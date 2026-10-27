@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#140e13">
+  <meta name="description" content="Junipurrr's little corner of the internet. Character bots, original worlds, fandom AUs, and notes from the workbench.">
+  <title>Junipurrr · Worlds to get lost in</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@400;450;500;600&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="content.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#collection">Skip to the collection</a>
+  <header class="site-header">
+    <a class="wordmark" href="#home" aria-label="Junipurrr home">Junipurrr<span aria-hidden="true"> ☾</span></a>
+    <nav aria-label="Main navigation">
+      <a href="#collection">The collection</a>
+      <a href="#desk">On my desk</a>
+      <a href="#about">About</a>
+      <a class="nav-djai profile-link" href="https://dreamjourneyai.com/profile/junipurrr" target="_blank" rel="noopener noreferrer">DJAI <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+  <main id="home">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-art" role="img" aria-label="Juni in a candlelit gothic study, cuddling an orange tabby cat"></div>
+      <div class="hero-shade"></div>
+      <div class="hero-content">
+        <p class="eyebrow"><span aria-hidden="true">✧</span> Worlds to get lost in</p>
+        <h1 id="hero-title">Junipurrr<span class="title-moon" aria-hidden="true">☾</span></h1>
+        <p class="hero-tagline">A little lore.<br>A lot of emotional damage.</p>
+        <p class="hero-description">Character bots, tangled stories, and<br class="desktop-break"> whatever I’m currently cooking.</p>
+        <div class="hero-actions">
+          <a class="button button-pink" href="#collection">Explore the collection <span aria-hidden="true">↗</span></a>
+          <a class="text-link" href="#desk">Peek at my projects <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="hero-footnote"><span class="little-star" aria-hidden="true">✦</span> Original worlds · Fandom AUs · Slow burns</div>
+      </div>
+      <div class="hero-note" aria-hidden="true">come for the stories,<br>stay for the cat. <span>♡</span></div>
+    </section>
+    <div class="marquee-line" aria-hidden="true"><span>FOR THE LOVE OF LORE</span><i>✧</i><span>AND QUESTIONABLE DECISIONS</span><i>✧</i><span>A LITTLE CORNER OF THE INTERNET</span><i>✧</i></div>
+    <section class="collection section-wrap" id="collection" aria-labelledby="collection-title">
+      <div class="section-heading">
+        <div><p class="eyebrow">Pick a door. Get attached.</p><h2 id="collection-title">The collection<span aria-hidden="true"> ✧</span></h2><p class="section-intro">Find your next favorite bad decision.</p></div>
+        <p class="section-aside">Different worlds.<br>Same unfortunate attachment issues.</p>
+      </div>
+      <div class="collection-toolbar">
+        <div class="filters" role="group" aria-label="Filter collection">
+          <button type="button" data-filter="all" aria-pressed="true">All worlds</button>
+          <button type="button" data-filter="original" aria-pressed="false">Original worlds</button>
+          <button type="button" data-filter="fandom" aria-pressed="false">Fandom AUs</button>
+          <button type="button" data-filter="fantasy" aria-pressed="false">Fantasy</button>
+        </div>
+        <label class="search-wrap"><span aria-hidden="true">⌕</span><span class="sr-only">Search the collection</span><input type="search" id="collection-search" placeholder="Search worlds, tags, or vibes…" autocomplete="off"></label>
+      </div>
+      <p class="result-count" id="result-count" role="status" aria-live="polite"></p>
+      <div class="world-grid" id="world-grid"></div>
+      <div class="empty-state" id="empty-state" hidden><span aria-hidden="true">☾</span><h3>A little too far off the map.</h3><p>No worlds match that search. Try another word or clear your filters.</p><button class="button" id="clear-search" type="button">Show all worlds</button></div>
+      <noscript><p>The collection needs JavaScript to display. You can still <a href="https://dreamjourneyai.com/profile/junipurrr">browse Junipurrr on DJAI</a>.</p></noscript>
+      <div class="collection-bottom"><span aria-hidden="true">✧</span><p>These are my little universes. Find their bots over on DJAI.</p><a class="text-link profile-link" href="https://dreamjourneyai.com/profile/junipurrr" target="_blank" rel="noopener noreferrer">Visit my profile <span aria-hidden="true">↗</span></a></div>
+    </section>
+    <section class="desk-section" id="desk" aria-labelledby="desk-title">
+      <div class="section-wrap desk-layout">
+        <div class="desk-heading"><p class="eyebrow">A peek behind the curtain</p><h2 id="desk-title">On my desk</h2><p>Half-finished thoughts.<br>Worlds in the making.<br>Probably another document.</p><span class="desk-scribble">good ideas live here ♡</span></div>
+        <div class="desk-notes" id="desk-notes"></div>
+      </div>
+    </section>
+    <section class="about-section section-wrap" id="about" aria-labelledby="about-title">
+      <div class="about-portrait"><img src="assets/juni-portrait.webp" alt="Juni's illustrated avatar, with long black hair, pink bows, and silver moon jewelry" width="440" height="440" loading="lazy"><span aria-hidden="true">✧</span></div>
+      <div class="about-copy"><p class="eyebrow">The person behind the lore</p><h2 id="about-title">Hi, I’m Juni.</h2><p id="about-text"></p><p class="about-signature">Professional enabler of bad decisions.<br>Curator of expensive emotional damage.</p><div class="about-links"><a class="button profile-link" href="https://dreamjourneyai.com/profile/junipurrr" target="_blank" rel="noopener noreferrer">Find me on DJAI ↗</a><button class="text-link" id="copy-discord" type="button">Copy Discord handle <span aria-hidden="true">♡</span></button></div><span class="copy-status" id="copy-status" role="status" aria-live="polite"></span></div>
+    </section>
+  </main>
+  <footer class="site-footer"><a class="wordmark" href="#home">Junipurrr <span aria-hidden="true">☾</span></a><p>Made with love, lore & questionable decisions.</p><button class="studio-link" id="open-studio" type="button">Creator desk</button><a href="#home" aria-label="Back to top">↑</a></footer>
+  <dialog class="world-dialog" id="world-dialog" aria-labelledby="dialog-title"><button class="dialog-close" type="button" aria-label="Close world notes">×</button><div id="world-detail"></div></dialog>
+  <dialog class="studio-dialog" id="studio-dialog" aria-labelledby="studio-title"><button class="dialog-close" type="button" aria-label="Close creator desk">×</button><p class="eyebrow">For your next obsession</p><h2 id="studio-title">Creator desk</h2><p class="studio-explanation">Edit your collection and project notes here. Drafts stay in this browser. To update the public website, export your content and replace <code>content.js</code> in your GitHub repository.</p><div class="studio-tabs" role="group" aria-label="Choose content to edit"><button type="button" data-studio="worlds" aria-pressed="true">Worlds & bots</button><button type="button" data-studio="notes" aria-pressed="false">Project notes</button></div><div id="studio-list"></div><form id="studio-form"><input type="hidden" name="id"><div class="form-grid"><label>Title<input name="title" required maxlength="100"></label><label>Category or fandom<input name="subtitle" maxlength="100"></label></div><label>Description<textarea name="description" required rows="3" maxlength="2000"></textarea></label><div class="form-grid"><label>Tags, separated by commas<input name="tags" placeholder="Gothic romance, Slow burn"></label><label>Type<select name="category"><option value="original">Original world</option><option value="fandom">Fandom AU</option><option value="fantasy">Fantasy</option></select></label></div><div class="form-grid"><label>DJAI bot link (optional)<input name="url" type="url" placeholder="https://dreamjourneyai.com/…"></label><label>Cover image (optional)<input name="image" placeholder="assets/my-cover.webp or https://…"></label></div><label class="note-status-label" hidden>Project status<select name="status"><option>In progress</option><option>Draft</option><option>Coming soon</option><option>On hold</option><option>Finished</option></select></label><div class="form-actions"><button class="button button-pink" type="submit">Save browser draft</button><button class="text-link" type="button" id="new-entry">Start a new entry</button></div></form><p id="studio-status" role="status" aria-live="polite"></p><div class="studio-export"><button class="button" id="export-content" type="button">Export content.js ↓</button><label class="import-label">Import content.json<input id="import-content" type="file" accept="application/json,.json"></label><button class="text-link" id="export-json" type="button">Back up as JSON</button></div><p class="studio-small">Your visitors only see published content. Browser drafts are private to this browser; exporting does not publish them.</p></dialog>
+</body>
+</html>
