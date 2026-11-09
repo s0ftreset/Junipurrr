@@ -286,3 +286,52 @@
   });
   render();
 })();
+
+/* DVD-style bouncing logo in the desk section */
+(function() {
+  const logo = document.getElementById('dvd-logo');
+  const container = document.querySelector('.desk-section');
+  if (!logo || !container) return;
+
+  const colors = ['#e3a8b7', '#e62955', '#c9a77b', '#e8adcc', '#f0b5c4'];
+  let colorIndex = 0;
+  let x = 40, y = 60;
+  let vx = 1.6, vy = 1.2;
+  let lastHit = 0;
+
+  function setColor(hex) {
+    logo.style.filter = `drop-shadow(0 0 8px ${hex}aa)`;
+    logo.style.backgroundImage = `url("assets/loading-logo.png")`;
+    // tint via filter
+    logo.style.filter = `hue-rotate(${colorIndex * 40}deg) saturate(1.3) drop-shadow(0 0 8px ${hex}99)`;
+  }
+
+  function tick() {
+    const rect = container.getBoundingClientRect();
+    const w = logo.offsetWidth || 72;
+    const h = logo.offsetHeight || 72;
+    const maxX = rect.width - w;
+    const maxY = rect.height - h;
+
+    x += vx;
+    y += vy;
+
+    let hit = false;
+    if (x <= 0) { x = 0; vx = Math.abs(vx); hit = true; }
+    if (x >= maxX) { x = maxX; vx = -Math.abs(vx); hit = true; }
+    if (y <= 0) { y = 0; vy = Math.abs(vy); hit = true; }
+    if (y >= maxY) { y = maxY; vy = -Math.abs(vy); hit = true; }
+
+    if (hit && Date.now() - lastHit > 120) {
+      colorIndex = (colorIndex + 1) % colors.length;
+      setColor(colors[colorIndex]);
+      lastHit = Date.now();
+    }
+
+    logo.style.transform = `translate(${x}px, ${y}px)`;
+    requestAnimationFrame(tick);
+  }
+
+  setColor(colors[0]);
+  requestAnimationFrame(tick);
+})();
