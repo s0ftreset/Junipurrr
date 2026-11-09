@@ -335,3 +335,46 @@
   setColor(colors[0]);
   requestAnimationFrame(tick);
 })();
+
+/* Poll + private feedback */
+(function() {
+  const form = document.getElementById('poll-form');
+  const countEl = document.getElementById('poll-count');
+  const fbForm = document.getElementById('feedback-form');
+  const fbStatus = document.getElementById('feedback-status');
+  if (!form || !countEl) return;
+
+  const KEY = 'junipurrr-poll-votes';
+  let votes = JSON.parse(localStorage.getItem(KEY) || '{"total":0,"choices":{}}');
+
+  function updateCount() {
+    countEl.textContent = votes.total + ' vote' + (votes.total === 1 ? '' : 's') + ' so far';
+  }
+  updateCount();
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const choice = form.querySelector('input[name=poll]:checked');
+    if (!choice) return;
+    votes.total += 1;
+    votes.choices[choice.value] = (votes.choices[choice.value] || 0) + 1;
+    localStorage.setItem(KEY, JSON.stringify(votes));
+    updateCount();
+    form.querySelector('button').textContent = 'Voted ✓';
+    setTimeout(() => form.querySelector('button').textContent = 'Cast my vote', 1800);
+  });
+
+  if (fbForm) {
+    fbForm.addEventListener('submit', e => {
+      e.preventDefault();
+      const data = new FormData(fbForm);
+      const name = data.get('name') || 'Anonymous';
+      const msg = data.get('message');
+      // Simple mailto fallback
+      const body = encodeURIComponent(`From: ${name}\\n\\n${msg}`);
+      window.location.href = `mailto:carlyynicole1@gmail.com?subject=Junipurrr%20private%20note&body=${body}`;
+      fbStatus.textContent = 'Opening your email client…';
+      fbForm.reset();
+    });
+  }
+})();
