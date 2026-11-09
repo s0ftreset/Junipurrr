@@ -15,7 +15,7 @@
   will-change:transform;
 }
 
-.poll-feedback{display:grid;grid-template-columns:1fr 1fr;gap:40px;padding:60px 0 40px}
+.poll-feedback{display:grid;grid-template-columns:1fr;gap:0;padding:60px 0 40px;max-width:560px;margin-inline:auto}
 .poll-card,.feedback-card{border:1px solid #62434f;background:#1c141b;padding:32px 28px;border-radius:4px}
 .poll-card h2,.feedback-card h2{font:32px/1.2 var(--gothic);color:#e4a8b8;margin:8px 0 12px}
 .poll-form,.feedback-form{display:flex;flex-direction:column;gap:12px;margin-top:20px}
