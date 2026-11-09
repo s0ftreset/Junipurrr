@@ -337,20 +337,3 @@
 })();
 
 
-/* Private feedback form */
-(function() {
-  const fbForm = document.getElementById('feedback-form');
-  const fbStatus = document.getElementById('feedback-status');
-  if (!fbForm) return;
-
-  fbForm.addEventListener('submit', e => {
-    e.preventDefault();
-    const data = new FormData(fbForm);
-    const name = data.get('name') || 'Anonymous';
-    const msg = data.get('message');
-    const body = encodeURIComponent(`From: ${name}\\n\\n${msg}`);
-    window.location.href = `mailto:carlyynicole1@gmail.com?subject=Junipurrr%20private%20note&body=${body}`;
-    fbStatus.textContent = 'Opening your email client…';
-    fbForm.reset();
-  });
-})();
