@@ -1,339 +1,86 @@
 (() => {
-  'use strict';
-  const $ = (selector, root = document) => root.querySelector(selector);
-  const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
-  const clone = value => JSON.parse(JSON.stringify(value));
-  const published = clone(window.JUNIPURRR_CONTENT);
-  let content = clone(published);
-  let filter = 'all';
-  let studioType = 'worlds';
-  let studioLoaded = false;
-  const storageKey = 'junipurrr-creator-draft-v1';
-  const themes = new Set(['lounge', 'manor', 'stage', 'desert', 'stairs', 'romance']);
-  const statusMessage = $('#studio-status');
-  const form = $('#studio-form');
-
-  function el(tag, className, text) {
-    const node = document.createElement(tag);
-    if (className) node.className = className;
-    if (text !== undefined) node.textContent = text;
-    return node;
-  }
-  function safeUrl(value, image = false) {
-    if (typeof value !== 'string' || !value.trim()) return '';
-    if (image && /^assets\/[a-z0-9/_\-.]+$/i.test(value) && !value.includes('..')) return value;
-    try {
-      const url = new URL(value);
-      return url.protocol === 'https:' ? url.href : '';
-    } catch { return ''; }
-  }
-  function validContent(value) {
-    if (!value || typeof value !== 'object' || !Array.isArray(value.worlds) || !Array.isArray(value.notes)) return false;
-    if (value.worlds.length > 200 || value.notes.length > 200) return false;
-    if (typeof value.about !== 'string' || typeof value.discord !== 'string' || !safeUrl(value.profileUrl)) return false;
-    for (const list of [value.worlds, value.notes]) {
-      const ids = new Set();
-      for (const item of list) {
-        if (!item || typeof item.id !== 'string' || !item.id || ids.has(item.id) || typeof item.title !== 'string' || typeof item.description !== 'string') return false;
-        if (item.title.length > 100 || item.description.length > 2000 || (item.subtitle !== undefined && typeof item.subtitle !== 'string')) return false;
-        if (item.url && !safeUrl(item.url)) return false;
-        if (item.image && !safeUrl(item.image, true)) return false;
-        if (item.tags !== undefined && (!Array.isArray(item.tags) || !item.tags.every(tag => typeof tag === 'string'))) return false;
-        ids.add(item.id);
-      }
-    }
-    return value.worlds.every(item => ['original','fandom','fantasy'].includes(item.category)) && value.notes.every(item => !item.status || typeof item.status === 'string');
-  }
-  function externalLink(text, url, className) {
-    const link = el('a', className, text);
-    link.href = safeUrl(url) || published.profileUrl;
-    link.target = '_blank';
-    link.rel = 'noopener noreferrer';
-    return link;
-  }
-  function cover(world, extra = '') {
-    const theme = themes.has(world.theme) ? world.theme : 'romance';
-    const node = el('div', `world-cover cover-${theme} ${extra}`);
-    node.setAttribute('aria-hidden', 'true');
-    const image = safeUrl(world.image, true);
-    if (image) {
-      node.classList.add('has-image');
-      node.style.backgroundImage = `url(${JSON.stringify(image)})`;
-    }
-    node.append(el('span', 'cover-sigil', theme === 'manor' ? '☾' : '✧'));
-    node.append(el('span', 'cover-title', world.coverTitle || world.title));
-    if (world.coverNote) node.append(el('span', 'cover-note', world.coverNote));
-    return node;
-  }
-  function renderWorlds() {
-    const term = $('#collection-search').value.trim().toLocaleLowerCase();
-    const worlds = content.worlds.filter(world => {
-      const tags = world.tags || [];
-      const matchesFilter = filter === 'all' || world.category === filter || (filter === 'fantasy' && tags.some(tag => tag.toLowerCase().includes('fantasy')));
-      const searchText = [world.title, world.subtitle, world.description, ...tags].join(' ').toLocaleLowerCase();
-      return matchesFilter && (!term || searchText.includes(term));
-    });
-    const grid = $('#world-grid');
-    grid.replaceChildren();
-    worlds.forEach(world => {
-      const article = el('article', 'world-card');
-      const button = el('button', 'world-open');
-      button.type = 'button';
-      button.setAttribute('aria-label', `Explore ${world.title}`);
-      button.append(cover(world));
-      const info = el('div', 'world-info');
-      const heading = el('div', 'world-heading');
-      heading.append(el('h3', '', world.title));
-      const arrow = el('span', '', '↗');
-      arrow.setAttribute('aria-hidden', 'true');
-      heading.append(arrow);
-      info.append(heading, el('p', 'world-subtitle', world.subtitle || 'A world by Junipurrr'));
-      const tags = el('div', 'world-tags');
-      (world.tags || []).slice(0, 3).forEach(tag => tags.append(el('span', '', tag)));
-      info.append(tags);
-      button.append(info);
-      button.addEventListener('click', () => openWorld(world));
-      article.append(button);
-      grid.append(article);
-    });
-    $('#empty-state').hidden = worlds.length > 0;
-    $('#result-count').textContent = `${worlds.length} ${worlds.length === 1 ? 'world' : 'worlds'} to wander${term ? ` · matching “${$('#collection-search').value.trim()}”` : ''}`;
-  }
-  function openWorld(world) {
-    const detail = $('#world-detail');
-    detail.replaceChildren();
-    const title = el('h2', '', world.title);
-    title.id = 'dialog-title';
-    detail.append(cover(world, 'dialog-cover'), el('p', 'eyebrow', 'Notes from this world'), title, el('p', 'detail-subtitle', world.subtitle || ''), el('p', 'detail-description', world.description));
-    const tags = el('div', 'detail-tags');
-    (world.tags || []).forEach(tag => tags.append(el('span', '', tag)));
-    detail.append(tags);
-    const directUrl = safeUrl(world.url);
-    detail.append(externalLink(directUrl ? 'Open this bot on DJAI ↗' : 'Browse my DJAI profile ↗', directUrl || content.profileUrl, 'button button-pink'));
-    if (!directUrl) detail.append(el('p', 'detail-footnote', 'Explore this collection through my creator profile.'));
-    $('#world-dialog').showModal();
-  }
-  function renderNotes() {
-    const notes = $('#desk-notes');
-    notes.replaceChildren();
-    if (!content.notes.length) notes.append(el('p', 'desk-empty', 'The desk is freshly cleared. Something new will land here soon.'));
-    content.notes.forEach(note => {
-      const article = el('article', 'project-note');
-      const top = el('div', 'note-top');
-      top.append(el('h3', '', note.title));
-      top.append(el('span', 'status-pill', note.status || 'In progress'));
-      article.append(top);
-      if (note.subtitle) article.append(el('p', 'note-subtitle', note.subtitle));
-      article.append(el('p', '', note.description));
-      if (safeUrl(note.url)) article.append(externalLink('Take a peek ↗', note.url, 'text-link'));
-      notes.append(article);
-    });
-  }
-  function render() {
-    renderWorlds();
-    renderNotes();
-    $('#about-text').textContent = content.about;
-    $$('.profile-link').forEach(link => link.href = safeUrl(content.profileUrl) || published.profileUrl);
-  }
-  $$('.filters button').forEach(button => button.addEventListener('click', () => {
-    filter = button.dataset.filter;
-    $$('.filters button').forEach(item => item.setAttribute('aria-pressed', String(item === button)));
-    renderWorlds();
-  }));
-  $('#collection-search').addEventListener('input', renderWorlds);
-  $('#clear-search').addEventListener('click', () => {
-    filter = 'all';
-    $('#collection-search').value = '';
-    $$('.filters button').forEach(item => item.setAttribute('aria-pressed', String(item.dataset.filter === 'all')));
-    renderWorlds();
-    $('#collection-search').focus();
-  });
-  $$('dialog').forEach(dialog => {
-    $('.dialog-close', dialog).addEventListener('click', () => dialog.close());
-    dialog.addEventListener('click', event => {
-      if (event.target !== dialog) return;
-      const rect = dialog.getBoundingClientRect();
-      if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) dialog.close();
-    });
-  });
-  $('#copy-discord').addEventListener('click', async () => {
-    try {
-      await navigator.clipboard.writeText(content.discord);
-      $('#copy-status').textContent = `${content.discord} copied ♡`;
-    } catch { $('#copy-status').textContent = `Discord: ${content.discord}`; }
-  });
-
-  function saveDraft() {
-    render();
-    try {
-      localStorage.setItem(storageKey, JSON.stringify(content));
-      statusMessage.textContent = 'Draft saved in this browser. Export when you’re ready to update the website.';
-    } catch { statusMessage.textContent = 'This browser could not save the draft. Export it now to keep your changes.'; }
-  }
-  function renderStudioList() {
-    const list = $('#studio-list');
-    list.replaceChildren();
-    content[studioType].forEach(item => {
-      const group = el('span', 'entry-group');
-      const button = el('button', 'entry-select', item.title);
-      button.type = 'button';
-      button.setAttribute('aria-pressed', String(form.elements.id.value === item.id));
-      button.addEventListener('click', () => fillForm(item));
-      const remove = el('button', 'entry-delete', '×');
-      remove.type = 'button';
-      remove.setAttribute('aria-label', `Delete browser draft entry ${item.title}`);
-      remove.addEventListener('click', () => {
-        content[studioType] = content[studioType].filter(entry => entry.id !== item.id);
-        if (form.elements.id.value === item.id) form.reset();
-        saveDraft();
-        renderStudioList();
-      });
-      group.append(button, remove);
-      list.append(group);
-    });
-  }
-  function fillForm(item = {}) {
-    form.reset();
-    const fields = ['id', 'title', 'subtitle', 'description', 'url', 'image', 'category', 'status'];
-    fields.forEach(name => { if (item[name] !== undefined) form.elements[name].value = item[name]; });
-    form.elements.tags.value = (item.tags || []).join(', ');
-    for (const name of ['tags','category','image']) form.elements[name].closest('label').hidden = studioType === 'notes';
-    $('.note-status-label').hidden = studioType !== 'notes';
-    renderStudioList();
-  }
-  $('#open-studio').addEventListener('click', () => {
-    if (!studioLoaded) {
-      try {
-        const draft = JSON.parse(localStorage.getItem(storageKey) || 'null');
-        if (validContent(draft)) {
-          content = clone(draft);
-          render();
-          statusMessage.textContent = 'Loaded your browser draft. The page now previews your draft content.';
-        }
-      } catch { statusMessage.textContent = 'Starting from published content; a saved draft could not be read.'; }
-      studioLoaded = true;
-    }
-    fillForm();
-    $('#studio-dialog').showModal();
-  });
-  $$('[data-studio]').forEach(button => button.addEventListener('click', () => {
-    studioType = button.dataset.studio;
-    $$('[data-studio]').forEach(item => item.setAttribute('aria-pressed', String(item === button)));
-    fillForm();
-  }));
-  $('#new-entry').addEventListener('click', () => {
-    fillForm();
-    form.elements.title.focus();
-  });
-  form.addEventListener('submit', event => {
-    event.preventDefault();
-    const fields = form.elements;
-    const url = fields.url.value.trim();
-    const image = fields.image.value.trim();
-    if (url && !safeUrl(url)) { statusMessage.textContent = 'Please use an https:// link.'; fields.url.focus(); return; }
-    if (studioType === 'worlds' && image && !safeUrl(image, true)) { statusMessage.textContent = 'Use an https:// image URL or an assets/ filename.'; fields.image.focus(); return; }
-    if (!fields.title.value.trim() || !fields.description.value.trim()) { statusMessage.textContent = 'Add a title and description before saving.'; return; }
-    const list = content[studioType];
-    const existing = list.find(item => item.id === fields.id.value);
-    if (!existing && list.length >= 200) { statusMessage.textContent = 'This collection is full (200 entries). Remove an entry before adding another.'; return; }
-    const item = {
-      ...(existing || {}),
-      id: existing?.id || `entry-${Date.now()}-${Math.random().toString(36).slice(2,7)}`,
-      title: fields.title.value.trim(),
-      subtitle: fields.subtitle.value.trim(),
-      description: fields.description.value.trim(),
-      url
-    };
-    if (studioType === 'worlds') {
-      item.category = fields.category.value;
-      item.tags = fields.tags.value.split(',').map(value => value.trim()).filter(Boolean);
-      item.image = image;
-      // User-edited titles should also update decorative cover lettering.
-      if (existing?.title !== item.title) item.coverTitle = item.title;
-    } else item.status = fields.status.value;
-    if (existing) list[list.indexOf(existing)] = item;
-    else list.push(item);
-    saveDraft();
-    fillForm(item);
-  });
-  function download(filename, text, type) {
-    const url = URL.createObjectURL(new Blob([text], { type }));
-    const link = el('a');
-    link.href = url;
-    link.download = filename;
-    document.body.append(link);
-    link.click();
-    link.remove();
-    setTimeout(() => URL.revokeObjectURL(url), 1000);
-  }
-  $('#export-content').addEventListener('click', () => {
-    download('content.js', `/* Junipurrr website content. Exported from the Creator desk. */\nwindow.JUNIPURRR_CONTENT = ${JSON.stringify(content, null, 2)};\n`, 'text/javascript');
-    statusMessage.textContent = 'Exported content.js. Replace that file in your GitHub repository to publish these entries.';
-  });
-  $('#export-json').addEventListener('click', () => download('junipurrr-content.json', JSON.stringify(content, null, 2), 'application/json'));
-  $('#import-content').addEventListener('change', async event => {
-    const file = event.target.files[0];
-    if (!file) return;
-    try {
-      if (file.size > 2_000_000) throw new Error('Too large');
-      const imported = JSON.parse(await file.text());
-      if (!validContent(imported)) throw new Error('Invalid content');
-      content = clone(imported);
-      saveDraft();
-      fillForm();
-    } catch { statusMessage.textContent = 'That file could not be imported. Choose a valid Junipurrr JSON backup under 2 MB.'; }
-    event.target.value = '';
-  });
-  render();
+ 'use strict';
+ const {$,$$}={ $:(s,r=document)=>r.querySelector(s), $$:(s,r=document)=>[...r.querySelectorAll(s)]};
+ const C=window.JuniCore, published=C.normalize(window.JUNIPURRR_CONTENT);
+ let content=C.clone(published),category='all',kind='all',savedOnly=false,studioType='home',editingId='',dirty=false,removed=null,isDraft=false;
+ const storageKey='junipurrr-creator-draft-v1',favoriteKey='junipurrr-favorites-v1';
+ let saved=[];try{const v=JSON.parse(localStorage.getItem(favoriteKey)||'[]');if(Array.isArray(v))saved=v.filter(x=>typeof x==='string')}catch{}
+ const form=$('#studio-form'),status=$('#studio-status');let toastTimer;
+ const labels={setting:{modern:'Modern mess',fantasy:'Fantasy courts',supernatural:'Supernatural yearning',fandom:'Fandom'},connection:{strangers:'Strangers',established:'Established relationship',history:'Shared history',open:'Open-ended'},intensity:{gentle:'Gentle yearning',tangled:'Tangled loyalties',devastating:'Emotional devastation'}};
+ const kindName=s=>s.kind==='character'?'Character':'Scenario';
+ const stageNames={'In progress':'Being written','Draft':'An idea unfortunately occurred','Coming soon':'Ready to ruin your evening','On hold':'Being difficult','Finished':'Escaped the drafts'};
+ function el(tag,cls,text){const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=text;return n}
+ function button(text,cls,fn){const n=el('button',cls,text);n.type='button';if(fn)n.addEventListener('click',fn);return n}
+ function link(text,url,cls,external=false){const n=el('a',cls,text);n.href=url;if(external){n.target='_blank';n.rel='noopener noreferrer'}return n}
+ function img(src,alt,cls){const n=el('img',cls);n.src=C.safeUrl(src,true);n.alt=alt;n.loading='lazy';return n}
+ function toast(text){$('#toast').textContent=text;$('#toast').classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('#toast').classList.remove('show'),4000)}
+ function cricket(){const messages=content.home.cricketMessages.length?content.home.cricketMessages:['Editor unavailable. Try again after his nap.'];toast(messages[Math.floor(Math.random()*messages.length)])}
+ function storyLink(s){return '#story/'+encodeURIComponent(s.id)}
+ function worldLink(w){return '#world/'+encodeURIComponent(w.id)}
+ function cover(item,extra=''){const theme=C.THEMES.includes(item.theme)?item.theme:'romance';const n=el('div',`world-cover cover-${theme} ${extra}`);n.setAttribute('aria-hidden','true');if(C.safeUrl(item.image,true)){n.classList.add('has-image');n.style.backgroundImage=`url(${JSON.stringify(C.safeUrl(item.image,true))})`}n.append(el('span','cover-sigil',theme==='manor'?'☾':'✧'),el('span','cover-title',item.coverTitle||item.title));if(item.coverNote||item.atmosphere)n.append(el('span','cover-note',item.coverNote||item.atmosphere));return n}
+ function tags(items){const n=el('div','detail-tags');items.forEach(t=>n.append(el('span','',t)));return n}
+ function save(id){saved=saved.includes(id)?saved.filter(x=>x!==id):[...saved,id];try{localStorage.setItem(favoriteKey,JSON.stringify(saved))}catch{toast('Favorites are available for this visit; this browser could not store them.')}renderStories();$$('[data-save-id]').forEach(b=>{const on=saved.includes(b.dataset.saveId);b.textContent=on?'♥ Saved':'♡ Save story';b.setAttribute('aria-pressed',String(on))})}
+ function card(s){const article=el('article','world-card');const a=link('',storyLink(s),'world-open');a.setAttribute('aria-label',`Explore ${s.title}`);a.append(cover(s));const info=el('div','world-info');const top=el('div','world-heading');top.append(el('h3','',s.title),el('span','','→'));info.append(el('span','entry-kind',kindName(s)),top,el('p','world-subtitle',s.subtitle),el('p','card-hook',s.description));const t=el('div','world-tags');s.tags.slice(0,3).forEach(x=>t.append(el('span','',x)));info.append(t);a.append(info);const b=button(saved.includes(s.id)?'♥':'♡','card-save',()=>save(s.id));b.setAttribute('aria-label',`${saved.includes(s.id)?'Unsave':'Save'} ${s.title}`);b.setAttribute('aria-pressed',String(saved.includes(s.id)));article.append(a,b);return article}
+ function renderStories(){const list=content.worlds.filter(s=>C.matches(s,{query:$('#collection-search').value,kind,category,saved:savedOnly?saved:null}));$('#world-grid').replaceChildren(...list.map(card));$('#result-count').textContent=`${list.length} ${list.length===1?'story':'stories'} ${savedOnly?'on your saved shelf':'to get attached to'}`;$('#empty-state').hidden=!!list.length;$('#empty-message').textContent=savedOnly?'No saved stories match. Tap a heart on a story to keep it on your shelf.':'Nothing. Try another word or clear your filters.';$('#saved-filter').textContent=`♡ Saved${saved.length?' · '+saved.length:''}`}
+ function renderFeatured(){const s=content.worlds.find(s=>s.id===content.home.featuredId);$('#featured').hidden=!s;if(!s)return;const a=link('',storyLink(s),'featured-art');a.append(cover(s));a.setAttribute('aria-label',`Explore featured story ${s.title}`);const n=el('div','featured-copy');n.append(el('p','eyebrow',kindName(s)+' · '+s.subtitle),el('h2','',s.title),el('p','',s.description));if(content.home.featuredNote)n.append(el('p','handwritten',content.home.featuredNote));n.append(link('Open this story →',storyLink(s),'button button-pink'));$('#featured-story').replaceChildren(a,n)}
+ function renderCollections(){const cards=content.collections.map(w=>{const n=link('',worldLink(w),'collection-door theme-'+w.theme);n.append(cover(w),el('h3','',w.title),el('p','',w.subtitle));const count=content.worlds.filter(s=>s.worldId===w.id).length;n.append(el('span','door-count',`${count} ${count===1?'story':'stories'} · Enter this world →`));return n});$('#collection-grid').replaceChildren(...cards);if(!cards.length)$('#collection-grid').append(el('p','','New worlds are taking shape at the desk.'))}
+ function noteCard(n){const a=el('article','project-note');if(n.image)a.append(img(n.image,n.title,'project-image'));const top=el('div','note-top');top.append(el('h3','',n.title),el('span','status-pill',stageNames[n.status]||n.status||'Being written'));a.append(top);if(n.subtitle)a.append(el('p','note-subtitle',n.subtitle));a.append(el('p','note-body',n.description));const s=content.worlds.find(s=>s.id===n.storyId);if(s)a.append(link('Open the story →',storyLink(s),'text-link'));else if(C.safeUrl(n.url))a.append(link('Take a peek →',C.safeUrl(n.url),'text-link',true));return a}
+ function renderNotes(){const live=content.notes.filter(n=>n.status!=='Finished'),done=content.notes.filter(n=>n.status==='Finished');$('#desk-notes').replaceChildren(...live.map(noteCard));if(!live.length)$('#desk-notes').append(el('p','desk-empty','The desk is clear. Cricket is taking full credit.'));$('#released-notes').replaceChildren();if(done.length)$('#released-notes').append(el('h3','released-heading','Escaped the drafts'),...done.map(noteCard))}
+ function renderGraveyard(){$('#graveyard-list').replaceChildren(...content.graveyard.map(g=>{const n=el('article','gravestone');n.append(el('span','grave-cross','✝'),el('h3','',g.title),el('p','',g.cause),el('small','',g.verdict));return n}));if(!content.graveyard.length)$('#graveyard-list').append(el('p','','No new casualties. For now.'))}
+ function render(){$('#juni-note').textContent=content.home.note;$('#about-text').textContent=content.about;$$('.profile-link').forEach(a=>a.href=C.safeUrl(content.profileUrl));renderStories();renderCollections();renderFeatured();renderNotes();renderGraveyard();$('#draft-banner').hidden=!isDraft;route(false)}
+ function loreSection(items){if(!items?.length)return null;const section=el('section','lore-section');section.append(el('p','eyebrow','The fine print'),el('h2','','A little more lore'));items.forEach(x=>{const d=el('details','lore-note');d.append(el('summary','',(x.spoiler?'Spoiler · ':'')+x.title),el('p','',x.text));section.append(d)});return section}
+ function launch(s){return link(s.url?'Open this bot on DJAI →':'Browse my DJAI profile →',C.safeUrl(s.url)||C.safeUrl(content.profileUrl),'button button-pink',true)}
+ function share(s){const u=new URL(location.href);u.hash=storyLink(s);navigator.clipboard?.writeText(u.href).then(()=>toast('Story link copied ♡')).catch(()=>toast('Copy the address in your browser to share this story.'))||toast('Copy the address in your browser to share this story.')}
+ function renderStory(s){const view=$('#detail-view');view.className='detail-view theme-'+(s.theme||'romance');const parent=content.collections.find(w=>w.id===s.worldId);const bread=el('nav','story-breadcrumb');bread.setAttribute('aria-label','Story breadcrumb');bread.append(link('← Back to Juni’s study','#collection','text-link'));if(parent)bread.append(link(parent.title+' →',worldLink(parent),'text-link'));const hero=el('header','story-hero');hero.append(cover(s,'story-poster'));const info=el('div','story-intro');info.append(el('p','eyebrow',kindName(s)+' · '+s.subtitle),el('h1','',s.title),el('p','story-premise',s.description),tags(s.tags));const actions=el('div','story-actions');const b=button(saved.includes(s.id)?'♥ Saved':'♡ Save story','button',()=>save(s.id));b.dataset.saveId=s.id;b.setAttribute('aria-pressed',String(saved.includes(s.id)));actions.append(launch(s),b,button('Copy story link','text-link',()=>share(s)));info.append(actions);if(!s.url)info.append(el('p','detail-footnote','This entry links to Juni’s creator profile; an individual bot link has not been added.'));hero.append(info);view.replaceChildren(bread,hero);
+ const body=el('div','story-body');const role=el('section','role-note');role.append(el('p','eyebrow','Your place in the story'),el('h2','',s.kind==='character'?'Where do we stand?':'Who can I be?'),el('p','',s.playerRole||'Check the bot’s opening on DJAI for its player setup. A fixed role has not been specified in this archive.'));body.append(role);
+ if(s.complications.length){const c=el('section','complications');c.append(el('p','eyebrow','What could possibly go wrong?'),el('h2','','The complications'));const list=el('ul');s.complications.forEach(t=>list.append(el('li','',t)));c.append(list);body.append(c)}
+ if(s.cast.length){const c=el('section','cast-section');c.append(el('p','eyebrow','The people (and occasional cat)'),el('h2','','Meet the cast'));const grid=el('div','cast-grid');s.cast.forEach(p=>{const card=el('article','cast-card');if(p.image)card.append(img(p.image,p.name));else card.append(el('span','cast-monogram',p.name.charAt(0)));const d=el('div');d.append(el('h3','',p.name),el('p','',p.role));card.append(d);grid.append(card)});c.append(grid);body.append(c)}
+ if(s.starts.length){const c=el('section','starts-section');c.append(el('p','eyebrow','Choose your first scene'),el('h2','','Opening previews'));s.starts.forEach((st,i)=>{const n=el('article','start-card');n.append(el('span','eyebrow',String(i+1).padStart(2,'0')),el('h3','',st.title),el('p','',st.text));if(st.url||s.url)n.append(link('Read the opening on DJAI →',C.safeUrl(st.url)||C.safeUrl(s.url),'text-link',true));c.append(n)});body.append(c)}
+ const lore=loreSection(s.lore);if(lore)body.append(lore);const related=content.worlds.filter(x=>x.id!==s.id&&s.worldId&&x.worldId===s.worldId);if(related.length){const n=el('section','related');n.append(el('h2','','Stay in this world'));const grid=el('div','world-grid');grid.append(...related.map(card));n.append(grid);body.append(n)}view.append(body);document.title=s.title+' · Junipurrr';}
+ function renderWorld(w){const view=$('#detail-view');view.className='detail-view theme-'+w.theme;const bread=link('← Back to Juni’s study','#worlds','text-link world-return');const head=el('header','world-entrance');head.append(cover(w,'world-landscape'),el('p','eyebrow',w.atmosphere||'A world by Juni'),el('h1','',w.title),el('p','entrance-subtitle',w.subtitle),el('p','world-description',w.description));const body=el('div','story-body');const list=content.worlds.filter(s=>s.worldId===w.id);const section=el('section');section.append(el('p','eyebrow','Find your way in'),el('h2','','Stories from this world'));const grid=el('div','world-grid');grid.append(...list.map(card));section.append(grid);if(!list.length)section.append(el('p','','A new story is taking shape. Visit the desk for updates.'));body.append(section);const lore=loreSection(w.lore);if(lore)body.append(lore);view.replaceChildren(bread,head,body);document.title=w.title+' · Junipurrr';}
+ function route(focus=true){let match;try{match=decodeURIComponent(location.hash.slice(1)).match(/^(story|world)\/(.+)$/)}catch{}const detail=$('#detail-view');if(match){const entry=(match[1]==='story'?content.worlds:content.collections).find(x=>x.id===match[2]);$('#home-view').hidden=true;detail.hidden=false;if(entry){match[1]==='story'?renderStory(entry):renderWorld(entry)}else{detail.className='detail-view';detail.replaceChildren(el('h1','','This page wandered off.'),el('p','','Cricket found no story at this address.'),link('Back to the collection','#collection','button'));document.title='Story not found · Junipurrr'}if(focus){window.scrollTo({top:0,left:0,behavior:'instant'});detail.focus({preventScroll:true})}}else{$('#home-view').hidden=false;detail.hidden=true;document.title='Junipurrr · Worlds to get lost in';if(focus){const target=document.getElementById(location.hash.slice(1)||'home');target?.scrollIntoView({behavior:'instant'});target?.focus({preventScroll:true})}}}
+ window.addEventListener('hashchange',()=>route());
+ function randomStory(){const pool=content.worlds;if(!pool.length){toast('Cricket is waiting for the first story.');return}const s=pool[Math.floor(Math.random()*pool.length)];$$('dialog[open]').forEach(d=>d.close());toast('Cricket chose '+s.title+'. He accepts no responsibility.');location.hash=storyLink(s)}
+ $$('[data-random]').forEach(b=>b.addEventListener('click',randomStory));$$('[data-cricket]').forEach(b=>b.addEventListener('click',cricket));$('#collection-search').addEventListener('input',renderStories);
+ $$('[data-filter]').forEach(b=>b.addEventListener('click',()=>{category=b.dataset.filter;$$('[data-filter]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));renderStories()}));$$('[data-kind]').forEach(b=>b.addEventListener('click',()=>{kind=b.dataset.kind;$$('[data-kind]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));renderStories()}));$('#saved-filter').addEventListener('click',e=>{savedOnly=!savedOnly;e.currentTarget.setAttribute('aria-pressed',String(savedOnly));renderStories()});$('#clear-search').addEventListener('click',()=>{kind=category='all';savedOnly=false;$('#collection-search').value='';$$('[data-kind]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.kind==='all')));$$('[data-filter]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.filter==='all')));$('#saved-filter').setAttribute('aria-pressed','false');renderStories()});
+ $$('dialog').forEach(d=>{$('.dialog-close',d).addEventListener('click',()=>d.close());d.addEventListener('click',e=>{if(e.target!==d)return;const r=d.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)d.close()})});$('#open-graveyard').addEventListener('click',()=>$('#graveyard-dialog').showModal());$('#copy-discord').addEventListener('click',async()=>{try{await navigator.clipboard.writeText(content.discord);$('#copy-status').textContent=content.discord+' copied ♡'}catch{$('#copy-status').textContent='Discord: '+content.discord}});
+ function moodQuestions(){Object.entries(labels).forEach(([key,opts],i)=>{const field=el('fieldset','mood-question');field.append(el('legend','',`${i+1}. ${['What sounds good?','What kind of connection?','How much trouble?'][i]}`));const choices={any:'Leave it open',...opts};Object.entries(choices).forEach(([value,label])=>{const wrap=el('label','mood-choice'),input=el('input');input.type='radio';input.name=key;input.value=value;input.checked=value==='any';wrap.append(input,el('span','',label));field.append(wrap)});$('#mood-questions').append(field)})}
+ moodQuestions();$('#open-mood').addEventListener('click',()=>$('#mood-dialog').showModal());$('#reset-mood').addEventListener('click',()=>{$('#mood-form').reset();$('#mood-results').replaceChildren()});$('#mood-form').addEventListener('submit',e=>{e.preventDefault();const choices=Object.fromEntries(new FormData(e.currentTarget));const result=C.recommend(content.worlds,choices);const out=$('#mood-results');out.replaceChildren(el('h3','',result.results.length?(result.exact?'Your kind of trouble':'A few nearby temptations'):'No match on this shelf yet.'));out.append(el('p','',result.exact?'These stories match every preference you selected.':result.results.length?'These are partial matches. The matched preferences are listed below; try leaving an answer open for more options.':'Try leaving one answer open, or let Cricket choose.'));result.results.forEach(r=>{const n=link('',storyLink(r.story),'mood-result');n.append(el('strong','',r.story.title),el('span','',r.matched.length?'Matches: '+r.matched.map(k=>labels[k][choices[k]]).join(' · '):'An open invitation from the collection.'),el('p','',r.story.description));n.addEventListener('click',()=>$('#mood-dialog').close());out.append(n)});out.append(button('Let Cricket choose 🐾','text-link',randomStory))});
+ // The Creator desk edits browser-local drafts only. Publication remains a content.js export.
+ const typeOptions=[['character','Character'],['scenario','Scenario']];
+ const moodOptions=k=>[['','Not specified'],...Object.entries(labels[k])];
+ const fields={
+ home:[['note','A note from Juni','textarea'],['featuredId','Featured story','stories'],['featuredNote','Your note about this story','textarea'],['cricketMessages','Cricket’s messages (one per line)','lines'],['about','About you','textarea'],['profileUrl','DJAI creator profile','url'],['discord','Discord handle','text']],
+ worlds:[['title','Story title','text',true],['subtitle','Subtitle / fandom','text'],['description','The premise','textarea',true],['kind','Entry type','select',typeOptions],['category','Category','select',[['original','Original'],['fandom','Fandom AU'],['fantasy','Fantasy']]],['worldId','Belongs to a world','collections'],['image','Cover artwork','image'],['theme','Atmosphere','select',C.THEMES.map(t=>[t,t[0].toUpperCase()+t.slice(1)])],['coverTitle','Lettering on the cover','text'],['coverNote','Short cover note','text'],['url','Direct DJAI bot link','url'],['tags','Tags (separated by commas)','tags'],['playerRole','Your place in the story','textarea'],['complications','Complications (one per line)','lines'],['moodSetting','Mood picker: setting','select',moodOptions('setting')],['moodConnection','Mood picker: connection','select',moodOptions('connection')],['moodIntensity','Mood picker: intensity','select',moodOptions('intensity')]],
+ collections:[['title','World title','text',true],['subtitle','Subtitle','text'],['description','About this world','textarea',true],['atmosphere','A line to set the scene','text'],['image','World artwork','image'],['theme','Atmosphere','select',C.THEMES.map(t=>[t,t[0].toUpperCase()+t.slice(1)])]],
+ notes:[['title','Project title','text',true],['subtitle','A short label','text'],['description','Your note','textarea',true],['status','Project status','select',Object.entries(stageNames)],['image','Preview artwork','image'],['storyId','Linked story','stories'],['url','Other preview link','url']],
+ graveyard:[['title','The dearly rejected name','text',true],['cause','Cause of rejection','textarea',true],['verdict','Final verdict','textarea',true]]
+ };
+ const repeaterDefs={cast:{title:'Cast',add:'Add a character',fields:[['name','Name'],['role','Role / short introduction','textarea'],['image','Portrait','image']]},starts:{title:'Opening previews',add:'Add an opening',fields:[['title','Opening title'],['text','Spoiler-free preview','textarea'],['url','Direct opening link (optional)','url']]},lore:{title:'Lore notes',add:'Add a lore note',fields:[['title','Title'],['text','Lore','textarea'],['spoiler','Hide behind a spoiler label','checkbox']]}};
+ function control(def,value,container){const [name,title,type='text',extra]=def;const wrap=el('label','editor-label');wrap.append(el('span','',title));let input;if(['select','stories','collections'].includes(type)){input=el('select');let options=type==='select'?extra:[['','None'],...content[type==='stories'?'worlds':'collections'].map(s=>[s.id,s.title])];if(value&&!options.some(o=>o[0]===value))options=[...options,[value,value+' (unlisted)']];options.forEach(([v,t])=>{const o=el('option','',t);o.value=v;input.append(o)})}else if(['textarea','lines'].includes(type)){input=el('textarea');input.rows=3;input.maxLength=10000}else{input=el('input');input.type=type==='checkbox'?'checkbox':type==='url'?'url':'text';input.maxLength=type==='image'||type==='url'?2000:200}input.name=name;if(type==='checkbox')input.checked=!!value;else input.value=Array.isArray(value)?value.join(type==='tags'?', ':'\n'):value??'';if(extra===true)input.required=true;if(type==='image')input.placeholder='assets/your-art.webp or an https:// image URL';if(type==='url')input.placeholder='https://…';wrap.append(input);container.append(wrap);return input}
+ function addRepeaterRow(key,data={}){const group=$(`[data-repeater="${key}"]`),row=el('fieldset','repeat-row');row.dataset.row=key;const def=repeaterDefs[key];row.append(el('legend','',key==='cast'?'Character':key==='starts'?'Opening':'Lore note'));def.fields.forEach(d=>control(d,data[d[0]],row));row.append(button('Remove this '+(key==='cast'?'character':key==='starts'?'opening':'note'),'text-link remove-repeat',()=>{row.remove();dirty=true}));group.append(row)}
+ function repeaters(item){const keys=studioType==='worlds'?['cast','starts','lore']:studioType==='collections'?['lore']:[];keys.forEach(key=>{const area=el('section','editor-repeater');area.append(el('h3','',repeaterDefs[key].title));const group=el('div');group.dataset.repeater=key;area.append(group,button(repeaterDefs[key].add,'button',()=>{addRepeaterRow(key);dirty=true}));$('#studio-fields').append(area);(item[key]||[]).forEach(row=>addRepeaterRow(key,row))})}
+ function askDiscard(){return !dirty||window.confirm('Leave these unsaved form edits? Your last saved browser draft will stay intact.')}
+ function studioList(){$('#studio-list').replaceChildren();$('#new-entry').hidden=studioType==='home';if(studioType==='home')return;content[studioType].forEach(item=>{const group=el('span','entry-group');const choose=button(item.title,'entry-select',()=>{if(askDiscard())fillForm(item)});choose.setAttribute('aria-pressed',String(item.id===editingId));const remove=button('×','entry-delete',()=>{if(!askDiscard())return;removed=C.clone(content);content[studioType]=content[studioType].filter(x=>x.id!==item.id);if(studioType==='collections')content.worlds.forEach(s=>{if(s.worldId===item.id)s.worldId=''});if(studioType==='worlds'){content.notes.forEach(n=>{if(n.storyId===item.id)n.storyId=''});if(content.home.featuredId===item.id)content.home.featuredId=''}saveDraft('Entry removed from this draft. Undo is available below.');$('#undo-delete').hidden=false;fillForm()});remove.setAttribute('aria-label','Remove '+item.title+' from browser draft');group.append(choose,remove);$('#studio-list').append(group)})}
+ function fillForm(item){dirty=false;item=item||(studioType==='home'?{...content.home,about:content.about,profileUrl:content.profileUrl,discord:content.discord}:{});editingId=item.id||'';$('#studio-fields').replaceChildren();const values={kind:'scenario',category:'original',theme:'romance',status:'Draft',...item,moodSetting:item.moods?.setting||'',moodConnection:item.moods?.connection||'',moodIntensity:item.moods?.intensity||''};fields[studioType].forEach(d=>control(d,values[d[0]],$('#studio-fields')));repeaters(item);studioList()}
+ function collectRepeater(key){return $$(`[data-row="${key}"]`,form).map(row=>{const item={};repeaterDefs[key].fields.forEach(([name,,type])=>{const input=$(`[name="${name}"]`,row);item[name]=type==='checkbox'?input.checked:input.value.trim()});return item})}
+ function saveDraft(message='Draft saved in this browser. Export when you’re ready to publish.'){isDraft=true;try{localStorage.setItem(storageKey,JSON.stringify(content));status.textContent=message}catch{status.textContent='Browser storage is unavailable. Export now to keep this draft.'}render()}
+ form.addEventListener('input',()=>{dirty=true});form.addEventListener('change',()=>{dirty=true});form.addEventListener('submit',e=>{e.preventDefault();const candidate=C.clone(content);const current=studioType==='home'?{...candidate.home}:candidate[studioType].find(x=>x.id===editingId)||{};const item={...current};for(const [name,,type] of fields[studioType]){const field=$(`[name="${name}"]`,form);const value=field.value.trim();item[name]=type==='tags'?value.split(',').map(s=>s.trim()).filter(Boolean):type==='lines'?value.split('\n').map(s=>s.trim()).filter(Boolean):value;if((type==='url'&&value&&!C.safeUrl(value))||(type==='image'&&value&&!C.safeUrl(value,true))){status.textContent='Use an https:// link, or an assets/ filename for artwork.';field.focus();return}}
+ if(studioType==='home'){['about','profileUrl','discord'].forEach(k=>{candidate[k]=item[k];delete item[k]});candidate.home=item}else{item.id=editingId||`entry-${Date.now()}-${Math.random().toString(36).slice(2,7)}`;if(studioType==='worlds'){item.moods={setting:item.moodSetting,connection:item.moodConnection,intensity:item.moodIntensity};delete item.moodSetting;delete item.moodConnection;delete item.moodIntensity;item.cast=collectRepeater('cast');item.starts=collectRepeater('starts');item.lore=collectRepeater('lore')}if(studioType==='collections')item.lore=collectRepeater('lore');const index=candidate[studioType].findIndex(x=>x.id===item.id);if(index<0)candidate[studioType].push(item);else candidate[studioType][index]=item}
+ if(!C.valid(candidate)){status.textContent='Check the required fields and links. Keep titles under 100 characters and each collection under 200 entries.';return}content=C.normalize(candidate);dirty=false;saveDraft();fillForm(studioType==='home'?undefined:item)});
+ let studioOpened=false;
+ function loadDraft(){try{const raw=localStorage.getItem(storageKey);if(raw){content=C.normalize(JSON.parse(raw));isDraft=true;render();status.textContent='Loaded your saved browser draft.'}else status.textContent='No saved draft in this browser yet.'}catch{status.textContent='The saved draft could not be read. Published content is still available.'}fillForm()}
+ $('#open-studio').addEventListener('click',()=>{if(!studioOpened){loadDraft();studioOpened=true}else if(!dirty)fillForm(studioType==='home'?undefined:content[studioType].find(x=>x.id===editingId));$('#studio-dialog').showModal()});$$('[data-studio]').forEach(b=>b.addEventListener('click',()=>{if(!askDiscard())return;studioType=b.dataset.studio;$$('[data-studio]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));fillForm()}));$('#new-entry').addEventListener('click',()=>{if(askDiscard()){fillForm();$('[name="title"]',form)?.focus()}});
+ function publishedPreview(){if(!askDiscard())return;content=C.clone(published);isDraft=false;dirty=false;render();fillForm();status.textContent='Showing published content. Your saved browser draft is still available.'}
+ $('#preview-published').addEventListener('click',publishedPreview);$('#draft-return').addEventListener('click',publishedPreview);$('#restore-draft').addEventListener('click',()=>{if(askDiscard())loadDraft()});$('#undo-delete').addEventListener('click',()=>{if(!removed||!askDiscard())return;content=removed;removed=null;$('#undo-delete').hidden=true;saveDraft('Removal undone.');fillForm()});
+ function download(name,text,type){const u=URL.createObjectURL(new Blob([text],{type}));const a=link('',u);a.download=name;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),1000)}
+ function exportReady(){if(dirty){status.textContent='Save your form edits before exporting.';return false}return true}
+ $('#export-content').addEventListener('click',()=>{if(!exportReady())return;download('content.js','/* Published Junipurrr content. */\nwindow.JUNIPURRR_CONTENT = '+JSON.stringify(content,null,2)+';\n','text/javascript');status.textContent='Exported content.js. Replace that file in your GitHub repository to publish.'});$('#export-json').addEventListener('click',()=>{if(exportReady())download('junipurrr-content.json',JSON.stringify(content,null,2),'application/json')});
+ $('#import-content').addEventListener('change',async e=>{const file=e.target.files[0];if(!file)return;if(!askDiscard()){e.target.value='';return}try{if(file.size>2_000_000)throw Error();const incoming=C.normalize(JSON.parse(await file.text()));content=incoming;dirty=false;saveDraft('Imported and saved this browser draft. Export content.js when ready to publish.');fillForm()}catch{status.textContent='Could not import that file. Choose a valid Junipurrr JSON backup under 2 MB.'}e.target.value=''});
+ render();
+ // Keep the DVD joke, with a pause control and reduced-motion support.
+ const logo=$('#dvd-logo'),container=$('.desk-section'),toggle=$('#motion-toggle'),reduce=matchMedia('(prefers-reduced-motion: reduce)');let x=40,y=60,vx=45,vy=35,previous=0,frame=0,paused=reduce.matches,visible=false,hits=0;
+ function motionState(){toggle.textContent=paused?'Play DVD':'Pause DVD';toggle.setAttribute('aria-pressed',String(paused));if(paused||!visible||document.hidden){cancelAnimationFrame(frame);frame=0;previous=0}else if(!frame)frame=requestAnimationFrame(tick)}
+ function tick(t){frame=0;if(paused||!visible||document.hidden)return;const dt=previous?Math.min((t-previous)/1000,.05):0;previous=t;const maxX=Math.max(0,container.clientWidth-72),maxY=Math.max(0,container.clientHeight-72);x+=vx*dt;y+=vy*dt;let hit=false;if(x<0||x>maxX){x=Math.max(0,Math.min(maxX,x));vx=-vx;hit=true}if(y<0||y>maxY){y=Math.max(0,Math.min(maxY,y));vy=-vy;hit=true}if(hit){hits++;logo.style.filter=`hue-rotate(${hits*40}deg) drop-shadow(0 0 7px #e3a8b770)`}logo.style.transform=`translate(${x}px,${y}px)`;frame=requestAnimationFrame(tick)}
+ toggle.addEventListener('click',()=>{paused=!paused;motionState()});reduce.addEventListener('change',()=>{paused=reduce.matches;motionState()});new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;motionState()}).observe(container);document.addEventListener('visibilitychange',motionState);motionState();
 })();
-
-/* DVD-style bouncing logo in the desk section */
-(function() {
-  const logo = document.getElementById('dvd-logo');
-  const container = document.querySelector('.desk-section');
-  if (!logo || !container) return;
-
-  const colors = ['#e3a8b7', '#e62955', '#c9a77b', '#e8adcc', '#f0b5c4'];
-  let colorIndex = 0;
-  let x = 40, y = 60;
-  let vx = 1.6, vy = 1.2;
-  let lastHit = 0;
-
-  function setColor(hex) {
-    logo.style.filter = `drop-shadow(0 0 8px ${hex}aa)`;
-    logo.style.backgroundImage = `url("assets/loading-logo.png")`;
-    // tint via filter
-    logo.style.filter = `hue-rotate(${colorIndex * 40}deg) saturate(1.3) drop-shadow(0 0 8px ${hex}99)`;
-  }
-
-  function tick() {
-    const rect = container.getBoundingClientRect();
-    const w = logo.offsetWidth || 72;
-    const h = logo.offsetHeight || 72;
-    const maxX = rect.width - w;
-    const maxY = rect.height - h;
-
-    x += vx;
-    y += vy;
-
-    let hit = false;
-    if (x <= 0) { x = 0; vx = Math.abs(vx); hit = true; }
-    if (x >= maxX) { x = maxX; vx = -Math.abs(vx); hit = true; }
-    if (y <= 0) { y = 0; vy = Math.abs(vy); hit = true; }
-    if (y >= maxY) { y = maxY; vy = -Math.abs(vy); hit = true; }
-
-    if (hit && Date.now() - lastHit > 120) {
-      colorIndex = (colorIndex + 1) % colors.length;
-      setColor(colors[colorIndex]);
-      lastHit = Date.now();
-    }
-
-    logo.style.transform = `translate(${x}px, ${y}px)`;
-    requestAnimationFrame(tick);
-  }
-
-  setColor(colors[0]);
-  requestAnimationFrame(tick);
-})();
-
-

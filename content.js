@@ -1,13 +1,13 @@
-/* Your website content. Edit here, or use the Creator desk on the website and export this file. */
+/* Published content. Manage entries in the Creator desk, then export this file. */
 window.JUNIPURRR_CONTENT = {
   "profileUrl": "https://dreamjourneyai.com/profile/junipurrr",
   "discord": "Junipurrr",
-  "about": "I make character bots, original worlds, and fandom AUs for stories you can settle into. Expect complicated people, lived-in settings, slow burns, and a frankly unreasonable amount of lore. This is where I keep my worlds together\u2014and leave a few notes about what comes next.",
+  "about": "I make character bots, original worlds, and fandom AUs for stories you can settle into. Expect complicated people, lived-in settings, slow burns, and a frankly unreasonable amount of lore. This is where I keep my worlds together—and leave a few notes about what comes next.",
   "worlds": [
     {
       "id": "after-hours",
       "title": "AFTER HOURS",
-      "subtitle": "Jujutsu Kaisen \u00b7 Nightlife AU",
+      "subtitle": "Jujutsu Kaisen · Nightlife AU",
       "category": "fandom",
       "tags": [
         "Nightlife",
@@ -19,12 +19,24 @@ window.JUNIPURRR_CONTENT = {
       "coverNote": "meet me after last call",
       "theme": "lounge",
       "url": "",
-      "image": ""
+      "image": "",
+      "kind": "scenario",
+      "worldId": "after-hours",
+      "playerRole": "",
+      "complications": [],
+      "cast": [],
+      "starts": [],
+      "lore": [],
+      "moods": {
+        "setting": "fandom",
+        "connection": "open",
+        "intensity": "tangled"
+      }
     },
     {
       "id": "hollowmere",
       "title": "HOLLOWMERE",
-      "subtitle": "Original world \u00b7 Gothic romance",
+      "subtitle": "Original world · Gothic romance",
       "category": "original",
       "tags": [
         "Fantasy",
@@ -36,12 +48,39 @@ window.JUNIPURRR_CONTENT = {
       "coverNote": "the hour before forever",
       "theme": "manor",
       "url": "https://dreamjourneyai.com/app/creation/758b4ab6-c812-4b04-8673-07b320841b91",
-      "image": "assets/hollowmere.png"
+      "image": "assets/hollowmere.png",
+      "kind": "scenario",
+      "worldId": "hollowmere",
+      "playerRole": "",
+      "complications": [
+        "Permanent night over Hollowmere.",
+        "A past that still shapes the present."
+      ],
+      "cast": [
+        {
+          "name": "Valentin Morland",
+          "role": "A Regency past, old grief, and things left unsaid.",
+          "image": ""
+        }
+      ],
+      "starts": [],
+      "lore": [
+        {
+          "title": "Blackthorn Manor",
+          "text": "Candlelit libraries, permanent night, and a clock still approaching 11:59.",
+          "spoiler": false
+        }
+      ],
+      "moods": {
+        "setting": "supernatural",
+        "connection": "open",
+        "intensity": "tangled"
+      }
     },
     {
       "id": "feedback",
       "title": "FEEDBACK",
-      "subtitle": "Demon Slayer \u00b7 Band AU",
+      "subtitle": "Demon Slayer · Band AU",
       "category": "fandom",
       "tags": [
         "Music",
@@ -53,12 +92,27 @@ window.JUNIPURRR_CONTENT = {
       "coverNote": "one more song. one more mistake.",
       "theme": "stage",
       "url": "https://dreamjourneyai.com/app/creation/608156f4-cfc2-4f37-897d-58f1c54dcd6d",
-      "image": ""
+      "image": "",
+      "kind": "scenario",
+      "worldId": "feedback",
+      "playerRole": "",
+      "complications": [
+        "Rival bands share a scene.",
+        "Backstage relationships outlast the performance."
+      ],
+      "cast": [],
+      "starts": [],
+      "lore": [],
+      "moods": {
+        "setting": "fandom",
+        "connection": "open",
+        "intensity": "tangled"
+      }
     },
     {
       "id": "dead-kings",
       "title": "DEAD KINGS MC",
-      "subtitle": "Original world \u00b7 Tucson, Arizona",
+      "subtitle": "Original world · Tucson, Arizona",
       "category": "original",
       "tags": [
         "Motorcycle club",
@@ -70,12 +124,38 @@ window.JUNIPURRR_CONTENT = {
       "coverNote": "no saints on this road",
       "theme": "desert",
       "url": "https://dreamjourneyai.com/app/creation/69ece87b-fa82-4ac9-8bb9-c7f914dad69b",
-      "image": ""
+      "image": "",
+      "kind": "scenario",
+      "worldId": "dead-kings",
+      "playerRole": "",
+      "complications": [
+        "Messy loyalties and hard choices.",
+        "Trouble rarely stays outside the clubhouse."
+      ],
+      "cast": [
+        {
+          "name": "Saint",
+          "role": "One of the Dead Kings.",
+          "image": ""
+        },
+        {
+          "name": "Sabbath",
+          "role": "The club dog.",
+          "image": ""
+        }
+      ],
+      "starts": [],
+      "lore": [],
+      "moods": {
+        "setting": "modern",
+        "connection": "open",
+        "intensity": "tangled"
+      }
     },
     {
       "id": "back-stairs",
       "title": "THE BACK STAIRS",
-      "subtitle": "Original world \u00b7 Chicago",
+      "subtitle": "Original world · Chicago",
       "category": "original",
       "tags": [
         "Neighbors",
@@ -87,29 +167,68 @@ window.JUNIPURRR_CONTENT = {
       "coverNote": "someone is always still awake",
       "theme": "stairs",
       "url": "https://dreamjourneyai.com/app/creation/5754764a-76e9-459c-bfe1-9e286df461df",
-      "image": ""
+      "image": "",
+      "kind": "scenario",
+      "worldId": "back-stairs",
+      "playerRole": "",
+      "complications": [],
+      "cast": [
+        {
+          "name": "Pork Chop & Pickle",
+          "role": "The resident cats.",
+          "image": ""
+        }
+      ],
+      "starts": [],
+      "lore": [],
+      "moods": {
+        "setting": "modern",
+        "connection": "open",
+        "intensity": "gentle"
+      }
     },
     {
       "id": "yours-privately",
       "title": "YOURS, PRIVATELY",
-      "subtitle": "Original world \u00b7 Celebrity romance",
+      "subtitle": "Original world · Celebrity romance",
       "category": "original",
       "tags": [
         "Secret relationship",
         "Fame",
         "Angst"
       ],
-      "description": "Felix Nystr\u00f6m has a life everyone gets to see\u2014and a relationship the cameras don't. A private romance shaped by childhood history, public expectations, hotel corridors, and the question of what it would take to choose daylight.",
+      "description": "Felix Nyström has a life everyone gets to see—and a relationship the cameras don't. A private romance shaped by childhood history, public expectations, hotel corridors, and the question of what it would take to choose daylight.",
       "coverTitle": "Yours, Privately",
       "coverNote": "some things deserve the daylight",
       "theme": "romance",
       "url": "https://dreamjourneyai.com/app/creation/6f33809a-d8e1-4c8f-91aa-a59889b8550f",
-      "image": ""
+      "image": "",
+      "kind": "character",
+      "worldId": "",
+      "playerRole": "You are in a private relationship with Felix Nyström, with a shared history stretching back to childhood.",
+      "complications": [
+        "A private relationship under the pressure of public expectations.",
+        "What would it take to choose daylight?"
+      ],
+      "cast": [
+        {
+          "name": "Felix Nyström",
+          "role": "A public life. A private relationship.",
+          "image": ""
+        }
+      ],
+      "starts": [],
+      "lore": [],
+      "moods": {
+        "setting": "modern",
+        "connection": "history",
+        "intensity": "devastating"
+      }
     },
     {
       "id": "no-saints-here",
       "title": "NO SAINTS HERE",
-      "subtitle": "Original world \u00b7 Band / Chaos",
+      "subtitle": "Original world · Band / Chaos",
       "category": "original",
       "tags": [
         "Music",
@@ -122,12 +241,27 @@ window.JUNIPURRR_CONTENT = {
       "coverNote": "chaos with a heartbeat",
       "theme": "stage",
       "url": "https://dreamjourneyai.com/app/creation/6fa26b8b-e433-484f-a62f-b2ab0a7b4246",
-      "image": "assets/no-saints-here.png"
+      "image": "assets/no-saints-here.png",
+      "kind": "scenario",
+      "worldId": "no-saints-here",
+      "playerRole": "",
+      "complications": [
+        "They survived being broke. Now they have to survive being famous.",
+        "Band chemistry and bad decisions share a tour bus."
+      ],
+      "cast": [],
+      "starts": [],
+      "lore": [],
+      "moods": {
+        "setting": "modern",
+        "connection": "open",
+        "intensity": "tangled"
+      }
     },
     {
       "id": "restoration-season",
       "title": "THE RESTORATION SEASON",
-      "subtitle": "Harry Potter AU \u00b7 Post-war Season",
+      "subtitle": "Harry Potter AU · Post-war Season",
       "category": "fandom",
       "tags": [
         "Fantasy",
@@ -138,14 +272,29 @@ window.JUNIPURRR_CONTENT = {
       "description": "Four years after the war, Britain revives the Season: glittering balls, ruthless gossip, old rivalries, and dangerous courtships. The Weasleys rise, the Malfoys rebuild, and everyone is watching who chooses whom.",
       "coverTitle": "Restoration Season",
       "coverNote": "glittering balls, dangerous choices",
-      "theme": "manor",
+      "theme": "society",
       "url": "https://dreamjourneyai.com/app/creation/236dbf53-33b4-4531-a6a4-1f8f25bd7937",
-      "image": "assets/restoration-season.png"
+      "image": "assets/restoration-season.png",
+      "kind": "scenario",
+      "worldId": "restoration-season",
+      "playerRole": "",
+      "complications": [
+        "Old rivalries meet a revived social Season.",
+        "Courtship comes with an audience."
+      ],
+      "cast": [],
+      "starts": [],
+      "lore": [],
+      "moods": {
+        "setting": "fandom",
+        "connection": "open",
+        "intensity": "tangled"
+      }
     },
     {
       "id": "esme-morcant",
       "title": "ESME MORCANT",
-      "subtitle": "Original character \u00b7 Girlfriend",
+      "subtitle": "Original character · Girlfriend",
       "category": "original",
       "tags": [
         "OC",
@@ -153,17 +302,44 @@ window.JUNIPURRR_CONTENT = {
         "Angst",
         "Modern"
       ],
-      "description": "You thought the relationship was struggling. Esme already knew it was over. While you kept loving her, she quietly packed away your life together\u2014and everyone seemed to know before you did.",
+      "description": "You thought the relationship was struggling. Esme already knew it was over. While you kept loving her, she quietly packed away your life together—and everyone seemed to know before you did.",
       "coverTitle": "Esme",
       "coverNote": "she already knew",
       "theme": "romance",
       "url": "https://dreamjourneyai.com/app/creation/67ac53b7-87cb-44de-96c2-7269c19952c6",
-      "image": "assets/esme-at-bar.png"
+      "image": "assets/esme-at-bar.png",
+      "kind": "character",
+      "worldId": "",
+      "playerRole": "You are Esme’s partner. You believe the relationship is struggling; she has already decided it is over.",
+      "complications": [
+        "An established relationship with unequal knowledge of its ending.",
+        "Other people seem to know before you do."
+      ],
+      "cast": [
+        {
+          "name": "Esme Morcant",
+          "role": "Your girlfriend",
+          "image": "assets/esme-at-bar.png"
+        }
+      ],
+      "starts": [
+        {
+          "title": "She already knew",
+          "text": "You kept loving her while she quietly packed away your life together. This is the premise of the main opening; follow the bot link for the full starter.",
+          "url": "https://dreamjourneyai.com/app/creation/67ac53b7-87cb-44de-96c2-7269c19952c6"
+        }
+      ],
+      "lore": [],
+      "moods": {
+        "setting": "modern",
+        "connection": "established",
+        "intensity": "devastating"
+      }
     },
     {
       "id": "drazhen-velaskar",
       "title": "DRAZHEN VELASKAR",
-      "subtitle": "Original character \u00b7 The Bear\u2019s Bargain",
+      "subtitle": "Original character · The Bear’s Bargain",
       "category": "original",
       "tags": [
         "Fantasy",
@@ -173,10 +349,22 @@ window.JUNIPURRR_CONTENT = {
       ],
       "description": "High Lord energy with a bear banner and quiet authority. Guarded charm, careful choices, and the kind of bargain that rewrites the rules.",
       "coverTitle": "Drazhen",
-      "coverNote": "the bear\u2019s bargain",
+      "coverNote": "the bear’s bargain",
       "theme": "manor",
       "url": "https://dreamjourneyai.com/app/creation/1a535e21-4b49-4f7f-a4c1-f0ed5722f409",
-      "image": "assets/drazhen-velaskar.png"
+      "image": "assets/drazhen-velaskar.png",
+      "kind": "character",
+      "worldId": "",
+      "playerRole": "",
+      "complications": [],
+      "cast": [],
+      "starts": [],
+      "lore": [],
+      "moods": {
+        "setting": "fantasy",
+        "connection": "open",
+        "intensity": "tangled"
+      }
     }
   ],
   "notes": [
@@ -185,7 +373,119 @@ window.JUNIPURRR_CONTENT = {
       "title": "A little corner of my own",
       "subtitle": "Website notes",
       "description": "Dragon shifter???\nmore omegaverse, yes no? maybe.\nWAR PRINCE BUT LADY \nfor the love of god elyndor does not need two more areas to explore. unlesss.",
-      "status": "In progress"
+      "status": "In progress",
+      "image": "",
+      "storyId": ""
+    }
+  ],
+  "schemaVersion": 2,
+  "home": {
+    "note": "I was supposed to finish one bot. There are now several worlds.",
+    "featuredId": "no-saints-here",
+    "featuredNote": "A band. A tour bus. An absolutely unreasonable amount of chemistry.",
+    "cricketMessages": [
+      "Cricket has placed this project on hold.",
+      "This document belongs to Cricket now.",
+      "Editor unavailable. Try again after his nap.",
+      "Cricket accepts no responsibility for your attachment."
+    ]
+  },
+  "collections": [
+    {
+      "id": "after-hours",
+      "title": "AFTER HOURS",
+      "subtitle": "After last call",
+      "description": "Shinjuku after dark. The Keep is a lounge full of adult sorcerers, tangled histories, and people who really should know better. Shared tables, industry gossip, late-night diners, and relationships that follow you past last call.",
+      "theme": "lounge",
+      "image": "",
+      "atmosphere": "A table at The Keep. A city that stays awake.",
+      "lore": []
+    },
+    {
+      "id": "hollowmere",
+      "title": "HOLLOWMERE",
+      "subtitle": "The hour before forever",
+      "description": "Permanent night hangs over Hollowmere. At Blackthorn Manor, Valentin Morland carries a Regency past into a world of candlelit libraries, old grief, and things left carefully unsaid. Somewhere, the clock is still approaching 11:59.",
+      "theme": "manor",
+      "image": "assets/hollowmere.png",
+      "atmosphere": "The clock is still approaching 11:59.",
+      "lore": []
+    },
+    {
+      "id": "feedback",
+      "title": "FEEDBACK",
+      "subtitle": "One more song. One more mistake.",
+      "description": "HASHIRA and UPPER MOONS trade the battlefield for the stage. An adult, modern band AU of rehearsals, rivalries, tour buses, backstage friendships, and the diner that still has coffee when the show is over.",
+      "theme": "stage",
+      "image": "",
+      "atmosphere": "Rehearsals, rival bands, and coffee after the show.",
+      "lore": []
+    },
+    {
+      "id": "dead-kings",
+      "title": "DEAD KINGS MC",
+      "subtitle": "No saints on this road",
+      "description": "Tucson asphalt, Mount Lemmon runs, and a motorcycle club with its own rules. Saint, the Dead Kings, and their club dog Sabbath inhabit a world of messy loyalties, hard choices, and trouble that rarely stays outside the clubhouse.",
+      "theme": "desert",
+      "image": "",
+      "atmosphere": "Tucson asphalt. Mount Lemmon runs. Complicated loyalties.",
+      "lore": []
+    },
+    {
+      "id": "back-stairs",
+      "title": "THE BACK STAIRS",
+      "subtitle": "Someone is always still awake",
+      "description": "An Andersonville two-flat. The girls upstairs, the guys downstairs, and two cats named Pork Chop and Pickle. Lives overlap on the back porch, over late shifts, and in all the ordinary moments that stop feeling ordinary.",
+      "theme": "stairs",
+      "image": "",
+      "atmosphere": "The girls upstairs. The guys downstairs. Two cats.",
+      "lore": []
+    },
+    {
+      "id": "no-saints-here",
+      "title": "NO SAINTS HERE",
+      "subtitle": "Chaos with a heartbeat",
+      "description": "No Saints Here already survived being broke. Now they have to survive being famous. Chaos, bad decisions, and the kind of chemistry that leaves marks.",
+      "theme": "stage",
+      "image": "assets/no-saints-here.png",
+      "atmosphere": "The battlefield is backstage.",
+      "lore": []
+    },
+    {
+      "id": "restoration-season",
+      "title": "THE RESTORATION SEASON",
+      "subtitle": "Glittering balls. Dangerous choices.",
+      "description": "Four years after the war, Britain revives the Season: glittering balls, ruthless gossip, old rivalries, and dangerous courtships. The Weasleys rise, the Malfoys rebuild, and everyone is watching who chooses whom.",
+      "theme": "society",
+      "image": "assets/restoration-season.png",
+      "atmosphere": "Four years after the war, everyone is watching.",
+      "lore": []
+    }
+  ],
+  "graveyard": [
+    {
+      "id": "cassian",
+      "title": "Cassian",
+      "cause": "Sounded like he came preinstalled in a fantasy name generator.",
+      "verdict": "Retired from future casting."
+    },
+    {
+      "id": "voss",
+      "title": "Voss",
+      "cause": "The surname department has reached capacity.",
+      "verdict": "No new appointments."
+    },
+    {
+      "id": "soren",
+      "title": "Soren",
+      "cause": "Failed the “have we met this man in twelve other books?” test.",
+      "verdict": "Rest in predictability."
+    },
+    {
+      "id": "alaric",
+      "title": "Alaric",
+      "cause": "Too many ancient men answered when called.",
+      "verdict": "Permanently off the shortlist."
     }
   ]
 };
