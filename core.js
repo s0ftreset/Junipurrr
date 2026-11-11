@@ -16,20 +16,21 @@
  const optional=(o,k,n=10000)=>o[k]===undefined||text(o[k],n);
  function rows(a,check,max=200){return Array.isArray(a)&&a.length<=max&&a.every(check)}
  function lore(a){return a===undefined||rows(a,x=>x&&text(x.title,100)&&text(x.text)&&typeof x.spoiler==='boolean',40)}
+ function website(o){return optional(o,'websiteUrl',2000)&&optional(o,'websiteTitle',100)&&optional(o,'websiteDescription',2000)&&(!o.websiteUrl||!!safeUrl(o.websiteUrl))}
  function valid(v){
   if(!v||!text(v.about)||!text(v.discord,100)||!safeUrl(v.profileUrl))return false;
   for(const key of ['worlds','notes','collections','graveyard']){
    if(v[key]===undefined&&['collections','graveyard'].includes(key))continue;
    const ids=new Set();if(!rows(v[key],o=>{if(!o||!text(o.id,100)||!o.id||!text(o.title,100)||!o.title.trim()||ids.has(o.id))return false;ids.add(o.id);return true}))return false;
   }
-  for(const s of v.worlds){if(!text(s.description)||!['original','fandom','fantasy'].includes(s.category)||!optional(s,'subtitle',200)||!optional(s,'playerRole')||!optional(s,'worldId',100)||!optional(s,'coverTitle',100)||!optional(s,'coverNote',300))return false;
+  for(const s of v.worlds){if(!website(s)||!optional(s,'highlight',100)||!optional(s,'chatMilestone',50)||!optional(s,'statsNote',200))return false;if(!text(s.description)||!['original','fandom','fantasy'].includes(s.category)||!optional(s,'subtitle',200)||!optional(s,'playerRole')||!optional(s,'worldId',100)||!optional(s,'coverTitle',100)||!optional(s,'coverNote',300))return false;
    if(s.url&&!safeUrl(s.url)||s.image&&!safeUrl(s.image,true)||s.kind&&!['character','scenario'].includes(s.kind)||s.theme&&!THEMES.includes(s.theme))return false;
    if(s.tags!==undefined&&!rows(s.tags,t=>text(t,100),30)||s.complications!==undefined&&!rows(s.complications,t=>text(t,1000),30))return false;
    if(s.cast!==undefined&&!rows(s.cast,c=>c&&text(c.name,100)&&text(c.role,2000)&&(!c.image||safeUrl(c.image,true)),50))return false;
    if(s.starts!==undefined&&!rows(s.starts,c=>c&&text(c.title,100)&&text(c.text)&&(!c.url||safeUrl(c.url)),30))return false;
    if(!lore(s.lore)||s.moods&&Object.keys(MOODS).some(k=>s.moods[k]&&!MOODS[k].includes(s.moods[k])))return false;
   }
-  for(const c of v.collections||[]){if(!text(c.description)||!optional(c,'subtitle',200)||!optional(c,'atmosphere',1000)||c.image&&!safeUrl(c.image,true)||c.theme&&!THEMES.includes(c.theme)||!lore(c.lore))return false}
+  for(const c of v.collections||[]){if(!website(c))return false;if(!text(c.description)||!optional(c,'subtitle',200)||!optional(c,'atmosphere',1000)||c.image&&!safeUrl(c.image,true)||c.theme&&!THEMES.includes(c.theme)||!lore(c.lore))return false}
   for(const n of v.notes){if(!text(n.description)||!optional(n,'subtitle',200)||!optional(n,'status',100)||!optional(n,'storyId',100)||n.image&&!safeUrl(n.image,true)||n.url&&!safeUrl(n.url))return false}
   for(const g of v.graveyard||[]){if(!text(g.cause,2000)||!text(g.verdict,2000))return false}
   if(v.home){if(!optional(v.home,'spotifyTitle',100)||!optional(v.home,'spotifyNote',2000)||!optional(v.home,'spotifyUrl',2000)||v.home.spotifyUrl&&!spotifyPlaylist(v.home.spotifyUrl))return false;if(!optional(v.home,'note',2000)||!optional(v.home,'featuredId',100)||!optional(v.home,'featuredNote',2000)||v.home.cricketMessages!==undefined&&!rows(v.home.cricketMessages,x=>text(x,500),30))return false}

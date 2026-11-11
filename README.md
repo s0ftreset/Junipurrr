@@ -30,7 +30,7 @@ Use **Creator desk** in the website footer:
 
 1. Choose **The study**, **Stories**, **Worlds**, **Project notes**, or **Name graveyard**.
 2. Choose an existing entry to edit it, or **Start a new entry**.
-3. Edit the fields. Stories support cast members, opening previews, lore notes, a world, and mood-picker choices. The study controls your note, featured story, Cricket’s messages, profile details, and the Spotify section title, note, and playlist link.
+3. Edit the fields. Stories support cast members, opening previews, lore notes, a world, mood-picker choices, a highlight and dated chat milestone, and a companion website. Worlds also support companion website links. The study controls your note, featured story, Cricket’s messages, profile details, and the Spotify section title, note, and playlist link.
 4. **Save browser draft** previews changes on this device. It does **not** publish them.
 5. Click **Export content.js**.
 6. On GitHub, open `content.js` → pencil icon, replace its contents with the exported file's contents, and commit to `main`. You can also upload the exported file through **Add file → Upload files**, replacing the existing file.
@@ -88,3 +88,5 @@ With Node.js available, run `node --test tests/content.test.cjs` for content, re
 Fonts use Google Fonts, with local system fallbacks. No analytics are included. The music section loads Spotify’s embedded player, which controls playback. The banner was made with the built-in image generation tool from the prompt: “A candlelit gothic study, the reference adult woman with long black hair, pink bows and crescent jewelry cuddling an orange tabby on the right, uncluttered dark study on the left for text; dusty pink and black palette; no text or UI.”
 
 The Dragon Crown entries use Juni’s supplied Zhaevran portrait and approved Zhaedrik and Kharveth aerie artwork, optimized as WebP. Azheryth is a separate setting from Elyndor. The character buttons link directly to their published DJAI bots.
+
+No Saints Here is placed first in the collection and featured as Juni’s most-chatted scenario. Its 54k chat milestone is a manual snapshot supplied by Juni on November 11, 2026, not a live DJAI counter. Update the milestone and date in Creator desk → Stories. Cast biographies follow the supplied NSH lorebook; portraits are loaded from Juni’s FOXGLOVE website.

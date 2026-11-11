@@ -1,9 +1,122 @@
-/* Published content. Manage entries in the Creator desk, then export this file. */
 window.JUNIPURRR_CONTENT = {
   "profileUrl": "https://dreamjourneyai.com/profile/junipurrr",
   "discord": "Junipurrr",
   "about": "I make character bots, original worlds, and fandom AUs for stories you can settle into. Expect complicated people, lived-in settings, slow burns, and a frankly unreasonable amount of lore. This is where I keep my worlds together—and leave a few notes about what comes next.",
   "worlds": [
+    {
+      "id": "no-saints-here",
+      "title": "NO SAINTS HERE",
+      "subtitle": "Original world · Band / Chaos",
+      "category": "original",
+      "tags": [
+        "Music",
+        "Gritty",
+        "Bad decisions",
+        "Ensemble"
+      ],
+      "description": "No Saints Here already survived being broke. Now they have to survive being famous. Five musicians from Oakland, one deeply entangled found family, and a tour bus with very little room to avoid each other.\n\nExpect dirty punk glamour, backstage arguments, borrowed hoodies, late-night songwriting, and the kind of chemistry that follows them offstage. They can play a flawless set while furious with each other. What happens after the encore is another matter.",
+      "coverTitle": "No Saints Here",
+      "coverNote": "chaos with a heartbeat",
+      "theme": "stage",
+      "url": "https://dreamjourneyai.com/app/creation/6fa26b8b-e433-484f-a62f-b2ab0a7b4246",
+      "image": "assets/no-saints-here.png",
+      "kind": "scenario",
+      "worldId": "no-saints-here",
+      "playerRole": "Step into an adult ensemble whose friendships, loyalties, and unfinished business already have history. Your choices and feelings remain yours; the five have lives and relationships of their own. Follow the opening you choose on DJAI for your specific starting role and connection to the band.",
+      "complications": [
+        "Fame made the rooms bigger. It did very little for anyone’s ability to communicate.",
+        "Creative control, label pressure, interviews, and tour schedules keep colliding with private lives.",
+        "Affection is easy. Asking for what they actually need is considerably harder.",
+        "They close ranks in public, then carry the argument back onto Purgatory.",
+        "Stage chemistry gives the fans theories. It does not settle anyone’s relationship status."
+      ],
+      "cast": [
+        {
+          "name": "Astrid Vale",
+          "role": "27 · Lead vocals & primary lyricist\nFeral under the lights, dry and observant offstage. She remembers the small things, starts arguments about songs, and writes feelings she struggles to say aloud. Being known is something she wants—and something she likes to control.",
+          "image": "https://s0ftreset.github.io/afterpages/assets/photos/astrid-vale.webp"
+        },
+        {
+          "name": "Forrest Hale",
+          "role": "28 · Lead guitar, backing vocals & songwriter\nPerceptive, stubborn, and capable of devastating deadpan nonsense. He shows up with coffee, company, and practical help. He wants a real say in the life they built; when he goes quiet, it does not always mean he agrees.",
+          "image": "https://s0ftreset.github.io/afterpages/assets/photos/forrest-hale.webp"
+        },
+        {
+          "name": "Jett Maddox",
+          "role": "27 · Rhythm guitar & occasional vocals\nA flirt, an instigator, and a hardworking musician who notices far more than he lets on. He wants the fun and the trust. Sometimes he keeps chasing a laugh after the person beside him has stopped enjoying the joke.",
+          "image": "https://s0ftreset.github.io/afterpages/assets/photos/jett-maddox.webp"
+        },
+        {
+          "name": "Roman Cross",
+          "role": "29 · Bass & backing vocals\nMexican-American, direct, funny, and fiercely invested in keeping this band alive. Food, rides, and follow-through are his usual language of care. Being dependable does not stop him from starting the bad idea—or deciding what someone needs before asking.",
+          "image": "https://s0ftreset.github.io/afterpages/assets/photos/roman-cross.webp"
+        },
+        {
+          "name": "Dahlia “Dolly” Gutierrez",
+          "role": "26 · Drums & occasional backing vocals\nPuerto Rican-American, affectionate, mischievous, and technically vicious behind the kit. She steals food, collects borrowed hoodies, and wants every bit of the life they worked for. Her warmth comes with opinions, limits, and a very poor poker face.",
+          "image": "https://s0ftreset.github.io/afterpages/assets/photos/dahlia-gutierrez.webp"
+        },
+        {
+          "name": "Mara Voss",
+          "role": "38 · Manager & professional damage control\nShe has been here since the basement venues. Contracts, press, money, touring, and five musicians’ lost belongings all somehow end up on her desk. Sharp, dry, and difficult to rattle; the emergency supplies in her bag are not a metaphor.",
+          "image": "https://s0ftreset.github.io/afterpages/assets/photos/mara-voss.webp"
+        }
+      ],
+      "starts": [],
+      "lore": [
+        {
+          "title": "Five people. Years of history.",
+          "text": "They were a found family before anyone bought an arena ticket. Clothes, casual touch, exhausting shows, and memories the public never saw all belong to that history. Each pair has its own bond; alliances change with the argument. A meal, a joke, or a great set can make a night easier without making a serious hurt disappear.",
+          "spoiler": false
+        },
+        {
+          "title": "Oakland, before the arenas",
+          "text": "The Vulture, The Rotten Apple, an early rented rehearsal room, and an overcrowded apartment formed their home scene. People knew them through shifts, equipment, favors, and small shows. Fame does not erase that familiarity, and it does not mean the five still share one apartment.",
+          "spoiler": false
+        },
+        {
+          "title": "The Vulture",
+          "text": "Their underground home venue holds barely 400 people. Sweating ceilings, stickered bathrooms, names carved into backstage walls, and a stage too small for all five. Owner Frankie Bell booked them when nobody else would. They still return for surprise shows; their first-show sticker is still behind the bar.",
+          "spoiler": false
+        },
+        {
+          "title": "The Rotten Apple",
+          "text": "Cheap beer, a busted jukebox, pool tables, and an ancient Polaroid behind the register. The Oakland dive was their unofficial headquarters before they were signed. They are technically too famous to treat it like their living room. Nobody seems to have told them.",
+          "spoiler": false
+        },
+        {
+          "title": "Welcome aboard Purgatory",
+          "text": "Their black custom tour bus contains battered couches, Dolly’s blankets, a quieter rear lounge, and five highly individual bunks. Roman’s is suspiciously organized. Jett’s is a crime scene.\n\nHouse rules: warn before bringing strangers, headphones after 3 AM, replace what you finish, and never wake Roman unless something is burning.",
+          "spoiler": false
+        },
+        {
+          "title": "Black Mass & Studio B",
+          "text": "Black Mass Records signed the band with creative control negotiated by Mara. Label pressure for cleaner singles and safer interviews remains a recurring headache. Studio B is their preferred room: amber light, old rugs, analog equipment, Astrid’s sticker-covered vocal booth, and a couch everyone threatens to throw out. Nobody is allowed to throw it out.",
+          "spoiler": false
+        },
+        {
+          "title": "The sound",
+          "text": "Punk, grunge, post-hardcore, and alternative rock, with the mistakes and feedback left in. Astrid changes deliveries; Forrest stretches solos; Jett antagonizes the room; Roman keeps the song together. Dolly changes the beat and everyone follows. Arena NSH is impressive. Club NSH is feral.",
+          "spoiler": false
+        },
+        {
+          "title": "Start with the records",
+          "text": "The self-titled debut belongs to the broke years: Cheap Cigarettes, Pretty When You’re Pissed, Teeth Marks, and Five Against the World. Later songs include Bad Habits Die Screaming, Bite Back, Love Me Like a Car Crash, and Everyone Leaves Eventually.\n\nPurgatory is the affectionate bus-life song. Call Your Mother is one of their gentlest crisis songs. Find songs and more of the catalog on FOXGLOVE.",
+          "spoiler": false
+        }
+      ],
+      "moods": {
+        "setting": "modern",
+        "connection": "open",
+        "intensity": "tangled"
+      },
+      "highlight": "Juni’s most-chatted scenario",
+      "chatMilestone": "54k chats",
+      "statsNote": "Chat count updated November 11, 2026.",
+      "websiteUrl": "https://s0ftreset.github.io/afterpages/#/",
+      "websiteTitle": "Go deeper into FOXGLOVE",
+      "websiteDescription": "The band has receipts. Iris kept the photographs. Explore the companion website for character dossiers, songs, backstage photos, and the wider music scene."
+    },
     {
       "id": "zhaevran-rhaezoryn",
       "title": "ZHAEVRAN RHAEZORYN",
@@ -391,39 +504,6 @@ window.JUNIPURRR_CONTENT = {
       }
     },
     {
-      "id": "no-saints-here",
-      "title": "NO SAINTS HERE",
-      "subtitle": "Original world · Band / Chaos",
-      "category": "original",
-      "tags": [
-        "Music",
-        "Gritty",
-        "Bad decisions",
-        "Ensemble"
-      ],
-      "description": "No Saints Here already survived being broke. Now they have to survive being famous. Chaos, bad decisions, and the kind of chemistry that leaves marks.",
-      "coverTitle": "No Saints Here",
-      "coverNote": "chaos with a heartbeat",
-      "theme": "stage",
-      "url": "https://dreamjourneyai.com/app/creation/6fa26b8b-e433-484f-a62f-b2ab0a7b4246",
-      "image": "assets/no-saints-here.png",
-      "kind": "scenario",
-      "worldId": "no-saints-here",
-      "playerRole": "",
-      "complications": [
-        "They survived being broke. Now they have to survive being famous.",
-        "Band chemistry and bad decisions share a tour bus."
-      ],
-      "cast": [],
-      "starts": [],
-      "lore": [],
-      "moods": {
-        "setting": "modern",
-        "connection": "open",
-        "intensity": "tangled"
-      }
-    },
-    {
       "id": "restoration-season",
       "title": "THE RESTORATION SEASON",
       "subtitle": "Harry Potter AU · Post-war Season",
@@ -567,7 +647,7 @@ window.JUNIPURRR_CONTENT = {
   "home": {
     "note": "I was supposed to finish one bot. There are now several worlds.",
     "featuredId": "no-saints-here",
-    "featuredNote": "A band. A tour bus. An absolutely unreasonable amount of chemistry.",
+    "featuredNote": "54k chats and counting. Five musicians. One tour bus. Absolutely no emotional supervision.",
     "cricketMessages": [
       "Cricket has placed this project on hold.",
       "This document belongs to Cricket now.",
@@ -664,11 +744,35 @@ window.JUNIPURRR_CONTENT = {
       "id": "no-saints-here",
       "title": "NO SAINTS HERE",
       "subtitle": "Chaos with a heartbeat",
-      "description": "No Saints Here already survived being broke. Now they have to survive being famous. Chaos, bad decisions, and the kind of chemistry that leaves marks.",
+      "description": "An Oakland punk and alternative rock scene that grew into arenas without leaving its old loyalties behind. No Saints Here are a five-piece band, a difficult found family, and a collection of private lives the headlines never quite get right.",
       "theme": "stage",
       "image": "assets/no-saints-here.png",
       "atmosphere": "The battlefield is backstage.",
-      "lore": []
+      "lore": [
+        {
+          "title": "Oakland, before the arenas",
+          "text": "The Vulture, The Rotten Apple, an early rented rehearsal room, and an overcrowded apartment formed their home scene. People knew them through shifts, equipment, favors, and small shows. Fame does not erase that familiarity, and it does not mean the five still share one apartment.",
+          "spoiler": false
+        },
+        {
+          "title": "Welcome aboard Purgatory",
+          "text": "Their black custom tour bus contains battered couches, Dolly’s blankets, a quieter rear lounge, and five highly individual bunks. Roman’s is suspiciously organized. Jett’s is a crime scene.\n\nHouse rules: warn before bringing strangers, headphones after 3 AM, replace what you finish, and never wake Roman unless something is burning.",
+          "spoiler": false
+        },
+        {
+          "title": "Black Mass & Studio B",
+          "text": "Black Mass Records signed the band with creative control negotiated by Mara. Label pressure for cleaner singles and safer interviews remains a recurring headache. Studio B is their preferred room: amber light, old rugs, analog equipment, Astrid’s sticker-covered vocal booth, and a couch everyone threatens to throw out. Nobody is allowed to throw it out.",
+          "spoiler": false
+        },
+        {
+          "title": "Beyond the headline",
+          "text": "FOXGLOVE is Iris Marlowe’s independent zine and archive. Its band files, portraits, songs, and contact sheets follow No Saints Here, Glass Teeth, and the people around them. Follow the companion website link for the wider scene.",
+          "spoiler": false
+        }
+      ],
+      "websiteUrl": "https://s0ftreset.github.io/afterpages/#/",
+      "websiteTitle": "Go deeper into FOXGLOVE",
+      "websiteDescription": "The band has receipts. Iris kept the photographs. Explore the companion website for character dossiers, songs, backstage photos, and the wider music scene."
     },
     {
       "id": "restoration-season",
