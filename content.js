@@ -534,6 +534,26 @@ window.JUNIPURRR_CONTENT = {
   ],
   "notes": [
     {
+      "id": "wip-aevrys-vaesqir",
+      "title": "Aevrys Vaesqir | The Sea Opal",
+      "subtitle": "The Dragon Crown · House Vaesqir",
+      "description": "Currently on my desk: the 263-year-old head of House Vaesqir, Warden of the Western Littoral, and the older twin. By nine minutes. Coastal politics, opal wings, and an entire coastline’s worth of responsibilities. Still being written.",
+      "status": "In progress",
+      "image": "",
+      "storyId": "",
+      "url": ""
+    },
+    {
+      "id": "wip-nytheris-vaesqir",
+      "title": "Nytheris Vaesqir | The Black Opal",
+      "subtitle": "The Dragon Crown · House Vaesqir",
+      "description": "Also being written: Aevrys’s fraternal twin, commander of the Coastal Wyvern Flights, and the other half of my current wyvern problem. The twins are 263, have very different responsibilities, and share guardianship of their six-year-old sister, Irielle. More soon.",
+      "status": "In progress",
+      "image": "",
+      "storyId": "",
+      "url": ""
+    },
+    {
       "id": "little-corner",
       "title": "A little corner of my own",
       "subtitle": "Website notes",
@@ -553,7 +573,10 @@ window.JUNIPURRR_CONTENT = {
       "This document belongs to Cricket now.",
       "Editor unavailable. Try again after his nap.",
       "Cricket accepts no responsibility for your attachment."
-    ]
+    ],
+    "spotifyTitle": "For the lore & late nights",
+    "spotifyNote": "What’s playing while I make everyone’s lives unnecessarily complicated.",
+    "spotifyUrl": "https://open.spotify.com/playlist/3n5ioFxaOK3Pct2NUO63lJ"
   },
   "collections": [
     {

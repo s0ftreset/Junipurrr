@@ -12,6 +12,7 @@ A personal home for Junipurrr's DreamJourney AI worlds, bots, and works in progr
 - Worlds have their own `#world/<id>` pages and atmospheres: lounge, manor, stage, desert, stairs, romance, society, or dragon.
 - The mood picker matches setting, relationship, and intensity. Questions can be skipped, and partial matches are labelled. “Let Cricket choose” picks a random story.
 - Project notes support artwork, linked stories, progress stages, and finished releases. Cricket has opinions; the footer also hides the name graveyard.
+- **On repeat** embeds Juni’s Spotify playlist, with an **Open in Spotify** link.
 - The bouncing DVD can be paused and respects the device’s reduced-motion preference.
 
 ## Publish on GitHub Pages
@@ -29,7 +30,7 @@ Use **Creator desk** in the website footer:
 
 1. Choose **The study**, **Stories**, **Worlds**, **Project notes**, or **Name graveyard**.
 2. Choose an existing entry to edit it, or **Start a new entry**.
-3. Edit the fields. Stories support cast members, opening previews, lore notes, a world, and mood-picker choices. The study controls your note, featured story, Cricket’s messages, and profile details.
+3. Edit the fields. Stories support cast members, opening previews, lore notes, a world, and mood-picker choices. The study controls your note, featured story, Cricket’s messages, profile details, and the Spotify section title, note, and playlist link.
 4. **Save browser draft** previews changes on this device. It does **not** publish them.
 5. Click **Export content.js**.
 6. On GitHub, open `content.js` → pencil icon, replace its contents with the exported file's contents, and commit to `main`. You can also upload the exported file through **Add file → Upload files**, replacing the existing file.
@@ -54,7 +55,7 @@ All published text and collection entries live in `content.js`:
 - `profileUrl`: your DJAI creator link.
 - `discord`: the handle copied by the Discord button.
 - `about`: the introduction.
-- `home`: the handwritten note, featured story ID and note, and Cricket messages.
+- `home`: the handwritten note, featured story ID and note, Cricket messages, and `spotifyTitle`, `spotifyNote`, and `spotifyUrl`. Paste a full `https://open.spotify.com/playlist/…` link; share parameters are removed when saving a browser draft.
 - `worlds`: character and scenario entries (the original key is retained for backup compatibility).
 - `collections`: world pages referenced by each story’s `worldId`.
 - `notes`: project notes with statuses, optional artwork, links, and `storyId`.
@@ -84,6 +85,6 @@ With Node.js available, run `node --test tests/content.test.cjs` for content, re
 - `tests/content.test.cjs` — dependency-free content and behavior checks.
 - `.nojekyll` — tells GitHub Pages to serve these files directly.
 
-Fonts use Google Fonts, with local system fallbacks. No analytics or third-party scripts are included. The banner was made with the built-in image generation tool from the prompt: “A candlelit gothic study, the reference adult woman with long black hair, pink bows and crescent jewelry cuddling an orange tabby on the right, uncluttered dark study on the left for text; dusty pink and black palette; no text or UI.”
+Fonts use Google Fonts, with local system fallbacks. No analytics are included. The music section loads Spotify’s embedded player, which controls playback. The banner was made with the built-in image generation tool from the prompt: “A candlelit gothic study, the reference adult woman with long black hair, pink bows and crescent jewelry cuddling an orange tabby on the right, uncluttered dark study on the left for text; dusty pink and black palette; no text or UI.”
 
 The Dragon Crown entries use Juni’s supplied Zhaevran portrait and approved Zhaedrik and Kharveth aerie artwork, optimized as WebP. Azheryth is a separate setting from Elyndor. The character buttons link directly to their published DJAI bots.
