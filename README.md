@@ -9,7 +9,7 @@ A personal home for Junipurrr's DreamJourney AI worlds, bots, and works in progr
 - The homepage has a handwritten note, a featured story, and entrances to the collection, worlds, and project desk.
 - Browse characters and scenarios separately, combine search and genre filters, or keep favorites on a saved shelf in your browser.
 - Each story has a shareable `#story/<id>` page for its premise, player role, complications, cast, optional opening previews, lore, and DJAI link.
-- Worlds have their own `#world/<id>` pages and atmospheres: lounge, manor, stage, desert, stairs, romance, or society.
+- Worlds have their own `#world/<id>` pages and atmospheres: lounge, manor, stage, desert, stairs, romance, society, or dragon.
 - The mood picker matches setting, relationship, and intensity. Questions can be skipped, and partial matches are labelled. “Let Cricket choose” picks a random story.
 - Project notes support artwork, linked stories, progress stages, and finished releases. Cricket has opinions; the footer also hides the name graveyard.
 - The bouncing DVD can be paused and respects the device’s reduced-motion preference.
@@ -85,3 +85,5 @@ With Node.js available, run `node --test tests/content.test.cjs` for content, re
 - `.nojekyll` — tells GitHub Pages to serve these files directly.
 
 Fonts use Google Fonts, with local system fallbacks. No analytics or third-party scripts are included. The banner was made with the built-in image generation tool from the prompt: “A candlelit gothic study, the reference adult woman with long black hair, pink bows and crescent jewelry cuddling an orange tabby on the right, uncluttered dark study on the left for text; dusty pink and black palette; no text or UI.”
+
+The Dragon Crown entries use Juni’s supplied Zhaevran portrait and approved Zhaedrik and Kharveth aerie artwork, optimized as WebP. Azheryth is a separate setting from Elyndor. The character buttons link directly to their published DJAI bots.

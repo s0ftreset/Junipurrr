@@ -5,6 +5,171 @@ window.JUNIPURRR_CONTENT = {
   "about": "I make character bots, original worlds, and fandom AUs for stories you can settle into. Expect complicated people, lived-in settings, slow burns, and a frankly unreasonable amount of lore. This is where I keep my worlds together—and leave a few notes about what comes next.",
   "worlds": [
     {
+      "id": "zhaevran-rhaezoryn",
+      "title": "ZHAEVRAN RHAEZORYN",
+      "subtitle": "The Dragon Crown · Dragon King of Azheryth",
+      "category": "original",
+      "kind": "character",
+      "worldId": "the-dragon-crown",
+      "tags": [
+        "Fantasy",
+        "Dragons",
+        "Royalty",
+        "Court intrigue",
+        "Any POV",
+        "Widower"
+      ],
+      "description": "His kingdom demands a queen. His heart answers to no Council. Zhaevran has ruled Azheryth for fifty years, but apparently surviving political crises does not excuse a king from being relentlessly married off. A widowed father, a formidable ruler, and a man who would quite like to choose his own future.",
+      "coverTitle": "Zhaevran",
+      "coverNote": "a king who will not be chosen for",
+      "theme": "dragon",
+      "url": "https://dreamjourneyai.com/app/creation/faaa265b-7666-480a-98c9-8103a2533ea1",
+      "image": "assets/zhaevran-rhaezoryn.webp",
+      "playerRole": "An audience with the king is your way into the story. Your identity, history, motives, and relationship to the court are yours to establish. You are not automatically his future spouse, his son’s new parent, or a replacement for the woman he loved.",
+      "complications": [
+        "The Council’s marriage proposals arrive with political expectations attached.",
+        "Dragon births are increasingly rare, and his seven-year-old son is the lawful heir.",
+        "Queen Eshara’s assassination still has unanswered questions.",
+        "The royal family loves each other. They also know exactly how to test his patience."
+      ],
+      "cast": [
+        {
+          "name": "Zhaevran Rhaezoryn",
+          "role": "242 · Dragon King of Azheryth. Fifty years on the throne, one beloved son, and no intention of letting a committee choose his next wife.",
+          "image": "assets/zhaevran-rhaezoryn.webp"
+        },
+        {
+          "name": "Zhaedrik Rhaezoryn",
+          "role": "225 · Royal prince and commander of the Royal Dragon Flights. Zhaevran’s younger brother, Ezhar’s questionable influence, and the Crown’s favorite problem.",
+          "image": "assets/zhaedrik-rhaezoryn.webp"
+        },
+        {
+          "name": "Ezhar Rhaezoryn",
+          "role": "Seven-year-old Crown Prince, beloved son, and enthusiastic accomplice to his uncle’s terrible ideas.",
+          "image": ""
+        },
+        {
+          "name": "Rhaessa Rhaezoryn",
+          "role": "The king’s sister, with diplomatic responsibilities and very little sympathy for his reception-related suffering.",
+          "image": ""
+        }
+      ],
+      "starts": [
+        {
+          "title": "The royal reception",
+          "text": "Rain over Khaedrin. The Convocation of Four Wings has filled the palace with dignitaries, marriage proposals, and ambitious relatives. Zhaevran is considering an escape when the chamberlain announces a request for an audience. A spoiler-light preview of the main opening.",
+          "url": "https://dreamjourneyai.com/app/creation/faaa265b-7666-480a-98c9-8103a2533ea1"
+        }
+      ],
+      "lore": [
+        {
+          "title": "A life beyond the throne",
+          "text": "Zhaevran is charismatic, commanding, affectionate with his family, and capable of being stubborn or spectacularly wrong. His grief matters, but so do his humor, friendships, desires, and responsibilities.",
+          "spoiler": false
+        },
+        {
+          "title": "Eshara was loved",
+          "text": "His political marriage to Eshara Orveth became a loving partnership. She was assassinated four years ago, before they could undertake the Kindling. Their son remembers her; a new relationship does not erase her life or their history.",
+          "spoiler": false
+        },
+        {
+          "title": "The Crown has limits",
+          "text": "The Covenant of Four Wings protects the jurisdictions of Rhaezoryn, Orveth, Vaesqir, and Therysk. Neither the king nor his brother can simply erase those rights. Political pressure is real; unlimited royal authority is not.",
+          "spoiler": false
+        },
+        {
+          "title": "The Kindling",
+          "text": "An optional magical bond chosen by consenting adults, distinct from marriage. Attraction, intimacy, or a royal claim cannot create it. It grants neither ownership nor forced devotion.",
+          "spoiler": false
+        }
+      ],
+      "moods": {
+        "setting": "fantasy",
+        "connection": "open",
+        "intensity": "tangled"
+      }
+    },
+    {
+      "id": "zhaedrik-rhaezoryn",
+      "title": "ZHAEDRIK RHAEZORYN",
+      "subtitle": "The Rogue Prince · The Dragon Crown",
+      "category": "original",
+      "kind": "character",
+      "worldId": "the-dragon-crown",
+      "tags": [
+        "Fantasy",
+        "Dragons",
+        "Royalty",
+        "Military politics",
+        "Any POV",
+        "Messy relationships"
+      ],
+      "description": "A prince by blood. A menace by choice. Zhaedrik commands the Royal Dragon Flights with exceptional skill and conducts his personal life with considerably less restraint. Charming, ambitious, shamelessly flirtatious, and capable of being very bad news. The Crown’s favorite problem—and possibly yours.",
+      "coverTitle": "Zhaedrik",
+      "coverNote": "the crown’s favorite problem",
+      "theme": "dragon",
+      "url": "https://dreamjourneyai.com/app/creation/250f2734-fc38-4027-a93e-cd655b6092b5",
+      "image": "assets/zhaedrik-rhaezoryn.webp",
+      "playerRole": "Establish your own identity, history, relationships, and reasons for being in Azheryth. You can enter through the aerie reception without becoming his admirer, lover, or redemption arc. Attraction, commitment, and forgiveness are separate choices.",
+      "complications": [
+        "Royal duty and his brother’s diplomacy keep interfering with his evening plans.",
+        "Centuries of lovers, casual affairs, and regular pleasure-house visits do not disappear because someone new arrives.",
+        "Charm can coexist with jealousy, selfishness, and hypocrisy. The red flags have consequences.",
+        "Loyalty to his brother does not prevent fierce arguments about how the kingdom should be governed."
+      ],
+      "cast": [
+        {
+          "name": "Zhaedrik Rhaezoryn",
+          "role": "225 · Royal prince and commander of the Royal Dragon Flights. Zhaevran’s younger brother, Ezhar’s questionable influence, and the Crown’s favorite problem.",
+          "image": "assets/zhaedrik-rhaezoryn.webp"
+        },
+        {
+          "name": "Zhaevran Rhaezoryn",
+          "role": "242 · Dragon King of Azheryth. Fifty years on the throne, one beloved son, and no intention of letting a committee choose his next wife.",
+          "image": "assets/zhaevran-rhaezoryn.webp"
+        },
+        {
+          "name": "Ezhar Rhaezoryn",
+          "role": "His seven-year-old nephew and the lawful first heir. Zhaedrik is a devoted, deeply questionable influence—not a rival claimant.",
+          "image": ""
+        }
+      ],
+      "starts": [
+        {
+          "title": "After the flight exhibition",
+          "text": "Sunset at the Royal Dragon Flights’ aerie. The exhibition went beautifully; a dispatch from Zhaevran is less welcome. Between visiting dignitaries, wine, and an argument about western patrols, the prince has every intention of enjoying his evening. A spoiler-light preview of the main opening.",
+          "url": "https://dreamjourneyai.com/app/creation/250f2734-fc38-4027-a93e-cd655b6092b5"
+        }
+      ],
+      "lore": [
+        {
+          "title": "Commander, not sovereign",
+          "text": "Zhaedrik earns respect through tactical skill and experience. He commands the Royal Dragon Flights, but remains bound by the Crown, military orders, and Great House jurisdictions. Competence does not make every decision wise.",
+          "spoiler": false
+        },
+        {
+          "title": "Brothers, not rival claimants",
+          "text": "Zhaedrik and Zhaevran share centuries of loyalty, affection, rivalry, and disagreement. The prince sometimes thinks he could govern better. He is not plotting a coup or trying to displace his nephew.",
+          "spoiler": false
+        },
+        {
+          "title": "The Crown has limits",
+          "text": "The Covenant of Four Wings protects the jurisdictions of Rhaezoryn, Orveth, Vaesqir, and Therysk. Neither the king nor his brother can simply erase those rights. Political pressure is real; unlimited royal authority is not.",
+          "spoiler": false
+        },
+        {
+          "title": "The Kindling",
+          "text": "An optional magical bond chosen by consenting adults, distinct from marriage. Attraction, intimacy, or a royal claim cannot create it. It grants neither ownership nor forced devotion.",
+          "spoiler": false
+        }
+      ],
+      "moods": {
+        "setting": "fantasy",
+        "connection": "open",
+        "intensity": "tangled"
+      }
+    },
+    {
       "id": "after-hours",
       "title": "AFTER HOURS",
       "subtitle": "Jujutsu Kaisen · Nightlife AU",
@@ -391,6 +556,37 @@ window.JUNIPURRR_CONTENT = {
     ]
   },
   "collections": [
+    {
+      "id": "the-dragon-crown",
+      "title": "THE DRAGON CROWN",
+      "subtitle": "Four Houses. One Crown.",
+      "description": "Welcome to Azheryth: an independent dragon kingdom of ancient Houses, volcanic citadels, protected territories, and a royal family with absolutely no intention of behaving. One king is defending his right to choose his own future. His younger brother is making a spectacular case for adult supervision. Choose your way into their world.",
+      "atmosphere": "A king who will not be chosen for. A prince who will not behave.",
+      "image": "assets/azheryth-aerie.webp",
+      "theme": "dragon",
+      "lore": [
+        {
+          "title": "Azheryth & Khaedrin",
+          "text": "Azheryth stands on the western edge of a larger continent, facing the Mirrath Sea. Its capital, Khaedrin, is a living city of basalt streets, bronze roofs, thermal baths, markets, and dragon terraces beside the Kharveth Range.",
+          "spoiler": false
+        },
+        {
+          "title": "The Four Great Houses",
+          "text": "Rhaezoryn holds the volcanic Crownlands and the throne. Orveth governs the Eastern Riverlands and their trade routes. Vaesqir oversees the Western Littoral, ports, and fleets. Therysk governs the forests, rivers, and timberlands of the Northern Weald.",
+          "spoiler": false
+        },
+        {
+          "title": "The Crown has limits",
+          "text": "The Covenant of Four Wings protects the jurisdictions of Rhaezoryn, Orveth, Vaesqir, and Therysk. Neither the king nor his brother can simply erase those rights. Political pressure is real; unlimited royal authority is not.",
+          "spoiler": false
+        },
+        {
+          "title": "The Kindling",
+          "text": "An optional magical bond chosen by consenting adults, distinct from marriage. Attraction, intimacy, or a royal claim cannot create it. It grants neither ownership nor forced devotion.",
+          "spoiler": false
+        }
+      ]
+    },
     {
       "id": "after-hours",
       "title": "AFTER HOURS",
