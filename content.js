@@ -118,6 +118,64 @@ window.JUNIPURRR_CONTENT = {
       "websiteDescription": "The band has receipts. Iris kept the photographs. Explore the companion website for character dossiers, songs, backstage photos, and the wider music scene."
     },
     {
+      "id": "aevrys-vaesqir",
+      "title": "Aevrys Vaesqir | The Opal Lord",
+      "subtitle": "The Dragon Crown · House Vaesqir",
+      "category": "original",
+      "kind": "character",
+      "worldId": "the-dragon-crown",
+      "tags": [
+        "Fantasy",
+        "Wyverns",
+        "House Vaesqir"
+      ],
+      "description": "The 263-year-old head of House Vaesqir, Warden of the Western Littoral, and the older twin. By nine minutes. Coastal politics, opal wings, and an entire coastline’s worth of responsibilities.",
+      "coverTitle": "Aevrys",
+      "coverNote": "The Opal Lord",
+      "theme": "dragon",
+      "url": "https://dreamjourneyai.com/app/creation/e0c5b1cf-b83b-4dd8-9342-355e130daac9",
+      "image": "",
+      "playerRole": "Choose an opening on DJAI for your starting role and connection to House Vaesqir.",
+      "complications": [],
+      "cast": [],
+      "starts": [],
+      "lore": [],
+      "moods": {
+        "setting": "fantasy",
+        "connection": "open",
+        "intensity": "tangled"
+      }
+    },
+    {
+      "id": "nytheris-vaesqir",
+      "title": "Nytheris Vaesqir | The Black Opal",
+      "subtitle": "The Dragon Crown · House Vaesqir",
+      "category": "original",
+      "kind": "character",
+      "worldId": "the-dragon-crown",
+      "tags": [
+        "Fantasy",
+        "Wyverns",
+        "House Vaesqir"
+      ],
+      "description": "Commander of the Coastal Wyvern Flights, Aevrys’s fraternal twin, and the other half of the Vaesqir brothers. At 263, he balances his own responsibilities with the guardianship of their six-year-old sister, Irielle, shared with Aevrys.",
+      "coverTitle": "Nytheris",
+      "coverNote": "The Black Opal",
+      "theme": "dragon",
+      "url": "https://dreamjourneyai.com/app/creation/ba4fa647-bdeb-40bc-b35f-69ed1b8ae108",
+      "image": "",
+      "playerRole": "Choose an opening on DJAI for your starting role and connection to House Vaesqir.",
+      "complications": [],
+      "cast": [],
+      "starts": [],
+      "lore": [],
+      "moods": {
+        "setting": "fantasy",
+        "connection": "open",
+        "intensity": "tangled"
+      }
+    },
+    {
       "id": "zhaevran-rhaezoryn",
       "title": "ZHAEVRAN RHAEZORYN",
       "subtitle": "The Dragon Crown · Dragon King of Azheryth",
@@ -615,22 +673,22 @@ window.JUNIPURRR_CONTENT = {
   "notes": [
     {
       "id": "wip-aevrys-vaesqir",
-      "title": "Aevrys Vaesqir | The Sea Opal",
+      "title": "Aevrys Vaesqir | The Opal Lord",
       "subtitle": "The Dragon Crown · House Vaesqir",
-      "description": "Currently on my desk: the 263-year-old head of House Vaesqir, Warden of the Western Littoral, and the older twin. By nine minutes. Coastal politics, opal wings, and an entire coastline’s worth of responsibilities. Still being written.",
-      "status": "In progress",
+      "description": "Now available on DJAI. The 263-year-old head of House Vaesqir, Warden of the Western Littoral, and the older twin. By nine minutes. Coastal politics, opal wings, and an entire coastline’s worth of responsibilities.",
+      "status": "Finished",
       "image": "",
-      "storyId": "",
+      "storyId": "aevrys-vaesqir",
       "url": ""
     },
     {
       "id": "wip-nytheris-vaesqir",
       "title": "Nytheris Vaesqir | The Black Opal",
       "subtitle": "The Dragon Crown · House Vaesqir",
-      "description": "Also being written: Aevrys’s fraternal twin, commander of the Coastal Wyvern Flights, and the other half of my current wyvern problem. The twins are 263, have very different responsibilities, and share guardianship of their six-year-old sister, Irielle. More soon.",
-      "status": "In progress",
+      "description": "Now available on DJAI. Commander of the Coastal Wyvern Flights, Aevrys’s fraternal twin, and the other half of the Vaesqir brothers. At 263, he balances his own responsibilities with the guardianship of their six-year-old sister, Irielle, shared with Aevrys.",
+      "status": "Finished",
       "image": "",
-      "storyId": "",
+      "storyId": "nytheris-vaesqir",
       "url": ""
     },
     {
@@ -663,7 +721,7 @@ window.JUNIPURRR_CONTENT = {
       "id": "the-dragon-crown",
       "title": "THE DRAGON CROWN",
       "subtitle": "Four Houses. One Crown.",
-      "description": "Welcome to Azheryth: an independent dragon kingdom of ancient Houses, volcanic citadels, protected territories, and a royal family with absolutely no intention of behaving. One king is defending his right to choose his own future. His younger brother is making a spectacular case for adult supervision. Choose your way into their world.",
+      "description": "Welcome to Azheryth: an independent dragon kingdom of ancient Houses, volcanic citadels, protected territories, and a royal family with absolutely no intention of behaving. One king is defending his right to choose his own future. His younger brother is making a spectacular case for adult supervision. Choose your way into their world. Along the Western Littoral, meet House Vaesqir’s wyvern brothers: Aevrys, the Opal Lord, and Nytheris, the Black Opal.",
       "atmosphere": "A king who will not be chosen for. A prince who will not behave.",
       "image": "assets/azheryth-aerie.webp",
       "theme": "dragon",
