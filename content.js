@@ -1,3 +1,4 @@
+/* Published Junipurrr content. */
 window.JUNIPURRR_CONTENT = {
   "profileUrl": "https://dreamjourneyai.com/profile/junipurrr",
   "discord": "Junipurrr",
@@ -116,6 +117,295 @@ window.JUNIPURRR_CONTENT = {
       "websiteUrl": "https://s0ftreset.github.io/afterpages/#/",
       "websiteTitle": "Go deeper into FOXGLOVE",
       "websiteDescription": "The band has receipts. Iris kept the photographs. Explore the companion website for character dossiers, songs, backstage photos, and the wider music scene."
+    },
+    {
+      "id": "fourth-wing-let-canon-bleed",
+      "title": "Fourth Wing: Let Canon Bleed",
+      "subtitle": "Fourth Wing · Basgiath War College",
+      "kind": "scenario",
+      "category": "fandom",
+      "worldId": "fourth-wing",
+      "theme": "dragon",
+      "url": "https://dreamjourneyai.com/app/creation/be462c20-1abc-4c46-925a-109640a98f23",
+      "description": "Welcome to Basgiath. The dragons have opinions, survival is a practical concern, and knowing the books does not make you immune to consequences. Step into a Fourth Wing sandbox where canon gives the world its history, but your choices can change what happens next. Get attached. Make a terrible decision. See what survives it.",
+      "playerRole": "Choose your place in the world and the choices you make within it. Your character’s thoughts, loyalties, relationships, and decisions remain yours; the story responds to what you actually do.",
+      "tags": [
+        "Fourth Wing",
+        "Fantasy",
+        "Dragons",
+        "Canon divergence",
+        "Player agency"
+      ],
+      "image": "assets/fourth-wing.webp",
+      "coverTitle": "Fourth Wing: Let Canon Bleed",
+      "coverNote": "Fourth Wing · Basgiath War College",
+      "cast": [],
+      "starts": [],
+      "lore": [
+        {
+          "title": "Canon is history, not gravity",
+          "text": "Basgiath is the starting framework, not a script you must follow. Relationships and outcomes can diverge through the choices made in play.",
+          "spoiler": false
+        }
+      ],
+      "complications": [
+        "Knowing how canon went does not guarantee the same outcome.",
+        "Other characters have their own loyalties and keep acting when you look away.",
+        "Changing a cause changes its consequences."
+      ],
+      "moods": {
+        "setting": "fandom",
+        "connection": "open",
+        "intensity": "tangled"
+      },
+      "artworkLayout": "poster",
+      "artworkRatio": "2 / 3"
+    },
+    {
+      "id": "musutafu-heights",
+      "title": "Musutafu Heights",
+      "subtitle": "My Hero Academia · Adult Pro Hero AU",
+      "kind": "scenario",
+      "category": "fandom",
+      "worldId": "musutafu-heights",
+      "theme": "stairs",
+      "url": "https://dreamjourneyai.com/app/creation/de8c96bf-1ef7-4bd4-a447-6e2ad387668d",
+      "description": "Saving the city does not excuse leaving your laundry in the machine. At Musutafu Heights, adult Pro Heroes come home to broken elevators, late-night takeout, messy friendships, quiet crushes, and the chaos of living ordinary lives with extraordinary quirks. Hero work follows them through the front door. So do their problems.",
+      "playerRole": "Find your place in an adult apartment-building AU. Define your character and their connections as the story develops; shared spaces, neighborhood life, and hero society offer plenty of ways in.",
+      "tags": [
+        "My Hero Academia",
+        "Adult AU",
+        "Pro Heroes",
+        "Slice of life",
+        "Romance"
+      ],
+      "image": "",
+      "coverTitle": "Musutafu Heights",
+      "coverNote": "My Hero Academia · Adult Pro Hero AU",
+      "cast": [],
+      "starts": [],
+      "lore": [
+        {
+          "title": "Life after U.A.",
+          "text": "This is an adult AU centered on former U.A. students and their lives as Pro Heroes. Its neighborhood and relationship stories coexist with quirks, agencies, villains, and career pressure.",
+          "spoiler": false
+        },
+        {
+          "title": "An ensemble under one roof",
+          "text": "The core residents include Bakugo, Kirishima, Todoroki, Kaminari, Jirou, Mina, Shinso, and Sero. The building is a shared setting, rather than a romance locked to one character.",
+          "spoiler": false
+        }
+      ],
+      "complications": [
+        "Patrols, injuries, agency pressure, and public attention do not stay at work.",
+        "Living close together makes avoiding an awkward conversation considerably harder.",
+        "A quiet evening is a communal achievement."
+      ],
+      "moods": {
+        "setting": "fandom",
+        "connection": "open",
+        "intensity": "tangled"
+      }
+    },
+    {
+      "id": "naruto-timeline-breaker",
+      "title": "Naruto Shippuden: Timeline Breaker",
+      "subtitle": "Naruto Shippuden · Adult alternate timeline",
+      "kind": "scenario",
+      "category": "fandom",
+      "worldId": "naruto-timeline-breaker",
+      "theme": "manor",
+      "url": "https://dreamjourneyai.com/app/creation/3b063bf1-f019-49a2-a89b-9ee942804306",
+      "description": "You know how this story is supposed to go. That is about to become everyone’s problem. Enter an adult Naruto Shippuden AU where canon events create pressure, your choices can change outcomes, and nobody is required to walk obediently toward their original ending.",
+      "playerRole": "Choose your role and decide where your loyalties lie. Your actions can redirect the timeline; the world responds without deciding your thoughts, dialogue, or relationships for you.",
+      "tags": [
+        "Naruto Shippuden",
+        "Adult AU",
+        "Canon divergence",
+        "Shinobi",
+        "Player agency"
+      ],
+      "image": "",
+      "coverTitle": "Naruto Shippuden: Timeline Breaker",
+      "coverNote": "Naruto Shippuden · Adult alternate timeline",
+      "cast": [],
+      "starts": [],
+      "lore": [
+        {
+          "title": "Pressure points, not fixed tracks",
+          "text": "An aged-up alternate universe with adult major canon characters. Canon events provide possibilities and pressures, while player decisions can change their course.",
+          "spoiler": false
+        }
+      ],
+      "complications": [
+        "Changing one outcome can create a different problem elsewhere.",
+        "Loyalties and relationships develop through what happens in play.",
+        "The original timeline is not a promise of what comes next."
+      ],
+      "moods": {
+        "setting": "fandom",
+        "connection": "open",
+        "intensity": "tangled"
+      }
+    },
+    {
+      "id": "rhaevor-veyr",
+      "title": "High Lord Rhaevor Veyr",
+      "subtitle": "Elyndor · Varrinth",
+      "kind": "character",
+      "category": "original",
+      "worldId": "elyndor",
+      "theme": "manor",
+      "url": "https://dreamjourneyai.com/app/creation/b1eae66f-8f64-44dd-a695-67c1697bb8c5",
+      "description": "Welcome to your arranged marriage. Veyrhold has prepared for your arrival; its High Lord has an entire realm to govern and a private life that did not politely disappear for the occasion. Rhaevor Veyr is warm, charismatic, and exceptionally practiced at keeping the most difficult parts of himself out of reach. What this marriage becomes is still unwritten.",
+      "playerRole": "Enter an open-ended arranged marriage with the High Lord of Varrinth. Your gender, background, personality, feelings, and choices are yours. Political usefulness can bring you to Veyrhold; romance is not guaranteed.",
+      "tags": [
+        "Fantasy",
+        "High Fae",
+        "Arranged marriage",
+        "Court politics",
+        "Slow burn"
+      ],
+      "image": "assets/rhaevor-veyr.webp",
+      "coverTitle": "High Lord Rhaevor Veyr",
+      "coverNote": "Elyndor · Varrinth",
+      "cast": [],
+      "starts": [],
+      "lore": [
+        {
+          "title": "Varrinth & Veyrhold",
+          "text": "Rhaevor is Varrinth’s High Lord and sovereign, governing from Veyrhold. Varrinth and the Court of Thorns are distinct political powers within Elyndor.",
+          "spoiler": false
+        },
+        {
+          "title": "Beneath the title",
+          "text": "A capable ruler with an easy public charm and a guarded private self. Familiarity has to develop beyond the role he knows how to perform.",
+          "spoiler": false
+        },
+        {
+          "title": "A shared world",
+          "text": "Elyndor is created by Junipurrr and HouseofNyx.",
+          "spoiler": false
+        }
+      ],
+      "complications": [
+        "A political arrangement does not supply emotional intimacy.",
+        "Lady Virelle Caith already has a long-standing place in Rhaevor’s private life.",
+        "Even the High Lord answers to laws, treaties, noble houses, and custom."
+      ],
+      "moods": {
+        "setting": "fantasy",
+        "connection": "open",
+        "intensity": "tangled"
+      },
+      "artworkLayout": "poster",
+      "artworkRatio": "1 / 1"
+    },
+    {
+      "id": "caer-avar",
+      "title": "Caer Avar",
+      "subtitle": "Elyndor · The Aerie Academy",
+      "kind": "scenario",
+      "category": "original",
+      "worldId": "elyndor",
+      "theme": "dragon",
+      "url": "https://dreamjourneyai.com/app/creation/e2790942-d523-49a8-be3e-ceb9abf4b19f",
+      "description": "A dragon-rider academy, a first year to survive, and absolutely no guarantee that the dragon is impressed with you. Welcome to Caer Avar, where becoming a rider takes more than being chosen and the people training beside you have lives, loyalties, and opinions of their own. The view is spectacular. Your next decision might be less so.",
+      "playerRole": "Arrive as a first-year at Caer Avar and find your place among its candidates, riders, and dragons. Your relationships and progress develop through play; a dragon’s choice remains its own.",
+      "tags": [
+        "Fantasy",
+        "Dragon riders",
+        "Academy",
+        "Ensemble",
+        "Elyndor"
+      ],
+      "image": "assets/caer-avar.webp",
+      "coverTitle": "Caer Avar",
+      "coverNote": "Elyndor · The Aerie Academy",
+      "cast": [],
+      "starts": [],
+      "lore": [
+        {
+          "title": "The Accord of Ash and Sky",
+          "text": "Caer Avar belongs to Elyndor’s dragon-rider setting. The Accord and mutual-choice Concord underpin cooperation with dragons; they are partners rather than possessions.",
+          "spoiler": false
+        },
+        {
+          "title": "Earning the title",
+          "text": "Flight Candidate → Called → Rider. Competence is part of becoming a rider, beyond the initial Concord.",
+          "spoiler": false
+        },
+        {
+          "title": "People to get attached to",
+          "text": "Meet second-year Dacian Rathen and his dragon Veyrath, alongside the wider academy ensemble. Elyndor is created by Junipurrr and HouseofNyx.",
+          "spoiler": false
+        }
+      ],
+      "complications": [
+        "Dragons are sovereign partners with their own choices.",
+        "A Concord does not automatically make someone a qualified rider.",
+        "Training and personal loyalties do not always pull in the same direction."
+      ],
+      "moods": {
+        "setting": "fantasy",
+        "connection": "open",
+        "intensity": "tangled"
+      },
+      "artworkLayout": "poster",
+      "artworkRatio": "1 / 1"
+    },
+    {
+      "id": "valandir-merythil",
+      "title": "Valandir Merythil",
+      "subtitle": "Elyndor · The War Hound",
+      "kind": "character",
+      "category": "original",
+      "worldId": "elyndor",
+      "theme": "manor",
+      "url": "https://dreamjourneyai.com/app/creation/6818a23b-2185-4681-aac4-241b684b223a",
+      "description": "The Court of Thorns calls him the War Hound. Valandir Merythil would rather count the people he brought home. A principled commander with three centuries of service, a very dry sense of humor, and a worrying habit of treating his own needs as optional. Getting close to him means meeting the man beneath the reputation—and the obligations he rarely puts down.",
+      "playerRole": "Find your place in the Court of Thorns and Valandir’s world. Define your character and let trust, political ties, military obligations, or a possible romance develop through the story.",
+      "tags": [
+        "Fantasy",
+        "High Fae",
+        "Military commander",
+        "Court of Thorns",
+        "Slow burn"
+      ],
+      "image": "assets/valandir-merythil.webp",
+      "coverTitle": "Valandir Merythil",
+      "coverNote": "Elyndor · The War Hound",
+      "cast": [],
+      "starts": [],
+      "lore": [
+        {
+          "title": "Commander of the Thorn Host",
+          "text": "Valandir is the supreme operational commander of the Court of Thorns’ Thorn Host, heir to House Merythil, and cousin to Vaelric. He is a commander, not the realm’s sovereign.",
+          "spoiler": false
+        },
+        {
+          "title": "Restraint, not indifference",
+          "text": "At 467, Valandir is observant, private, principled, stubborn, and gentler than his reputation suggests. He prefers peace and measures successful command by how many people return.",
+          "spoiler": false
+        },
+        {
+          "title": "A shared world",
+          "text": "Elyndor is created by Junipurrr and HouseofNyx.",
+          "spoiler": false
+        }
+      ],
+      "complications": [
+        "Duty has a habit of coming first, including when it costs him personally.",
+        "His reputation reaches a room before he does.",
+        "Trust takes more than being fascinated by the title."
+      ],
+      "moods": {
+        "setting": "fantasy",
+        "connection": "open",
+        "intensity": "tangled"
+      },
+      "artworkLayout": "poster",
+      "artworkRatio": "4 / 3"
     },
     {
       "id": "aevrys-vaesqir",
@@ -819,11 +1109,26 @@ window.JUNIPURRR_CONTENT = {
       "id": "elyndor",
       "title": "ELYNDOR",
       "subtitle": "Courts, kingdoms & complicated loyalties",
-      "description": "A shared fantasy world created by Junipurrr and HouseofNyx. Enter its courts and sovereign realms through the people who live there, beginning with the coastal principality of Iskareth and The Gilded Household.",
+      "description": "A shared fantasy world created by Junipurrr and HouseofNyx. Enter Varrinth with High Lord Rhaevor Veyr, the Court of Thorns with Valandir Merythil, the dragon-rider academy of Caer Avar, or the coastal principality of Iskareth through The Gilded Household. Different doors. An unreasonable amount of lore.",
       "atmosphere": "A world by Junipurrr & HouseofNyx",
       "theme": "society",
       "image": "",
       "lore": [
+        {
+          "title": "Varrinth",
+          "text": "The realm of High Lord Rhaevor Veyr, governed from Veyrhold. Court politics and an open-ended arranged marriage offer one way in.",
+          "spoiler": false
+        },
+        {
+          "title": "The Court of Thorns",
+          "text": "A separate High Fae power, home to House Merythil and Valandir, the Thorn Host’s commander.",
+          "spoiler": false
+        },
+        {
+          "title": "Caer Avar",
+          "text": "Elyndor’s dragon-rider academy, with its own ensemble and traditions. Dragons remain sovereign partners and choose their bonds.",
+          "spoiler": false
+        },
         {
           "title": "Iskareth",
           "text": "The coastal principality of House Orsenne: maritime trade, diplomacy, white limestone terraces, and the Gilded Atrium. Home to Prince Luceryn and an established household with a place for its incoming Princess Consort.",
@@ -923,6 +1228,36 @@ window.JUNIPURRR_CONTENT = {
       "theme": "society",
       "image": "assets/restoration-season.png",
       "atmosphere": "Four years after the war, everyone is watching.",
+      "lore": []
+    },
+    {
+      "id": "fourth-wing",
+      "title": "FOURTH WING",
+      "subtitle": "Fourth Wing · Basgiath War College",
+      "description": "Welcome to Basgiath. The dragons have opinions, survival is a practical concern, and knowing the books does not make you immune to consequences. Step into a Fourth Wing sandbox where canon gives the world its history, but your choices can change what happens next. Get attached. Make a terrible decision. See what survives it.",
+      "atmosphere": "Fourth Wing: Let Canon Bleed",
+      "theme": "dragon",
+      "image": "",
+      "lore": []
+    },
+    {
+      "id": "musutafu-heights",
+      "title": "MUSUTAFU HEIGHTS",
+      "subtitle": "My Hero Academia · Adult Pro Hero AU",
+      "description": "Saving the city does not excuse leaving your laundry in the machine. At Musutafu Heights, adult Pro Heroes come home to broken elevators, late-night takeout, messy friendships, quiet crushes, and the chaos of living ordinary lives with extraordinary quirks. Hero work follows them through the front door. So do their problems.",
+      "atmosphere": "Musutafu Heights",
+      "theme": "stairs",
+      "image": "",
+      "lore": []
+    },
+    {
+      "id": "naruto-timeline-breaker",
+      "title": "NARUTO SHIPPUDEN",
+      "subtitle": "Naruto Shippuden · Adult alternate timeline",
+      "description": "You know how this story is supposed to go. That is about to become everyone’s problem. Enter an adult Naruto Shippuden AU where canon events create pressure, your choices can change outcomes, and nobody is required to walk obediently toward their original ending.",
+      "atmosphere": "Naruto Shippuden: Timeline Breaker",
+      "theme": "manor",
+      "image": "",
       "lore": []
     }
   ],
