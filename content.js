@@ -687,113 +687,6 @@ window.JUNIPURRR_CONTENT = {
       }
     },
     {
-      "id": "after-hours",
-      "title": "AFTER HOURS",
-      "subtitle": "Jujutsu Kaisen · Nightlife AU",
-      "category": "fandom",
-      "tags": [
-        "Nightlife",
-        "Ensemble cast",
-        "Slow burn"
-      ],
-      "description": "Shinjuku after dark. The Keep is a lounge full of adult sorcerers, tangled histories, and people who really should know better. Shared tables, industry gossip, late-night diners, and relationships that follow you past last call.",
-      "coverTitle": "The Keep",
-      "coverNote": "meet me after last call",
-      "theme": "lounge",
-      "url": "",
-      "image": "",
-      "kind": "scenario",
-      "worldId": "after-hours",
-      "playerRole": "",
-      "complications": [],
-      "cast": [],
-      "starts": [],
-      "lore": [],
-      "moods": {
-        "setting": "fandom",
-        "connection": "open",
-        "intensity": "tangled"
-      },
-      "shelf": "anime"
-    },
-    {
-      "id": "hollowmere",
-      "title": "HOLLOWMERE",
-      "subtitle": "Original world · Gothic romance",
-      "category": "original",
-      "tags": [
-        "Fantasy",
-        "Vampires",
-        "Gothic romance"
-      ],
-      "description": "Permanent night hangs over Hollowmere. At Blackthorn Manor, Valentin Morland carries a Regency past into a world of candlelit libraries, old grief, and things left carefully unsaid. Somewhere, the clock is still approaching 11:59.",
-      "coverTitle": "Hollowmere",
-      "coverNote": "the hour before forever",
-      "theme": "manor",
-      "url": "https://dreamjourneyai.com/app/creation/758b4ab6-c812-4b04-8673-07b320841b91",
-      "image": "assets/hollowmere.png",
-      "kind": "scenario",
-      "worldId": "hollowmere",
-      "playerRole": "",
-      "complications": [
-        "Permanent night over Hollowmere.",
-        "A past that still shapes the present."
-      ],
-      "cast": [
-        {
-          "name": "Valentin Morland",
-          "role": "A Regency past, old grief, and things left unsaid.",
-          "image": ""
-        }
-      ],
-      "starts": [],
-      "lore": [
-        {
-          "title": "Blackthorn Manor",
-          "text": "Candlelit libraries, permanent night, and a clock still approaching 11:59.",
-          "spoiler": false
-        }
-      ],
-      "moods": {
-        "setting": "supernatural",
-        "connection": "open",
-        "intensity": "tangled"
-      }
-    },
-    {
-      "id": "feedback",
-      "title": "FEEDBACK",
-      "subtitle": "Demon Slayer · Band AU",
-      "category": "fandom",
-      "tags": [
-        "Music",
-        "Backstage",
-        "Rival bands"
-      ],
-      "description": "HASHIRA and UPPER MOONS trade the battlefield for the stage. An adult, modern band AU of rehearsals, rivalries, tour buses, backstage friendships, and the diner that still has coffee when the show is over.",
-      "coverTitle": "FEEDBACK",
-      "coverNote": "one more song. one more mistake.",
-      "theme": "stage",
-      "url": "https://dreamjourneyai.com/app/creation/608156f4-cfc2-4f37-897d-58f1c54dcd6d",
-      "image": "",
-      "kind": "scenario",
-      "worldId": "feedback",
-      "playerRole": "",
-      "complications": [
-        "Rival bands share a scene.",
-        "Backstage relationships outlast the performance."
-      ],
-      "cast": [],
-      "starts": [],
-      "lore": [],
-      "moods": {
-        "setting": "fandom",
-        "connection": "open",
-        "intensity": "tangled"
-      },
-      "shelf": "anime"
-    },
-    {
       "id": "dead-kings",
       "title": "DEAD KINGS MC",
       "subtitle": "Original world · Tucson, Arizona",
@@ -808,7 +701,7 @@ window.JUNIPURRR_CONTENT = {
       "coverNote": "no saints on this road",
       "theme": "desert",
       "url": "https://dreamjourneyai.com/app/creation/69ece87b-fa82-4ac9-8bb9-c7f914dad69b",
-      "image": "",
+      "image": "assets/dead-kings.webp",
       "kind": "scenario",
       "worldId": "dead-kings",
       "playerRole": "",
@@ -834,7 +727,191 @@ window.JUNIPURRR_CONTENT = {
         "setting": "modern",
         "connection": "open",
         "intensity": "tangled"
-      }
+      },
+      "artworkLayout": "poster",
+      "artworkRatio": "1 / 1"
+    },
+    {
+      "id": "wolves-old-blood",
+      "title": "The Wolves of the Old Blood",
+      "subtitle": "Original world · Aristocratic Omegaverse",
+      "description": "Two wolf-shifter Houses, old loyalties, and a political marriage that has not happened yet. House Saurenc’s southern riverlands meet House Aursund’s northern mountains in a world of family obligations, former lovers, and people with very different ideas about what you owe them. The wedding is approaching. Your choices are still yours.",
+      "url": "https://dreamjourneyai.com/app/creation/ab34c0cf-74f8-47c6-b977-fe4cc4125df3",
+      "theme": "manor",
+      "tags": [
+        "Fantasy",
+        "Wolf shifters",
+        "Omegaverse",
+        "Political marriage",
+        "Ensemble cast"
+      ],
+      "playerRole": "Enter as someone connected to either House, an outsider, or through the Marriage Accord: arrive before the wedding, with your identity, intended spouse, feelings, and decisions left to you.",
+      "kind": "scenario",
+      "worldId": "wolves-old-blood",
+      "category": "original",
+      "moods": {
+        "setting": "fantasy",
+        "connection": "open",
+        "intensity": "tangled"
+      },
+      "complications": [
+        "Family alliances arrive with personal history attached.",
+        "A political agreement cannot decide how everyone feels.",
+        "The marriage route begins before the ceremony; the wedding is not guaranteed."
+      ],
+      "lore": [],
+      "cast": [],
+      "starts": [],
+      "image": "assets/wolves-old-blood.webp",
+      "coverTitle": "The Wolves of the Old Blood",
+      "coverNote": "Original world · Aristocratic Omegaverse",
+      "artworkLayout": "poster",
+      "artworkRatio": "1 / 1"
+    },
+    {
+      "id": "orchard-house",
+      "title": "The Affairs of Orchard House",
+      "subtitle": "Original world · Regency ensemble romance",
+      "description": "England, 1813. A country family with six adult children, strained finances, and rather a lot of opinions about everybody’s future. You are the unmarried second-born at Orchard House, where family life, social expectations, and possible romances have an unfortunate habit of becoming everyone’s business.",
+      "url": "https://dreamjourneyai.com/app/creation/f52436fd-cd8d-46e7-92b6-2d6d8019b0b4",
+      "theme": "society",
+      "tags": [
+        "Regency",
+        "Family drama",
+        "Ensemble cast",
+        "Romance"
+      ],
+      "playerRole": "You are the unmarried second-born of the family, still living at home. Define your identity and pursue friendship, art, work, independence, romance—or a life that refuses to follow the expected script.",
+      "kind": "scenario",
+      "worldId": "orchard-house",
+      "category": "original",
+      "moods": {
+        "connection": "open",
+        "intensity": "tangled"
+      },
+      "complications": [
+        "The family’s finances make the future a pressing subject.",
+        "Private feelings rarely stay private in a busy household.",
+        "Your ambitions may not match the plans being made around you."
+      ],
+      "lore": [],
+      "cast": [],
+      "starts": [],
+      "image": "assets/orchard-house.webp",
+      "coverTitle": "The Affairs of Orchard House",
+      "coverNote": "Original world · Regency ensemble romance",
+      "artworkLayout": "poster",
+      "artworkRatio": "1 / 1"
+    },
+    {
+      "id": "until-death-my-darling",
+      "title": "Until Death, My Darling",
+      "subtitle": "Hasekura Nagi · Kagemori, 1880s Japan",
+      "description": "Hasekura Nagi was hired to kill you. Curiosity has made him hesitate, which is a deeply inconvenient development for an assassin. In Kagemori, charm and danger arrive wearing the same face—and the man sent to end your story is suddenly interested in what happens next.",
+      "url": "https://dreamjourneyai.com/app/creation/3bb96b90-9a48-4fda-bff1-b88cbb9be22c",
+      "theme": "stage",
+      "tags": [
+        "Historical",
+        "Assassin",
+        "Dangerous attraction",
+        "Dark romance"
+      ],
+      "playerRole": "You are the target of Nagi’s contract. Decide how to respond to the dangerous man whose interest has complicated the job he came to do.",
+      "kind": "character",
+      "worldId": "",
+      "category": "original",
+      "moods": {
+        "connection": "strangers",
+        "intensity": "devastating"
+      },
+      "complications": [
+        "There is a contract on your life.",
+        "Nagi’s curiosity does not make him harmless.",
+        "Attraction and trust are very different decisions."
+      ],
+      "lore": [],
+      "cast": [],
+      "starts": [],
+      "image": "assets/until-death-my-darling.webp",
+      "coverTitle": "Until Death, My Darling",
+      "coverNote": "Hasekura Nagi · Kagemori, 1880s Japan",
+      "artworkLayout": "poster",
+      "artworkRatio": "1 / 1"
+    },
+    {
+      "id": "kang-jae-min",
+      "title": "Kang Jae-min: No Labels, Apparently",
+      "subtitle": "Original character · An undefined relationship",
+      "description": "He remembers your coffee order. He notices who is looking at you. He would, however, appreciate it if nobody used the word relationship. A Comic-Con fling with Parallax House founder Kang Jae-min has become shared routines, constant contact, and jealousy that is frankly ambitious for a man who insists there are no labels.",
+      "url": "https://dreamjourneyai.com/app/creation/a78784d6-63b8-4e87-bb6d-b14b4e442df1",
+      "theme": "lounge",
+      "tags": [
+        "Situationship",
+        "Jealousy",
+        "Modern romance",
+        "Emotional avoidance"
+      ],
+      "playerRole": "You met Jae-min at Comic-Con. What began as a fling has become an ongoing, undefined relationship; you decide what you want from it and what you are willing to accept.",
+      "kind": "character",
+      "worldId": "",
+      "category": "original",
+      "moods": {
+        "setting": "modern",
+        "connection": "history",
+        "intensity": "tangled"
+      },
+      "complications": [
+        "His behavior and his preferred relationship terminology do not agree.",
+        "Someone else showing interest can turn an ordinary party into a problem.",
+        "His ex, Han Seorin, knows the history he would rather keep private."
+      ],
+      "lore": [],
+      "cast": [],
+      "starts": [],
+      "image": "assets/kang-jae-min.webp",
+      "coverTitle": "Kang Jae-min: No Labels, Apparently",
+      "coverNote": "Original character · An undefined relationship",
+      "artworkLayout": "poster",
+      "artworkRatio": "1 / 1"
+    },
+    {
+      "id": "elyndor-living-realm",
+      "title": "Elyndor | The Living Realm",
+      "subtitle": "Elyndor · A shared fantasy world",
+      "description": "A whole realm to get lost in. Enter Elyndor, the fantasy world created by Junipurrr and HouseofNyx, where courts, kingdoms, and the people living between them have stories of their own. Explore the setting, find your place, and follow the connections that draw you further into the world.",
+      "url": "https://dreamjourneyai.com/app/creation/8024efc5-5a05-4e04-a414-5350b621de3e",
+      "theme": "dragon",
+      "tags": [
+        "Fantasy",
+        "World exploration",
+        "High Fae",
+        "Original world"
+      ],
+      "playerRole": "Find your place in the realm and shape your character’s journey through its people, places, and possibilities.",
+      "kind": "scenario",
+      "worldId": "elyndor",
+      "category": "original",
+      "moods": {
+        "setting": "fantasy",
+        "connection": "open",
+        "intensity": "tangled"
+      },
+      "complications": [],
+      "lore": [
+        {
+          "title": "A shared world",
+          "text": "Elyndor is co-created by Junipurrr and HouseofNyx. Visit the companion website to explore more of the setting.",
+          "spoiler": false
+        }
+      ],
+      "cast": [],
+      "starts": [],
+      "image": "",
+      "coverTitle": "Elyndor | The Living Realm",
+      "coverNote": "Elyndor · A shared fantasy world",
+      "websiteUrl": "https://s0ftreset.github.io/HouseOfNyxandJuni/#home",
+      "websiteTitle": "Explore Elyndor",
+      "websiteDescription": "Visit the Elyndor website by HouseofNyx and Junipurrr for more of the realm and its stories."
     },
     {
       "id": "back-stairs",
@@ -851,16 +928,26 @@ window.JUNIPURRR_CONTENT = {
       "coverNote": "someone is always still awake",
       "theme": "stairs",
       "url": "https://dreamjourneyai.com/app/creation/5754764a-76e9-459c-bfe1-9e286df461df",
-      "image": "",
+      "image": "https://i.postimg.cc/c1PBQfCZ/Names.png",
       "kind": "scenario",
       "worldId": "back-stairs",
-      "playerRole": "",
+      "playerRole": "You can become someone’s friend, someone’s problem, someone’s crush, somebody’s terrible idea, or the person who accidentally changes the entire floor plan of the group dynamic.",
       "complications": [],
       "cast": [
         {
           "name": "Pork Chop & Pickle",
           "role": "The resident cats.",
-          "image": ""
+          "image": "https://i.postimg.cc/2jg74nyC/Gothic-Cat-Cuddle-in-Chicago.png"
+        },
+        {
+          "name": "Luca, Eli and Theo",
+          "role": "",
+          "image": "https://i.postimg.cc/v8CtW5TQ/Luca-Eli-and-Theo-Triptych.png"
+        },
+        {
+          "name": "Maia, Valentina, Kaira",
+          "role": "",
+          "image": "https://i.postimg.cc/h4N19VvD/Noir-Gothic-Triptych-Character-Lineup.png"
         }
       ],
       "starts": [],
@@ -869,7 +956,13 @@ window.JUNIPURRR_CONTENT = {
         "setting": "modern",
         "connection": "open",
         "intensity": "gentle"
-      }
+      },
+      "highlight": "",
+      "chatMilestone": "",
+      "statsNote": "",
+      "websiteUrl": "",
+      "websiteTitle": "",
+      "websiteDescription": ""
     },
     {
       "id": "yours-privately",
@@ -886,7 +979,7 @@ window.JUNIPURRR_CONTENT = {
       "coverNote": "some things deserve the daylight",
       "theme": "romance",
       "url": "https://dreamjourneyai.com/app/creation/6f33809a-d8e1-4c8f-91aa-a59889b8550f",
-      "image": "",
+      "image": "assets/yours-privately.webp",
       "kind": "character",
       "worldId": "",
       "playerRole": "You are in a private relationship with Felix Nyström, with a shared history stretching back to childhood.",
@@ -907,7 +1000,9 @@ window.JUNIPURRR_CONTENT = {
         "setting": "modern",
         "connection": "history",
         "intensity": "devastating"
-      }
+      },
+      "artworkLayout": "poster",
+      "artworkRatio": "3 / 2"
     },
     {
       "id": "restoration-season",
@@ -1064,6 +1159,9 @@ window.JUNIPURRR_CONTENT = {
     "requestStatus": "open",
     "requestEndpoint": "https://formspree.io/f/xkjrgpea",
     "requestFormUrl": "",
+    "spotifyUrl": "https://open.spotify.com/playlist/3n5ioFxaOK3Pct2NUO63lJ",
+    "spotifyTitle": "For the lore & late nights",
+    "spotifyNote": "What’s playing while I make everyone’s lives unnecessarily complicated.",
     "note": "I was supposed to finish one bot. There are now several worlds.",
     "featuredId": "no-saints-here",
     "featuredNote": "54k chats and counting. Five musicians. One tour bus. Absolutely no emotional supervision.",
@@ -1072,10 +1170,7 @@ window.JUNIPURRR_CONTENT = {
       "This document belongs to Cricket now.",
       "Editor unavailable. Try again after his nap.",
       "Cricket accepts no responsibility for your attachment."
-    ],
-    "spotifyTitle": "For the lore & late nights",
-    "spotifyNote": "What’s playing while I make everyone’s lives unnecessarily complicated.",
-    "spotifyUrl": "https://open.spotify.com/playlist/3n5ioFxaOK3Pct2NUO63lJ"
+    ]
   },
   "collections": [
     {
@@ -1113,7 +1208,7 @@ window.JUNIPURRR_CONTENT = {
       "id": "elyndor",
       "title": "ELYNDOR",
       "subtitle": "Courts, kingdoms & complicated loyalties",
-      "description": "A shared fantasy world created by Junipurrr and HouseofNyx. Enter Varrinth with High Lord Rhaevor Veyr, the Court of Thorns with Valandir Merythil, the dragon-rider academy of Caer Avar, or the coastal principality of Iskareth through The Gilded Household. Different doors. An unreasonable amount of lore.",
+      "description": "A shared fantasy world created by Junipurrr and HouseofNyx. Explore the wider setting through The Living Realm, enter Varrinth with High Lord Rhaevor Veyr, the Court of Thorns with Valandir Merythil, the dragon-rider academy of Caer Avar, or the coastal principality of Iskareth through The Gilded Household. Different doors. An unreasonable amount of lore.",
       "atmosphere": "A world by Junipurrr & HouseofNyx",
       "theme": "society",
       "image": "",
@@ -1138,7 +1233,10 @@ window.JUNIPURRR_CONTENT = {
           "text": "The coastal principality of House Orsenne: maritime trade, diplomacy, white limestone terraces, and the Gilded Atrium. Home to Prince Luceryn and an established household with a place for its incoming Princess Consort.",
           "spoiler": false
         }
-      ]
+      ],
+      "websiteUrl": "https://s0ftreset.github.io/HouseOfNyxandJuni/#home",
+      "websiteTitle": "Explore Elyndor",
+      "websiteDescription": "Visit the Elyndor website by HouseofNyx and Junipurrr for more of the realm and its stories."
     },
     {
       "id": "after-hours",
@@ -1272,11 +1370,31 @@ window.JUNIPURRR_CONTENT = {
       "id": "anime",
       "title": "ANIME",
       "subtitle": "Canon was a suggestion. I took it personally.",
-      "description": "The anime corner has its own room now. Pro heroes, shinobi, sorcerers, and a band that is absolutely going to become your problem. Pick your next unfortunate attachment.",
+      "description": "The anime corner has its own room now. Familiar worlds, alternate timelines, and an unreasonable amount of attachment. Pick your next obsession—or open the full anime folder on DJAI.",
       "atmosphere": "A folder for the anime obsessions",
       "theme": "lounge",
       "image": "",
       "folderUrl": "https://dreamjourneyai.com/app/folder/d826bdf6-3a5d-427e-953c-990b4d231db8",
+      "lore": []
+    },
+    {
+      "id": "wolves-old-blood",
+      "title": "The Wolves of the Old Blood",
+      "subtitle": "Original world · Aristocratic Omegaverse",
+      "description": "Two wolf-shifter Houses, old loyalties, and a political marriage that has not happened yet. House Saurenc’s southern riverlands meet House Aursund’s northern mountains in a world of family obligations, former lovers, and people with very different ideas about what you owe them. The wedding is approaching. Your choices are still yours.",
+      "theme": "manor",
+      "image": "",
+      "atmosphere": "An original world by Junipurrr",
+      "lore": []
+    },
+    {
+      "id": "orchard-house",
+      "title": "The Affairs of Orchard House",
+      "subtitle": "Original world · Regency ensemble romance",
+      "description": "England, 1813. A country family with six adult children, strained finances, and rather a lot of opinions about everybody’s future. You are the unmarried second-born at Orchard House, where family life, social expectations, and possible romances have an unfortunate habit of becoming everyone’s business.",
+      "theme": "society",
+      "image": "",
+      "atmosphere": "An original world by Junipurrr",
       "lore": []
     }
   ],

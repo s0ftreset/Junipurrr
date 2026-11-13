@@ -17,7 +17,7 @@ A personal home for Junipurrr's DreamJourney AI worlds, bots, and works in progr
 
 ## Anime folder
 
-`#world/anime` holds Musutafu Heights, Naruto Shippuden: Timeline Breaker, After Hours, and Feedback, with a link to Juni's DJAI anime folder. Stories and world cards marked `shelf: "anime"` are excluded from the homepage, including search, saved results, featured stories, random picks, and mood recommendations. Existing story/world URLs, favorites, and scene-request choices remain available. Fourth Wing and Harry Potter remain on the main shelf. In Creator desk, use **Display location → Anime folder only** for future anime stories and their world cards.
+`#world/anime` holds Musutafu Heights and Naruto Shippuden: Timeline Breaker, with a link to Juni's DJAI anime folder. Stories and world cards marked `shelf: "anime"` are excluded from the homepage, including search, saved results, featured stories, random picks, and mood recommendations. Existing story/world URLs, favorites, and scene-request choices remain available. Fourth Wing and Harry Potter remain on the main shelf. In Creator desk, use **Display location → Anime folder only** for future anime stories and their world cards.
 
 ## Publish on GitHub Pages
 
@@ -104,3 +104,7 @@ In Creator desk → The study, configure either `requestEndpoint` with a Formspr
 The GitHub Pages site uses vanilla JavaScript AJAX via the existing `fetch` handler; no React, build step, or additional CDN library is needed. It sends the custom scene fields as JSON with `Accept: application/json`, disables repeat submissions while waiting, and shows Cricket’s confirmation only after Formspree accepts the submission. Failed requests retain the typed idea.
 
 Catalog update: six user-linked releases added (Fourth Wing: Let Canon Bleed, Musutafu Heights, Naruto Shippuden: Timeline Breaker, High Lord Rhaevor Veyr, Caer Avar, Valandir Merythil). Elyndor retains Junipurrr & HouseofNyx credit and now groups four stories. New descriptions use prior creation context; Rhaevor/Valandir details were checked against the current Valandir master lorebook. Uploaded artwork is WebP-encoded; `artworkRatio` supports `1 / 1`, `2 / 3`, or `4 / 3` with poster layout to preserve full compositions. Additional remembered projects without supplied release links were not silently marked available.
+
+## November catalog additions
+
+Merged Juni’s uploaded content export, including The Back Stairs artwork/cast edits and removal of After Hours, Feedback, and Hollowmere story entries. Empty world doors are omitted from the homepage; their existing world routes remain available. Preserved the Anime folder metadata. Added The Wolves of the Old Blood, The Affairs of Orchard House, Until Death, My Darling, Kang Jae-min, and Elyndor | The Living Realm with supplied DJAI links. Added six supplied images, including the premiere portrait for Yours, Privately and the Dead Kings poster. Added the Elyndor companion website to its world and Living Realm story. Landscape portraits support `artworkRatio: "3 / 2"`.

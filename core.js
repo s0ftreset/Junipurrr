@@ -2,7 +2,7 @@
 (function(root,factory){const api=factory();if(typeof module==='object'&&module.exports)module.exports=api;else root.JuniCore=api;})(typeof window!=='undefined'?window:globalThis,function(){
  'use strict';
  const THEMES=['lounge','manor','stage','desert','stairs','romance','society','dragon'];
- const ARTWORK_RATIOS=['1 / 1','2 / 3','4 / 3'];
+ const ARTWORK_RATIOS=['1 / 1','2 / 3','3 / 2','4 / 3'];
  const MOODS={setting:['modern','fantasy','supernatural','fandom'],connection:['strangers','established','history','open'],intensity:['gentle','tangled','devastating']};
  const clone=v=>JSON.parse(JSON.stringify(v));
  function safeUrl(value,image=false){if(typeof value!=='string'||!value.trim())return '';const v=value.trim();if(image&&/^assets\/[a-z0-9/_\-.]+$/i.test(v)&&!v.includes('..'))return v;try{const u=new URL(v);return u.protocol==='https:'?u.href:''}catch{return ''}}
