@@ -108,3 +108,5 @@ Catalog update: six user-linked releases added (Fourth Wing: Let Canon Bleed, Mu
 ## November catalog additions
 
 Merged Juni’s uploaded content export, including The Back Stairs artwork/cast edits and removal of After Hours, Feedback, and Hollowmere story entries. Empty world doors are omitted from the homepage; their existing world routes remain available. Preserved the Anime folder metadata. Added The Wolves of the Old Blood, The Affairs of Orchard House, Until Death, My Darling, Kang Jae-min, and Elyndor | The Living Realm with supplied DJAI links. Added six supplied images, including the premiere portrait for Yours, Privately and the Dead Kings poster. Added the Elyndor companion website to its world and Living Realm story. Landscape portraits support `artworkRatio: "3 / 2"`.
+
+Rhydan Dunmere | The High Lord's Household is available as an original character in the standalone Keldrin March collection, using the supplied portrait and direct DJAI link.

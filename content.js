@@ -769,6 +769,75 @@ window.JUNIPURRR_CONTENT = {
       "artworkRatio": "1 / 1"
     },
     {
+      "id": "rhydan-dunmere",
+      "title": "Rhydan Dunmere | The High Lord's Household",
+      "subtitle": "Keldrin March · An established household",
+      "description": "A High Lord, a fifteen-year marriage, three recognized consorts, and your arrival at Dunmere Keep. Rhydan Dunmere is a 43-year-old Alpha wolf-shifter and former military commander with a territory to govern and a household whose history does not politely disappear because someone new has arrived. Welcome to Keldrin March. There is rather a lot to discuss.",
+      "kind": "character",
+      "category": "original",
+      "worldId": "keldrin-march",
+      "theme": "manor",
+      "url": "https://dreamjourneyai.com/app/creation/15b6530d-e77b-47a6-9661-d93e468d74b5",
+      "image": "assets/rhydan-dunmere.webp",
+      "artworkLayout": "poster",
+      "artworkRatio": "1 / 1",
+      "coverTitle": "Rhydan Dunmere",
+      "coverNote": "The High Lord's Household",
+      "tags": [
+        "Fantasy",
+        "Omegaverse",
+        "Wolf shifter",
+        "Household politics",
+        "Complicated relationships"
+      ],
+      "moods": {
+        "setting": "fantasy",
+        "connection": "open",
+        "intensity": "tangled"
+      },
+      "playerRole": "You arrive at Dunmere Keep as Rhydan’s prospective fourth concubine. Define your identity, prior history, boundaries, and choices as you find your place in an already established household.",
+      "complications": [
+        "Rhydan’s marriage to Catrin Vellacourt remains part of the household’s present.",
+        "Three recognized consorts have their own agreements, histories, and independent lives.",
+        "Private relationships unfold within a territory full of political responsibilities."
+      ],
+      "cast": [
+        {
+          "name": "Rhydan Dunmere",
+          "role": "High Lord of Keldrin March; Alpha wolf-shifter and former military commander.",
+          "image": ""
+        },
+        {
+          "name": "Catrin Vellacourt",
+          "role": "The High Lady, married to Rhydan for fifteen years.",
+          "image": ""
+        },
+        {
+          "name": "Odette Varenne",
+          "role": "An established recognized consort.",
+          "image": ""
+        },
+        {
+          "name": "Bastian Corbett",
+          "role": "An established recognized consort.",
+          "image": ""
+        },
+        {
+          "name": "Talia Renswick",
+          "role": "An established recognized consort.",
+          "image": ""
+        }
+      ],
+      "starts": [],
+      "lore": [
+        {
+          "title": "Dunmere Keep",
+          "text": "The administrative seat of Keldrin March is a working fortified residence, where household life and the business of governing a northern territory meet.",
+          "spoiler": false
+        }
+      ]
+    },
+    {
       "id": "orchard-house",
       "title": "The Affairs of Orchard House",
       "subtitle": "Original world · Regency ensemble romance",
@@ -1395,6 +1464,16 @@ window.JUNIPURRR_CONTENT = {
       "theme": "society",
       "image": "",
       "atmosphere": "An original world by Junipurrr",
+      "lore": []
+    },
+    {
+      "id": "keldrin-march",
+      "title": "KELDRIN MARCH",
+      "subtitle": "Dunmere Keep · The High Lord’s household",
+      "description": "A standalone northern fantasy setting of wooded ridges, mountain passes, rivers, and farmland. At its center stands Dunmere Keep: a fortified residence, a seat of government, and the home of Rhydan Dunmere’s complicated household.",
+      "atmosphere": "An original world by Junipurrr",
+      "theme": "manor",
+      "image": "",
       "lore": []
     }
   ],
