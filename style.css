@@ -54,3 +54,13 @@
 @media(max-width:740px){.companion-site{flex-direction:column;align-items:flex-start;padding:24px;gap:22px}.story-popularity{gap:9px}.story-popularity strong{font-size:24px}}
 
 @media(max-width:440px){.theme-stage .cast-card{display:block}.theme-stage .cast-card img{height:260px;width:100%}.theme-stage .cast-card>div{padding:22px}}
+/* Supplied square posters keep their lettering and complete composition. */
+.world-cover.poster-art{height:auto!important;aspect-ratio:1;min-height:0!important;background-size:contain!important;background-position:center!important;background-repeat:no-repeat;background-color:#171017}
+.world-cover.poster-art:after,.world-cover.poster-art>.cover-sigil,.world-cover.poster-art>.cover-title,.world-cover.poster-art>.cover-note{display:none}
+.story-poster.poster-art{align-self:start;height:auto;min-height:0}.featured-art>.poster-art{height:auto;min-height:0}
+@media(hover:hover) and (pointer:fine){
+ body{cursor:url('assets/cursor-moon.svg') 7 3,auto}
+ a,button,summary,select,label:has(input[type=checkbox]),label:has(input[type=radio]),input[type=checkbox],input[type=radio],input[type=file]{cursor:url('assets/cursor-heart.svg') 16 29,pointer!important}
+ input:not([type=checkbox]):not([type=radio]):not([type=file]),textarea,[contenteditable=true]{cursor:text}
+ button:disabled,input:disabled,select:disabled{cursor:not-allowed!important}
+}

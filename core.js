@@ -23,7 +23,7 @@
    if(v[key]===undefined&&['collections','graveyard'].includes(key))continue;
    const ids=new Set();if(!rows(v[key],o=>{if(!o||!text(o.id,100)||!o.id||!text(o.title,100)||!o.title.trim()||ids.has(o.id))return false;ids.add(o.id);return true}))return false;
   }
-  for(const s of v.worlds){if(!website(s)||!optional(s,'highlight',100)||!optional(s,'chatMilestone',50)||!optional(s,'statsNote',200))return false;if(!text(s.description)||!['original','fandom','fantasy'].includes(s.category)||!optional(s,'subtitle',200)||!optional(s,'playerRole')||!optional(s,'worldId',100)||!optional(s,'coverTitle',100)||!optional(s,'coverNote',300))return false;
+  for(const s of v.worlds){if(s.artworkLayout!==undefined&&!['','poster'].includes(s.artworkLayout))return false;if(!website(s)||!optional(s,'highlight',100)||!optional(s,'chatMilestone',50)||!optional(s,'statsNote',200))return false;if(!text(s.description)||!['original','fandom','fantasy'].includes(s.category)||!optional(s,'subtitle',200)||!optional(s,'playerRole')||!optional(s,'worldId',100)||!optional(s,'coverTitle',100)||!optional(s,'coverNote',300))return false;
    if(s.url&&!safeUrl(s.url)||s.image&&!safeUrl(s.image,true)||s.kind&&!['character','scenario'].includes(s.kind)||s.theme&&!THEMES.includes(s.theme))return false;
    if(s.tags!==undefined&&!rows(s.tags,t=>text(t,100),30)||s.complications!==undefined&&!rows(s.complications,t=>text(t,1000),30))return false;
    if(s.cast!==undefined&&!rows(s.cast,c=>c&&text(c.name,100)&&text(c.role,2000)&&(!c.image||safeUrl(c.image,true)),50))return false;

@@ -134,7 +134,7 @@ window.JUNIPURRR_CONTENT = {
       "coverNote": "The Opal Lord",
       "theme": "dragon",
       "url": "https://dreamjourneyai.com/app/creation/e0c5b1cf-b83b-4dd8-9342-355e130daac9",
-      "image": "",
+      "image": "assets/aevrys-vaesqir.webp",
       "playerRole": "Choose an opening on DJAI for your starting role and connection to House Vaesqir.",
       "complications": [],
       "cast": [],
@@ -144,7 +144,8 @@ window.JUNIPURRR_CONTENT = {
         "setting": "fantasy",
         "connection": "open",
         "intensity": "tangled"
-      }
+      },
+      "artworkLayout": "poster"
     },
     {
       "id": "nytheris-vaesqir",
@@ -163,12 +164,65 @@ window.JUNIPURRR_CONTENT = {
       "coverNote": "The Black Opal",
       "theme": "dragon",
       "url": "https://dreamjourneyai.com/app/creation/ba4fa647-bdeb-40bc-b35f-69ed1b8ae108",
-      "image": "",
+      "image": "assets/nytheris-vaesqir.webp",
       "playerRole": "Choose an opening on DJAI for your starting role and connection to House Vaesqir.",
       "complications": [],
       "cast": [],
       "starts": [],
       "lore": [],
+      "moods": {
+        "setting": "fantasy",
+        "connection": "open",
+        "intensity": "tangled"
+      },
+      "artworkLayout": "poster"
+    },
+    {
+      "id": "the-gilded-household",
+      "title": "THE GILDED HOUSEHOLD",
+      "subtitle": "Elyndor · Iskareth",
+      "kind": "scenario",
+      "category": "original",
+      "worldId": "elyndor",
+      "tags": [
+        "Fantasy",
+        "High Fae",
+        "Political marriage",
+        "Court intrigue",
+        "Established consorts"
+      ],
+      "description": "A coastal palace, a charming prince, and five consorts who already call it home. You arrive as Luceryn Orsenne’s lawful wife and Princess Consort, entering a household with long histories, protected places, and no intention of starting over for your arrival. Welcome to Iskareth.",
+      "coverTitle": "The Gilded Household",
+      "coverNote": "Elyndor · Iskareth",
+      "theme": "society",
+      "image": "assets/gilded-household.webp",
+      "artworkLayout": "poster",
+      "url": "",
+      "playerRole": "You are Luceryn’s incoming lawful wife and Princess Consort. Your background, appearance, motives, personality, and reactions are yours to define. Your position brings ceremonial precedence and a household of your own, alongside five existing consorts whose relationships and rights continue.",
+      "complications": [
+        "Luceryn marries you without ending his five existing relationships.",
+        "Ceremonial rank does not give you control over the other consorts’ homes or lives.",
+        "The prince is politically capable, affectionate, and much less comfortable with difficult domestic conversations."
+      ],
+      "cast": [],
+      "starts": [],
+      "lore": [
+        {
+          "title": "Iskareth & the Gilded Atrium",
+          "text": "Iskareth is a wealthy sovereign coastal principality in Elyndor, ruled by House Orsenne. Maritime trade and diplomacy support its harbors, white limestone terraces, gardens, and gilded halls. The Gilded Atrium contains the prince’s quarters, your Sunward Apartments, and five independent consort households.",
+          "spoiler": false
+        },
+        {
+          "title": "Prince Luceryn Orsenne",
+          "text": "493 · High Fae · Sovereign Prince of Iskareth. Charming, affectionate, witty, and politically competent. His instinct to indulge the people he loves can make the conversations he avoids even harder. He has five recognized consorts and two adult children.",
+          "spoiler": false
+        },
+        {
+          "title": "The Covenant of the Gilded Seal",
+          "text": "The consorts retain protected residences, staff, property, allowances, and palace access after the marriage. Neither Luceryn nor the Princess Consort can unilaterally dismiss, evict, confine, demote, exclude, defund, or strip their rights. Voluntary departure is possible; involuntary removal requires lawful grounds, evidence, and an independent tribunal.",
+          "spoiler": false
+        }
+      ],
       "moods": {
         "setting": "fantasy",
         "connection": "open",
@@ -672,6 +726,16 @@ window.JUNIPURRR_CONTENT = {
   ],
   "notes": [
     {
+      "id": "wip-hazelbrook",
+      "title": "Hazelbrook | Horror farming sim",
+      "subtitle": "Folk horror · Mystery · Romance",
+      "description": "Currently growing something deeply concerning at Thistlebrook Farm. A farming-life murder mystery in Hazelbrook, with romance, community secrets, a killer whose identity can change between playthroughs, and very real danger for you and the people you get attached to. Still being developed.",
+      "status": "In progress",
+      "image": "",
+      "storyId": "",
+      "url": ""
+    },
+    {
       "id": "wip-aevrys-vaesqir",
       "title": "Aevrys Vaesqir | The Opal Lord",
       "subtitle": "The Dragon Crown · House Vaesqir",
@@ -744,6 +808,22 @@ window.JUNIPURRR_CONTENT = {
         {
           "title": "The Kindling",
           "text": "An optional magical bond chosen by consenting adults, distinct from marriage. Attraction, intimacy, or a royal claim cannot create it. It grants neither ownership nor forced devotion.",
+          "spoiler": false
+        }
+      ]
+    },
+    {
+      "id": "elyndor",
+      "title": "ELYNDOR",
+      "subtitle": "Courts, kingdoms & complicated loyalties",
+      "description": "A shared fantasy world created by Junipurrr and HouseofNyx. Enter its courts and sovereign realms through the people who live there, beginning with the coastal principality of Iskareth and The Gilded Household.",
+      "atmosphere": "A world by Junipurrr & HouseofNyx",
+      "theme": "society",
+      "image": "",
+      "lore": [
+        {
+          "title": "Iskareth",
+          "text": "The coastal principality of House Orsenne: maritime trade, diplomacy, white limestone terraces, and the Gilded Atrium. Home to Prince Luceryn and an established household with a place for its incoming Princess Consort.",
           "spoiler": false
         }
       ]

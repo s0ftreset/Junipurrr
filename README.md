@@ -90,3 +90,5 @@ Fonts use Google Fonts, with local system fallbacks. No analytics are included. 
 The Dragon Crown entries use Juni’s supplied Zhaevran portrait and approved Zhaedrik and Kharveth aerie artwork, optimized as WebP. Azheryth is a separate setting from Elyndor. The character buttons link directly to their published DJAI bots.
 
 No Saints Here is placed first in the collection and featured as Juni’s most-chatted scenario. Its 54k chat milestone is a manual snapshot supplied by Juni on November 11, 2026, not a live DJAI counter. Update the milestone and date in Creator desk → Stories. Cast biographies follow the supplied NSH lorebook; portraits are loaded from Juni’s FOXGLOVE website.
+
+Supplied square posters use `artworkLayout: "poster"` to show the complete art without duplicate cover lettering. The desktop cursor uses a pink moon, changing to a heart on links and buttons; editable fields retain their text cursor. Hazelbrook is listed as a work in progress. The Gilded Household belongs to Elyndor (Junipurrr & HouseofNyx) and currently uses the labelled creator-profile fallback until its direct DJAI link is provided.
