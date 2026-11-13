@@ -74,3 +74,9 @@
 @media(max-width:760px){.request-section{grid-template-columns:1fr;padding-top:56px;padding-bottom:64px;gap:28px}.request-intro{padding-top:0}.request-intro h2{font-size:62px}.request-intro h2 br{display:none}.request-intro>p:not(.eyebrow){max-width:100%}.request-reception{max-width:420px}.request-paper{padding:24px 20px}.request-paper select,.request-paper textarea,.request-paper input:not([type=radio]):not([type=checkbox]){font-size:16px}.request-intro h2{font-size:clamp(44px,9vw,62px)}.request-intro .eyebrow{font-size:9px}.request-actions .button{width:100%;padding:12px}.request-actions{gap:14px}.request-section .eyebrow{letter-spacing:.12em}}
 
 .request-section:focus{outline:none}
+
+/* Anime stays behind its folder door, separate from the main collection. */
+.anime-folder-link{color:var(--muted);font-size:13px;margin:24px 0}.anime-folder-link a{margin-left:8px}.anime-entrance{padding:48px 24px}.anime-entrance .button{margin-top:18px}.anime-folder{display:block}.anime-folder>.eyebrow{margin:0 0 24px}.anime-folder .world-grid{width:100%}
+@media(max-width:740px){.anime-folder-link a{display:block;margin:8px 0 0}.anime-entrance{padding:32px 18px}}
+
+.theme-lounge .anime-entrance:after{content:none}

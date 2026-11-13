@@ -205,7 +205,8 @@ window.JUNIPURRR_CONTENT = {
         "setting": "fandom",
         "connection": "open",
         "intensity": "tangled"
-      }
+      },
+      "shelf": "anime"
     },
     {
       "id": "naruto-timeline-breaker",
@@ -246,7 +247,8 @@ window.JUNIPURRR_CONTENT = {
         "setting": "fandom",
         "connection": "open",
         "intensity": "tangled"
-      }
+      },
+      "shelf": "anime"
     },
     {
       "id": "rhaevor-veyr",
@@ -711,7 +713,8 @@ window.JUNIPURRR_CONTENT = {
         "setting": "fandom",
         "connection": "open",
         "intensity": "tangled"
-      }
+      },
+      "shelf": "anime"
     },
     {
       "id": "hollowmere",
@@ -787,7 +790,8 @@ window.JUNIPURRR_CONTENT = {
         "setting": "fandom",
         "connection": "open",
         "intensity": "tangled"
-      }
+      },
+      "shelf": "anime"
     },
     {
       "id": "dead-kings",
@@ -1144,7 +1148,8 @@ window.JUNIPURRR_CONTENT = {
       "theme": "lounge",
       "image": "",
       "atmosphere": "A table at The Keep. A city that stays awake.",
-      "lore": []
+      "lore": [],
+      "shelf": "anime"
     },
     {
       "id": "hollowmere",
@@ -1164,7 +1169,8 @@ window.JUNIPURRR_CONTENT = {
       "theme": "stage",
       "image": "",
       "atmosphere": "Rehearsals, rival bands, and coffee after the show.",
-      "lore": []
+      "lore": [],
+      "shelf": "anime"
     },
     {
       "id": "dead-kings",
@@ -1248,7 +1254,8 @@ window.JUNIPURRR_CONTENT = {
       "atmosphere": "Musutafu Heights",
       "theme": "stairs",
       "image": "",
-      "lore": []
+      "lore": [],
+      "shelf": "anime"
     },
     {
       "id": "naruto-timeline-breaker",
@@ -1258,6 +1265,18 @@ window.JUNIPURRR_CONTENT = {
       "atmosphere": "Naruto Shippuden: Timeline Breaker",
       "theme": "manor",
       "image": "",
+      "lore": [],
+      "shelf": "anime"
+    },
+    {
+      "id": "anime",
+      "title": "ANIME",
+      "subtitle": "Canon was a suggestion. I took it personally.",
+      "description": "The anime corner has its own room now. Pro heroes, shinobi, sorcerers, and a band that is absolutely going to become your problem. Pick your next unfortunate attachment.",
+      "atmosphere": "A folder for the anime obsessions",
+      "theme": "lounge",
+      "image": "",
+      "folderUrl": "https://dreamjourneyai.com/app/folder/d826bdf6-3a5d-427e-953c-990b4d231db8",
       "lore": []
     }
   ],

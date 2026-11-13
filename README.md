@@ -15,6 +15,10 @@ A personal home for Junipurrr's DreamJourney AI worlds, bots, and works in progr
 - **On repeat** embeds Juni’s Spotify playlist, with an **Open in Spotify** link.
 - The bouncing DVD can be paused and respects the device’s reduced-motion preference.
 
+## Anime folder
+
+`#world/anime` holds Musutafu Heights, Naruto Shippuden: Timeline Breaker, After Hours, and Feedback, with a link to Juni's DJAI anime folder. Stories and world cards marked `shelf: "anime"` are excluded from the homepage, including search, saved results, featured stories, random picks, and mood recommendations. Existing story/world URLs, favorites, and scene-request choices remain available. Fourth Wing and Harry Potter remain on the main shelf. In Creator desk, use **Display location → Anime folder only** for future anime stories and their world cards.
+
 ## Publish on GitHub Pages
 
 1. Open this repository's **Settings → Pages**.
