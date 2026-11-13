@@ -768,7 +768,7 @@ window.JUNIPURRR_CONTENT = {
   "schemaVersion": 2,
   "home": {
     "requestStatus": "open",
-    "requestEndpoint": "",
+    "requestEndpoint": "https://formspree.io/f/xkjrgpea",
     "requestFormUrl": "",
     "note": "I was supposed to finish one bot. There are now several worlds.",
     "featuredId": "no-saints-here",
