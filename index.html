@@ -10,10 +10,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@400;450;500;600&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=elyndor-art-20261112">
-  <script src="core.js?v=elyndor-art-20261112" defer></script>
-  <script src="content.js?v=elyndor-art-20261112" defer></script>
-  <script src="app.js?v=elyndor-art-20261112" defer></script>
+  <link rel="stylesheet" href="style.css?v=requests-20261112">
+  <script src="core.js?v=requests-20261112" defer></script>
+  <script src="content.js?v=requests-20261112" defer></script>
+  <script src="requests.js?v=requests-20261112" defer></script>
+  <script src="app.js?v=requests-20261112" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#collection">Skip to the collection</a>
@@ -23,6 +24,7 @@
       <a href="#collection">Stories</a>
       <a href="#worlds">Worlds</a>
       <a href="#desk">On my desk</a>
+      <a href="#requests">Scene requests</a>
       <a href="#music">On repeat</a>
       <a href="#about">About</a>
       <a class="nav-djai profile-link" href="https://dreamjourneyai.com/profile/junipurrr" target="_blank" rel="noopener noreferrer">DJAI <span aria-hidden="true">→</span></a>
@@ -96,6 +98,47 @@
 
 <span class="desk-scribble">good ideas live here ♡</span><button class="desk-cricket" type="button" data-cricket aria-label="Wake Cricket, editorial supervisor"><img src="assets/cricket.svg" alt="Cricket asleep on the drafts"><span>Cricket has placed this project on hold.</span></button><button class="memorial" type="button" id="open-graveyard" aria-label="Inspect the little memorial">☾ <span>in loving rejection</span> ✝</button></div>
         <div><div class="desk-notes" id="desk-notes"></div><div id="released-notes"></div></div>
+      </div>
+    </section>
+    <section class="request-section section-wrap" id="requests" aria-labelledby="request-title" tabindex="-1">
+      <div class="request-intro">
+        <p class="eyebrow">Scene requests · for plot purposes, obviously</p>
+        <h2 id="request-title">make it <br>my problem <span aria-hidden="true">♡</span></h2>
+        <p>have a scene living in your head rent free? a conversation they absolutely need to have? a situation that would make everyone’s lives significantly worse?</p>
+        <p class="request-invitation">tell me. unfortunately, i can probably be convinced.</p>
+        <div class="request-reception"><button type="button" id="request-cricket" aria-label="Check with Cricket, the receptionist"><img src="assets/cricket.svg" alt="Cricket, your deeply unqualified receptionist" width="160" height="110" loading="lazy"></button><p><strong>Cricket · reception</strong><span>your proposal is important to us.<br>he is sitting on it.</span></p></div>
+        <p class="request-boundaries">requests are inspiration, not a guaranteed slot. i’ll pick up the ones that click with the characters and whatever my brain is currently cooperating with. please do not mistake my enthusiasm for a release date.</p>
+      </div>
+      <div class="request-paper">
+        <div class="request-paper-top"><span class="eyebrow">a note for Juni</span><span class="request-stamp" aria-hidden="true">☾</span></div>
+        <p class="request-availability" id="request-availability">inbox opening soon</p>
+        <p class="request-delivery" id="request-delivery">Cricket is still setting up the inbox. You can write an idea and keep a copy, but requests aren’t being sent yet.</p>
+        <a class="button button-pink" id="request-hosted" hidden target="_blank" rel="noopener noreferrer">place this gently on my desk ↗</a>
+        <form id="scene-request-form">
+          <fieldset id="request-fields">
+            <legend class="sr-only">Your scene request</legend>
+            <label for="request-subject">who are we bothering? <span>bot or universe · required</span></label>
+            <select id="request-subject" name="subject" required><option value="">choose your next unfortunate attachment</option></select>
+            <label for="request-idea">okay. hear me out. <span>the scene · required</span></label>
+            <textarea id="request-idea" name="scene" rows="4" maxlength="4000" required placeholder="Tell me where we are, what just happened, and why nobody is handling it normally."></textarea>
+            <fieldset class="request-moods"><legend>what are we doing to their day? <span>the mood · optional</span></legend><div>
+              <label><input type="radio" name="mood" value="Making it sweeter"><span>making it sweeter</span></label>
+              <label><input type="radio" name="mood" value="Making it worse"><span>making it worse</span></label>
+              <label><input type="radio" name="mood" value="Both, ideally"><span>both, ideally</span></label>
+              <label><input type="radio" name="mood" value="Let me explain"><span>let me explain</span></label>
+            </div></fieldset>
+            <label for="request-detail">the part i’m attached to <span>must-have detail · optional</span></label>
+            <textarea id="request-detail" name="detail" rows="2" maxlength="1500" placeholder="A line of dialogue, a particular dynamic, an extremely specific detail. I understand."></textarea>
+            <label for="request-name">who do i blame? ♡ <span>your handle · optional</span></label>
+            <input id="request-name" name="handle" maxlength="100" autocomplete="off" placeholder="Leave blank and remain a mysterious influence.">
+            <label class="request-credit"><input type="checkbox" name="credit" value="Yes, credit my handle if this scene is made"><span>you can credit this handle if the scene happens. <small>optional. requests aren’t posted publicly.</small></span></label>
+            <div hidden aria-hidden="true"><label>Leave this empty<input name="_gotcha" tabindex="-1" autocomplete="off"></label></div>
+          </fieldset>
+          <div class="request-actions"><button class="button button-pink" type="submit" id="request-send" disabled>place this gently on my desk</button><button class="text-link" type="button" id="request-copy">keep a copy</button></div>
+          <p class="request-feedback" id="request-feedback" role="status" aria-live="polite"></p>
+          <div id="request-copy-fallback" hidden><label for="request-copy-text">Your request — select and copy this text</label><textarea id="request-copy-text" rows="7" readonly></textarea></div>
+        </form>
+        <noscript><p>The request form needs JavaScript. The inbox is not connected yet.</p></noscript>
       </div>
     </section>
     <section class="music-section section-wrap" id="music" aria-labelledby="music-title">

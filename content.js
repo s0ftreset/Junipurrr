@@ -767,6 +767,9 @@ window.JUNIPURRR_CONTENT = {
   ],
   "schemaVersion": 2,
   "home": {
+    "requestStatus": "open",
+    "requestEndpoint": "",
+    "requestFormUrl": "",
     "note": "I was supposed to finish one bot. There are now several worlds.",
     "featuredId": "no-saints-here",
     "featuredNote": "54k chats and counting. Five musicians. One tour bus. Absolutely no emotional supervision.",
