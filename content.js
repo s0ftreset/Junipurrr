@@ -3,6 +3,56 @@ window.JUNIPURRR_CONTENT = {
   "profileUrl": "https://dreamjourneyai.com/profile/junipurrr",
   "discord": "Junipurrr",
   "about": "I make character bots, original worlds, and fandom AUs for stories you can settle into. Expect complicated people, lived-in settings, slow burns, and a frankly unreasonable amount of lore. This is where I keep my worlds together—and leave a few notes about what comes next.",
+  "gallery": [
+    {
+      "id": "rhydan-dunmere-portrait",
+      "title": "Rhydan, in candlelight",
+      "storyId": "rhydan-dunmere",
+      "image": "assets/rhydan-dunmere.webp",
+      "alt": "A dark-haired, bearded man in an embroidered coat and fur mantle, seated in a candlelit hall.",
+      "caption": "The candlelight at Dunmere Keep is doing him several favors."
+    },
+    {
+      "id": "aevrys-vaesqir-portrait",
+      "title": "The Opal Lord",
+      "storyId": "aevrys-vaesqir",
+      "image": "assets/aevrys-vaesqir.webp",
+      "alt": "A pale-haired wyvern man with iridescent horns and scales, framed by the lettering The Opal Lord.",
+      "caption": "Aevrys in daylight. Zoom in on the little chains hanging from his horns."
+    },
+    {
+      "id": "nytheris-vaesqir-portrait",
+      "title": "The Black Opal",
+      "storyId": "nytheris-vaesqir",
+      "image": "assets/nytheris-vaesqir.webp",
+      "alt": "A dark-haired wyvern man with jewel-toned horns and scales, framed by the lettering Black Opal.",
+      "caption": "Nytheris at sunset. The family resemblance is in the opals."
+    },
+    {
+      "id": "rhaevor-veyr-portrait",
+      "title": "Rhaevor Veyr",
+      "storyId": "rhaevor-veyr",
+      "image": "assets/rhaevor-veyr.webp",
+      "alt": "A long-haired fae man in dark embroidered clothing, with one green eye and one hazel eye.",
+      "caption": "A closer look at the High Lord of Varrinth."
+    },
+    {
+      "id": "the-gilded-household-portrait",
+      "title": "The Gilded Household",
+      "storyId": "the-gilded-household",
+      "image": "assets/gilded-household.webp",
+      "alt": "A richly dressed man surrounded by five women in a sunlit coastal palace.",
+      "caption": "Luceryn and the five consorts of Iskareth. Elyndor belongs to Junipurrr and HouseofNyx."
+    },
+    {
+      "id": "yours-privately-portrait",
+      "title": "At the premiere",
+      "storyId": "yours-privately",
+      "image": "assets/yours-privately.webp",
+      "alt": "A dark-haired man in a black suit beside a car, with cameras and bright lights behind him.",
+      "caption": "A quiet look on a carpet full of cameras."
+    }
+  ],
   "worlds": [
     {
       "id": "no-saints-here",

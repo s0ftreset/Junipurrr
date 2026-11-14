@@ -25,3 +25,16 @@ test('folder placement survives exports and existing story URLs stay available',
 test('folder imports reject unknown placement and unsafe external links',()=>{const v=C.clone(content);v.worlds[0].shelf='other';assert.equal(C.valid(v),false);delete v.worlds[0].shelf;v.collections.find(w=>w.id==='anime').folderUrl='javascript:alert(1)';assert.equal(C.valid(v),false);});
 
 test('uploaded catalog edits and new links are preserved together',()=>{const get=id=>content.worlds.find(s=>s.id===id);for(const id of ['after-hours','feedback','hollowmere'])assert.equal(get(id),undefined);assert.equal(get('back-stairs').cast.length,3);assert.ok(get('back-stairs').image.endsWith('/Names.png'));assert.equal(get('yours-privately').artworkRatio,'3 / 2');for(const [id,uuid] of Object.entries({'dead-kings':'69ece87b-fa82-4ac9-8bb9-c7f914dad69b','wolves-old-blood':'ab34c0cf-74f8-47c6-b977-fe4cc4125df3','orchard-house':'f52436fd-cd8d-46e7-92b6-2d6d8019b0b4','until-death-my-darling':'3bb96b90-9a48-4fda-bff1-b88cbb9be22c','kang-jae-min':'a78784d6-63b8-4e87-bb6d-b14b4e442df1','elyndor-living-realm':'8024efc5-5a05-4e04-a414-5350b621de3e'}))assert.equal(get(id).url,'https://dreamjourneyai.com/app/creation/'+uuid);assert.equal(get('elyndor-living-realm').worldId,'elyndor');assert.equal(content.collections.find(w=>w.id==='elyndor').websiteUrl,'https://s0ftreset.github.io/HouseOfNyxandJuni/#home');});
+
+test('gallery photos survive export, older backups open, and invalid photo records are rejected',()=>{
+  const backup=C.clone(content);
+  delete backup.gallery;
+  assert.deepEqual(C.normalize(backup).gallery,[]);
+  assert.deepEqual(C.normalize(content).gallery,content.gallery);
+  for(const photo of content.gallery) if(photo.image.startsWith('assets/')) assert.ok(fs.existsSync(photo.image),photo.image);
+  for(const invalid of [{image:'data:image/svg+xml,bad'},{storyId:'missing-story'},{alt:' '}]) {
+    const draft=C.clone(content);
+    Object.assign(draft.gallery[0],invalid);
+    assert.equal(C.valid(draft),false);
+  }
+});
