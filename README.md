@@ -113,6 +113,6 @@ Rhydan Dunmere | The High Lord's Household is available as an original character
 
 ### The camera roll
 
-Open **Gallery** for all photos, or **View photo album** on a story with photos. Each album has a shareable address at `#gallery/<story-id>`. Select a photo to open the complete image, caption, and story link. Use the arrow keys to browse and Escape to close.
+Open **Gallery** for all photos, or **View photo album** on a story with photos. Each album has a shareable address at `#gallery/<story-id>`. The page opens on one full image with its name underneath. Click the image or use the arrows to move through the album. Enlarge opens the same photo in a dialog.
 
-To add a photo, open **Creator desk → Gallery → Start a new entry**. Choose the story, enter a title and image description, and optionally add a scene note. Use an image URL or a file already uploaded to `assets/`. Save the browser draft, then export and publish `content.js` as described above.
+To add a photo, open **Creator desk → Gallery → Start a new entry**. Enter a title and image description, and optionally add a scene note. Leave the story set to **None** for standalone generations, or pick a story to include the photo in its album. Use an image URL or a file already uploaded to `assets/`. Save the browser draft, then export and publish `content.js` as described above.

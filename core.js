@@ -35,7 +35,7 @@
   if(!v||!text(v.about)||!text(v.discord,100)||!safeUrl(v.profileUrl))return false;
   for(const key of ['worlds','notes','collections','graveyard','gallery']){
    if(v[key]===undefined&&['collections','graveyard','gallery'].includes(key))continue;
-   const ids=new Set();if(!rows(v[key],o=>{if(!o||!text(o.id,100)||!o.id||!text(o.title,100)||!o.title.trim()||ids.has(o.id))return false;if(o.shelf!==undefined&&!['','anime'].includes(o.shelf))return false;ids.add(o.id);return true}))return false;
+   const ids=new Set();if(!rows(v[key],o=>{if(!o||!text(o.id,100)||!o.id||!text(o.title,100)||!o.title.trim()||ids.has(o.id))return false;if(o.shelf!==undefined&&!['','anime'].includes(o.shelf))return false;ids.add(o.id);return true},key==='gallery'?Infinity:200))return false;
   }
   for(const s of v.worlds){if(s.artworkRatio!==undefined&&!ARTWORK_RATIOS.includes(s.artworkRatio))return false;if(s.artworkLayout!==undefined&&!['','poster'].includes(s.artworkLayout))return false;if(!website(s)||!optional(s,'highlight',100)||!optional(s,'chatMilestone',50)||!optional(s,'statsNote',200))return false;if(!text(s.description)||!['original','fandom','fantasy'].includes(s.category)||!optional(s,'subtitle',200)||!optional(s,'playerRole')||!optional(s,'worldId',100)||!optional(s,'coverTitle',100)||!optional(s,'coverNote',300))return false;
    if(s.url&&!safeUrl(s.url)||s.image&&!safeUrl(s.image,true)||s.kind&&!['character','scenario'].includes(s.kind)||s.theme&&!THEMES.includes(s.theme))return false;

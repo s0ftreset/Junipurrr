@@ -38,3 +38,11 @@ test('gallery photos survive export, older backups open, and invalid photo recor
     assert.equal(C.valid(draft),false);
   }
 });
+
+test('a large camera roll can contain standalone photos and linked story photos together', () => {
+  const draft = C.clone(content);
+  for (let index = 0; index < 250; index++) {
+    draft.gallery.push({...draft.gallery[0], id: 'standalone-' + index, storyId: ''});
+  }
+  assert.deepEqual(C.normalize(draft).gallery, draft.gallery);
+});
