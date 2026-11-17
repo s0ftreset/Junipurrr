@@ -116,3 +116,11 @@ Rhydan Dunmere | The High Lord's Household is available as an original character
 Open **Gallery** for all photos, or **View photo album** on a story with photos. Each album has a shareable address at `#gallery/<story-id>`. The page opens on one full image with its name underneath. Click the image or use the arrows to move through the album. Enlarge opens the same photo in a dialog.
 
 To add a photo, open **Creator desk → Gallery → Start a new entry**. Enter a title and image description, and optionally add a scene note. Leave the story set to **None** for standalone generations, or pick a story to include the photo in its album. Use an image URL or a file already uploaded to `assets/`. Save the browser draft, then export and publish `content.js` as described above.
+
+### After dark (18+)
+
+The navigation's **18+** link opens `#adult`. Visitors confirm they are 18 or older before entering. Confirmation lasts for the tab session. **Leave & reset age check** clears it. This is a self-declared age gate, not identity verification or private hosting.
+
+In **Creator desk → Stories**, check **18+ section (requires age confirmation)** and publish the content export. An **18+ world** marks all its linked stories as adult too. Adult entries are omitted from public search, favorites, recommendations, world lists, request choices, and gallery browsing. Direct story, world, and linked album addresses require the same age confirmation. Published files and artwork remain publicly accessible on GitHub Pages.
+
+No existing bots have been reclassified. The new shelf starts empty until Juni selects its entries.

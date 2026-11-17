@@ -46,3 +46,20 @@ test('a large camera roll can contain standalone photos and linked story photos 
   }
   assert.deepEqual(C.normalize(draft).gallery, draft.gallery);
 });
+
+test('adult content and inherited adult worlds stay out of public browsing and linked previews',()=>{
+ const draft=C.normalize(content);
+ draft.worlds.find(s=>s.id==='rhydan-dunmere').adult=true;
+ draft.collections.find(w=>w.id==='elyndor').adult=true;
+ draft.worlds.find(s=>s.id==='musutafu-heights').adult=true;
+ draft.notes.push({id:'adult-note',title:'Private preview',description:'Preview',storyId:'rhydan-dunmere'});
+ const restored=C.normalize(JSON.parse(JSON.stringify(draft)));
+ const publicData=C.publicContent(restored);
+ assert.ok(!C.mainStories(restored).some(s=>s.id==='rhydan-dunmere'||s.worldId==='elyndor'));
+ assert.ok(!C.animeStories(restored).some(s=>s.id==='musutafu-heights'));
+ assert.ok(!publicData.gallery.some(p=>p.storyId==='rhydan-dunmere'||p.storyId==='rhaevor-veyr'));
+ assert.ok(!publicData.notes.some(n=>n.id==='adult-note'));
+ assert.ok(!publicData.collections.some(w=>w.id==='elyndor'));
+ assert.ok(C.isAdult(restored.worlds.find(s=>s.id==='rhaevor-veyr'),restored));
+ const wrong=C.clone(draft);wrong.worlds[0].adult='false';assert.equal(C.valid(wrong),false);
+});

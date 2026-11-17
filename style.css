@@ -115,3 +115,16 @@
 .photo-navigation:has(button[hidden]) {display:none}
 .missing-photo,.gallery-empty {padding:20px;color:var(--muted)}
 @media(min-width:741px) and (max-width:1140px){.site-header{height:auto;min-height:93px;padding-block:14px}.site-header nav{justify-content:flex-end;flex-wrap:wrap;gap:6px 16px}}
+
+/* Adult section and age confirmation */
+.adult-view {background:radial-gradient(ellipse at top,#38202c,#140e13 65%);min-height:72vh}
+.adult-gate {max-width:660px;margin:5vh auto;padding:clamp(24px,5vw,60px);border:1px solid var(--line);background:#21171fe0;text-align:center}
+.adult-gate h1,.adult-heading h1 {font:clamp(48px,7vw,78px)/1.1 var(--gothic);letter-spacing:0;margin:16px 0;color:var(--pink)}
+.adult-gate .eyebrow,.adult-heading .eyebrow {color:var(--pink)}
+.adult-intro {font:italic 25px/1.4 var(--serif)}
+.adult-actions {display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin:28px 0 18px}
+.adult-small {font-size:11px;color:var(--muted)}
+.adult-heading {padding:30px 0}.adult-heading p {color:var(--muted)}
+.adult-empty {grid-column:1/-1;padding:38px;border:1px solid var(--line);color:var(--muted)}
+.adult-view>.text-link:last-child {margin-top:24px}
+@media(min-width:1141px){.site-header nav{gap:23px}}

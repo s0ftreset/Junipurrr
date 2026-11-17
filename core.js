@@ -28,14 +28,24 @@
  function rows(a,check,max=200){return Array.isArray(a)&&a.length<=max&&a.every(check)}
  function lore(a){return a===undefined||rows(a,x=>x&&text(x.title,100)&&text(x.text)&&typeof x.spoiler==='boolean',40)}
  function website(o){return optional(o,'websiteUrl',2000)&&optional(o,'websiteTitle',100)&&optional(o,'websiteDescription',2000)&&(!o.websiteUrl||!!safeUrl(o.websiteUrl))}
- function onMain(item){return item.shelf!=='anime'}
- function mainStories(content){return content.worlds.filter(onMain)}
- function animeStories(content){return content.worlds.filter(s=>!onMain(s))}
+ function isAdult(item,content){
+  if(item.adult===true)return true;
+  const story=item.storyId&&content.worlds.find(s=>s.id===item.storyId);
+  const worldId=story?story.worldId:item.worldId;
+  return story?.adult===true||!!content.collections?.some(w=>w.id===worldId&&w.adult===true);
+ }
+ function onMain(item){return item.shelf!=='anime'&&item.adult!==true}
+ function publicContent(content){
+  const visible=item=>!isAdult(item,content);
+  return {...content,worlds:content.worlds.filter(visible),collections:(content.collections||[]).filter(visible),notes:(content.notes||[]).filter(visible),gallery:(content.gallery||[]).filter(visible)};
+ }
+ function mainStories(content){return publicContent(content).worlds.filter(onMain)}
+ function animeStories(content){return publicContent(content).worlds.filter(s=>s.shelf==='anime')}
  function valid(v){
   if(!v||!text(v.about)||!text(v.discord,100)||!safeUrl(v.profileUrl))return false;
   for(const key of ['worlds','notes','collections','graveyard','gallery']){
    if(v[key]===undefined&&['collections','graveyard','gallery'].includes(key))continue;
-   const ids=new Set();if(!rows(v[key],o=>{if(!o||!text(o.id,100)||!o.id||!text(o.title,100)||!o.title.trim()||ids.has(o.id))return false;if(o.shelf!==undefined&&!['','anime'].includes(o.shelf))return false;ids.add(o.id);return true},key==='gallery'?Infinity:200))return false;
+   const ids=new Set();if(!rows(v[key],o=>{if(!o||!text(o.id,100)||!o.id||!text(o.title,100)||!o.title.trim()||ids.has(o.id))return false;if(o.shelf!==undefined&&!['','anime'].includes(o.shelf))return false;if(o.adult!==undefined&&typeof o.adult!=='boolean')return false;ids.add(o.id);return true},key==='gallery'?Infinity:200))return false;
   }
   for(const s of v.worlds){if(s.artworkRatio!==undefined&&!ARTWORK_RATIOS.includes(s.artworkRatio))return false;if(s.artworkLayout!==undefined&&!['','poster'].includes(s.artworkLayout))return false;if(!website(s)||!optional(s,'highlight',100)||!optional(s,'chatMilestone',50)||!optional(s,'statsNote',200))return false;if(!text(s.description)||!['original','fandom','fantasy'].includes(s.category)||!optional(s,'subtitle',200)||!optional(s,'playerRole')||!optional(s,'worldId',100)||!optional(s,'coverTitle',100)||!optional(s,'coverNote',300))return false;
    if(s.url&&!safeUrl(s.url)||s.image&&!safeUrl(s.image,true)||s.kind&&!['character','scenario'].includes(s.kind)||s.theme&&!THEMES.includes(s.theme))return false;
@@ -54,5 +64,5 @@
  function normalize(value){if(!valid(value))throw new Error('This file is not a valid Junipurrr content backup.');const v=clone(value);v.schemaVersion=2;v.collections||=[];v.graveyard||=[];v.gallery||=[];v.home={requestStatus:'open',requestEndpoint:'',requestFormUrl:'',spotifyUrl:'',spotifyTitle:'The soundtrack',spotifyNote:'A little music for the worlds in my head.',note:'A little lore. A lot of emotional damage.',featuredId:'',featuredNote:'',cricketMessages:['Editor unavailable. Try again after his nap.'],...v.home};v.worlds=v.worlds.map(s=>({kind:'scenario',worldId:'',playerRole:'',cast:[],starts:[],lore:[],complications:[],tags:[],moods:{},...s}));return v}
  function matches(s,{query='',kind='all',category='all',saved=null}={}){const hay=[s.title,s.subtitle,s.description,...s.tags].join(' ').toLowerCase();return (kind==='all'||s.kind===kind)&&(category==='all'||s.category===category||category==='fantasy'&&s.tags.some(t=>t.toLowerCase().includes('fantasy')))&&(!saved||saved.includes(s.id))&&hay.includes(query.trim().toLowerCase())}
  function recommend(stories,choices){const chosen=Object.entries(choices).filter(([k,v])=>MOODS[k]?.includes(v));const ranked=stories.map(s=>{const matched=chosen.filter(([k,v])=>s.moods?.[k]===v).map(([k])=>k);return{story:s,matched,score:matched.length,exact:matched.length===chosen.length}}).filter(r=>!chosen.length||r.score>0).sort((a,b)=>b.score-a.score);const exact=ranked.filter(r=>r.exact);return{results:(exact.length?exact:ranked).slice(0,3),exact:!!exact.length,chosen:chosen.length}}
- return {THEMES,ARTWORK_RATIOS,MOODS,clone,safeUrl,spotifyPlaylist,requestEndpoint,requestMode,submitRequest,onMain,mainStories,animeStories,valid,normalize,matches,recommend};
+ return {THEMES,ARTWORK_RATIOS,MOODS,clone,safeUrl,spotifyPlaylist,requestEndpoint,requestMode,submitRequest,isAdult,publicContent,onMain,mainStories,animeStories,valid,normalize,matches,recommend};
 });
