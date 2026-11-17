@@ -169,6 +169,99 @@ window.JUNIPURRR_CONTENT = {
       "websiteDescription": "The band has receipts. Iris kept the photographs. Explore the companion website for character dossiers, songs, backstage photos, and the wider music scene."
     },
     {
+      "id": "beneath-the-bloom",
+      "title": "Beneath the Bloom",
+      "kind": "scenario",
+      "category": "original",
+      "theme": "romance",
+      "subtitle": "Hazelbrook · Folk horror · Farming & romance",
+      "url": "https://dreamjourneyai.com/app/creation/8a07e8cd-2ffb-472c-8a70-bf84ead30723",
+      "description": "You inherited twenty-three acres, an overgrown greenhouse, and a fresh start in Hazelbrook. Spring brings planting, new neighbors, and six very appealing reasons to stay. Then someone is murdered. Build a life at Thistlebrook Farm while a quiet rural town begins showing its teeth. The killer can change between playthroughs, and falling in love will absolutely not save you.",
+      "tags": [
+        "Folk horror",
+        "Farming sim",
+        "Murder mystery",
+        "Romance",
+        "Ensemble"
+      ],
+      "playerRole": "Arrive as the new owner of Thistlebrook Farm. Decide who to trust, who to get close to, and how far you will go for answers as you build your life in Hazelbrook.",
+      "complications": [
+        "A suspicious murder can escalate as the mystery unfolds.",
+        "The killer is fixed within each playthrough, but their identity can differ in another.",
+        "Dating the wrong person can put you in danger. Romance gives you no immunity."
+      ],
+      "worldId": "",
+      "image": "assets/beneath-the-bloom.webp",
+      "artworkLayout": "poster",
+      "artworkRatio": "1 / 1",
+      "moods": {},
+      "cast": [],
+      "starts": [],
+      "lore": []
+    },
+    {
+      "id": "love-island-season-one",
+      "title": "Love Island: Wizarding World — Season One",
+      "kind": "scenario",
+      "category": "fandom",
+      "theme": "society",
+      "subtitle": "Wizarding World AU · Adult dating competition",
+      "url": "https://dreamjourneyai.com/app/creation/1f8d391e-aa5c-401d-87ae-48afccdee966",
+      "description": "Twelve familiar faces. One enchanted Mediterranean villa. Absolutely nowhere to hide your terrible taste. Join adult former Hogwarts classmates for magical challenges, private dates, public recouplings, and conversations that really should have happened somewhere without cameras. Fleur Delacour hosts, Rita Skeeter has opinions, and the next bombshell is already on the way.",
+      "tags": [
+        "Harry Potter AU",
+        "Dating competition",
+        "Ensemble",
+        "Romance",
+        "Reality TV"
+      ],
+      "playerRole": "Join the villa and find your place among the Islanders. Follow your chosen DJAI opening for your arrival, then decide who catches your eye and how you handle the cameras.",
+      "complications": [
+        "Recouplings put private feelings in front of the entire villa.",
+        "Bombshells and public votes can change the balance overnight.",
+        "Casa Amor gives everyone another opportunity to make this complicated."
+      ],
+      "worldId": "",
+      "image": "assets/love-island-season-one.webp",
+      "artworkLayout": "poster",
+      "artworkRatio": "1 / 1",
+      "moods": {},
+      "cast": [],
+      "starts": [],
+      "lore": []
+    },
+    {
+      "id": "styrmir-hrafnsson",
+      "title": "Styrmir Hrafnsson | The Northern Jarl",
+      "kind": "character",
+      "category": "original",
+      "theme": "manor",
+      "subtitle": "Thornfell · Viking-inspired Omegaverse",
+      "url": "https://dreamjourneyai.com/app/creation/65aa4903-7e20-44b1-add8-6682bf3f9f0c",
+      "description": "A thirty-year feud. A wedding meant to end it. A northern Alpha who was never going to be remotely normal about his new spouse. Styrmir Hrafnsson is the 39-year-old Jarl of Thornfell, a feared commander, widower, and father to seven-year-old Eira. Your story begins on the wedding day, where a political bargain meets a dangerously possessive man with rather strong opinions about his future.",
+      "tags": [
+        "Fantasy",
+        "Omegaverse",
+        "Arranged marriage",
+        "Vikings",
+        "Wolf shifter"
+      ],
+      "playerRole": "Enter the story on your arranged wedding day to Styrmir. Your identity, feelings, and choices remain yours as you step into Hrafnhöll and the uneasy peace between two Houses.",
+      "complications": [
+        "Thirty years of conflict between House Hrafn and House Ravneld will not disappear with a wedding.",
+        "Styrmir carries the loss of his first mate alongside his responsibilities as a father and Jarl.",
+        "His possessiveness and volatile temper make this political marriage intensely personal."
+      ],
+      "worldId": "",
+      "image": "assets/styrmir-hrafnsson.webp",
+      "artworkLayout": "poster",
+      "artworkRatio": "1 / 1",
+      "moods": {},
+      "cast": [],
+      "starts": [],
+      "lore": []
+    },
+    {
       "id": "fourth-wing-let-canon-bleed",
       "title": "Fourth Wing: Let Canon Bleed",
       "subtitle": "Fourth Wing · Basgiath War College",
@@ -1234,13 +1327,43 @@ window.JUNIPURRR_CONTENT = {
   ],
   "notes": [
     {
-      "id": "wip-hazelbrook",
-      "title": "Hazelbrook | Horror farming sim",
-      "subtitle": "Folk horror · Mystery · Romance",
-      "description": "Currently growing something deeply concerning at Thistlebrook Farm. A farming-life murder mystery in Hazelbrook, with romance, community secrets, a killer whose identity can change between playthroughs, and very real danger for you and the people you get attached to. Still being developed.",
+      "id": "wip-love-island-season-two",
+      "title": "Love Island: Wizarding World — Season Two (Marauders Edition)",
+      "subtitle": "Wizarding World AU · The villa is reopening",
+      "description": "The Marauders are checking in. Rita has returned with commentary, Minerva is hosting, and apparently one season of televised terrible decisions was not enough.",
       "status": "In progress",
       "image": "",
       "storyId": "",
+      "url": ""
+    },
+    {
+      "id": "wip-addams-family",
+      "title": "Addams Family Scenario",
+      "subtitle": "An Unfortunate Invitation",
+      "description": "An invitation to the Addams estate. A perfectly ordinary visit, according to absolutely nobody outside this family. A blended AU with the core household and plenty of room for things to get strange.",
+      "status": "In progress",
+      "image": "",
+      "storyId": "",
+      "url": ""
+    },
+    {
+      "id": "wip-more-vikings",
+      "title": "More Vikings >:3",
+      "subtitle": "An idea unfortunately occurred",
+      "description": "Apparently one northern problem was not enough. More Vikings are rattling around in my brain. Details pending. Judgment already questionable.",
+      "status": "Draft",
+      "image": "",
+      "storyId": "",
+      "url": ""
+    },
+    {
+      "id": "wip-hazelbrook",
+      "title": "Beneath the Bloom",
+      "subtitle": "Hazelbrook · Folk horror · Farming & romance",
+      "description": "Hazelbrook has escaped the drafts. Thistlebrook Farm, six potential bad decisions, and a murder mystery are now waiting for you on DJAI. Please enjoy your fresh start responsibly. Or at least keep an eye on the woods.",
+      "status": "Finished",
+      "image": "",
+      "storyId": "beneath-the-bloom",
       "url": ""
     },
     {
